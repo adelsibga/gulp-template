@@ -1,0 +1,19 @@
+{
+  "name": "gulp-template",
+  "version": "1.0.0",
+  "description": "gulp template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adelsibga/gulp-template.git"
+  },
+  "author": "Adel Sibgatullin <adelsibga@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adelsibga/gulp-template/issues"
+  },
+  "homepage": "https://github.com/adelsibga/gulp-template#readme"
+}
