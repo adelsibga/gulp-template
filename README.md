@@ -4,7 +4,7 @@
 
 Clone the repo using this command:
 
-    git@github.com:adelsibga/gulp-template.git
+    git clone git@github.com:adelsibga/gulp-template.git
 
 # Run #
 
