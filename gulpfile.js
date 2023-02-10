@@ -46,7 +46,7 @@ const path = {
 }
 
 function serve() {
-    browserSync.init({ // TODO: https://browsersync.io/docs/gulp
+    browserSync.init({
         server: {
             baseDir: './' + buildPath,
             open: false
@@ -66,7 +66,7 @@ function css() {
     return src(path.src.css, {base: srcPath + 'scss/'})
         .pipe(plumber({
             errorHandler: function (err) {
-                notify.onError({ // TODO: check warning
+                notify.onError({
                     title: 'SCSS',
                     subtitle: 'Error',
                     message: 'Error: <%= error.message %>',
@@ -98,7 +98,7 @@ function js() {
     return src(path.src.js, {base: srcPath + 'js/'})
         .pipe(plumber({
             errorHandler: function (err) {
-                notify.onError({ // TODO: check warning
+                notify.onError({
                     title: 'JS',
                     subtitle: 'Error',
                     message: 'Error: <%= error.message %>',

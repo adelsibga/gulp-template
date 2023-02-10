@@ -4,7 +4,9 @@
   padding: 0;
 }
 
-// Global SCSS-files imports
+@import './components/footer';
+@import './components/header';
+
 @import './config/vars';
 @import './config/reset';
 @import './config/global';
