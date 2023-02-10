@@ -1,7 +1,3 @@
-// https://dev.to/bmsvieira/vanilla-js-slidedown-up-4dkn // TODO: check link resource
-// https://w3bits.com/javascript-slidetoggle/
-
-/* SLIDE UP */
 const slideUp = (target, duration = 500) => {
     target.style.transitionProperty = 'height, margin, padding'
     target.style.transitionDuration = duration + 'ms'
@@ -27,7 +23,6 @@ const slideUp = (target, duration = 500) => {
     }, duration)
 }
 
-/* SLIDE DOWN */
 const slideDown = (target, duration = 500) => {
     target.style.removeProperty('display')
     let display = window.getComputedStyle(target).display
@@ -57,7 +52,6 @@ const slideDown = (target, duration = 500) => {
     }, duration)
 }
 
-/* TOGGLE */
 const slideToggle = (target, duration = 500) => {
     if (window.getComputedStyle(target).display === 'none') {
         return slideDown(target, duration)

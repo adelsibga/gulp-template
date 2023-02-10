@@ -1,6 +1,5 @@
 @import 'vars';
 
-// Container
 .container {
   width: 100%;
   max-width: ($containerWidth + $containerPadding) + px;
@@ -24,7 +23,6 @@
   }
 }
 
-// Body & Locked
 body {
   font-family: $fontMain;
 

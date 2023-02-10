@@ -43,6 +43,7 @@ web_modules/
 out
 .nuxt
 dist
+build
 .cache/
 .vuepress/dist
 .temp

@@ -1,6 +1,6 @@
 'use strict'
 
-const {src, dest} = require('gulp') // TODO: const convert to import
+const {src, dest} = require('gulp')
 const gulp = require('gulp')
 const autoprefixer = require('gulp-autoprefixer')
 const cssbeautify = require('gulp-cssbeautify')
@@ -10,7 +10,7 @@ const sass = require('gulp-sass')(require('sass'))
 const cssnano = require('gulp-cssnano')
 const uglify = require('gulp-uglify')
 const plumber = require('gulp-plumber')
-const panini = require('panini')
+const nunjucks = require('gulp-nunjucks');
 const imagemin = require('gulp-imagemin')
 const del = require('del')
 const notify = require('gulp-notify')
@@ -29,9 +29,9 @@ const path = {
         fonts: buildPath + 'fonts/'
     },
     src: {
-        html: srcPath + '*.html', // '**/*.html' // TODO: check path
-        css: srcPath + 'scss/*.scss', // ''
-        js: srcPath + 'js/*.js', // 'js/**/*.js'
+        html: srcPath + '*.html',
+        css: srcPath + 'scss/*.scss',
+        js: srcPath + 'js/*.js',
         images: srcPath + 'images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}',
         fonts: srcPath + 'fonts/**/*.{eot.woff,woff2,ttf,svg}'
     },
@@ -46,7 +46,7 @@ const path = {
 }
 
 function serve() {
-    browserSync.init({
+    browserSync.init({ // TODO: https://browsersync.io/docs/gulp
         server: {
             baseDir: './' + buildPath,
             open: false
@@ -55,15 +55,9 @@ function serve() {
 }
 
 function html() {
-    panini.refresh()
     return src(path.src.html, {base: srcPath})
         .pipe(plumber())
-        .pipe(panini({
-            root: srcPath + 'pages/',
-            layouts: srcPath + 'templates/layouts/',
-            partials: srcPath + 'templates/partials/',
-            data: srcPath + 'templates/data/'
-        }))
+        .pipe(nunjucks.compile())
         .pipe(dest(path.build.html))
         .pipe(browserSync.stream())
 }
