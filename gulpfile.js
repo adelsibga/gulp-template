@@ -10,7 +10,7 @@ const sass = require('gulp-sass')(require('sass'))
 const cssnano = require('gulp-cssnano')
 const uglify = require('gulp-uglify')
 const plumber = require('gulp-plumber')
-const nunjucks = require('gulp-nunjucks');
+const twig = require('gulp-twig');
 const imagemin = require('gulp-imagemin')
 const del = require('del')
 const notify = require('gulp-notify')
@@ -22,21 +22,21 @@ const buildPath = 'build/'
 
 const path = {
     build: {
-        html: buildPath,
+        twig: buildPath,
         css: buildPath + 'css/',
         js: buildPath + 'js/',
         images: buildPath + 'images/',
         fonts: buildPath + 'fonts/'
     },
     src: {
-        html: srcPath + '*.html',
+        twig: srcPath + '*.twig',
         css: srcPath + 'scss/*.scss',
         js: srcPath + 'js/*.js',
         images: srcPath + 'images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}',
         fonts: srcPath + 'fonts/**/*.{eot.woff,woff2,ttf,svg}'
     },
     watch: {
-        html: srcPath + '**/*.html',
+        twig: srcPath + '**/*.twig',
         css: srcPath + 'scss/**/*.scss',
         js: srcPath + 'js/**/*.js',
         images: srcPath + 'images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}',
@@ -54,11 +54,13 @@ function serve() {
     })
 }
 
-function html() {
-    return src(path.src.html, {base: srcPath})
+function twig2Html() {
+    return src(path.src.twig, {base: srcPath})
         .pipe(plumber())
-        .pipe(nunjucks.compile())
-        .pipe(dest(path.build.html))
+        .pipe(twig({
+            errorLogToConsole: true,
+        }))
+        .pipe(dest(path.build.twig))
         .pipe(browserSync.stream())
 }
 
@@ -145,17 +147,17 @@ function clean() {
 }
 
 function watchFiles() {
-    gulp.watch([path.watch.html], html)
+    gulp.watch([path.watch.twig], twig2Html)
     gulp.watch([path.watch.css], css)
     gulp.watch([path.watch.js], js)
     gulp.watch([path.watch.images], images)
     gulp.watch([path.watch.fonts], fonts)
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts))
+const build = gulp.series(clean, gulp.parallel(twig2Html, css, js, images, fonts))
 const watch = gulp.parallel(build, watchFiles, serve)
 
-exports.html = html
+exports.twig = twig
 exports.css = css
 exports.js = js
 exports.images = images
