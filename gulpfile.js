@@ -10,7 +10,7 @@ const sass = require('gulp-sass')(require('sass'))
 const cssnano = require('gulp-cssnano')
 const uglify = require('gulp-uglify')
 const plumber = require('gulp-plumber')
-const twig = require('gulp-twig');
+const twig = require('gulp-twig')
 const imagemin = require('gulp-imagemin')
 const del = require('del')
 const notify = require('gulp-notify')
@@ -21,137 +21,137 @@ const srcPath = 'src/'
 const buildPath = 'build/'
 
 const path = {
-    build: {
-        twig: buildPath,
-        css: buildPath + 'css/',
-        js: buildPath + 'js/',
-        images: buildPath + 'images/',
-        fonts: buildPath + 'fonts/'
-    },
-    src: {
-        twig: srcPath + '*.twig',
-        css: srcPath + 'scss/*.scss',
-        js: srcPath + 'js/*.js',
-        images: srcPath + 'images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}',
-        fonts: srcPath + 'fonts/**/*.{eot.woff,woff2,ttf,svg}'
-    },
-    watch: {
-        twig: srcPath + '**/*.twig',
-        css: srcPath + 'scss/**/*.scss',
-        js: srcPath + 'js/**/*.js',
-        images: srcPath + 'images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}',
-        fonts: srcPath + 'fonts/**/*.{eot.woff,woff2,ttf,svg}'
-    },
-    clean: './' + buildPath
+	build: {
+		twig: `${buildPath}`,
+		css: `${buildPath}css/`,
+		js: `${buildPath}js/`,
+		images: `${buildPath}images/`,
+		fonts: `${buildPath}fonts/`
+	},
+	src: {
+		twig: `${srcPath}*.twig`,
+		css: `${srcPath}scss/*.scss`,
+		js: `${srcPath}js/*.js`,
+		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
+		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`
+	},
+	watch: {
+		twig: `${srcPath}**/*.twig`,
+		css: `${srcPath}scss/**/*.scss`,
+		js: `${srcPath}js/**/*.js`,
+		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
+		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`
+	},
+	clean: `./${buildPath}`
 }
 
 function serve() {
-    browserSync.init({
-        server: {
-            baseDir: './' + buildPath,
-            open: false
-        }
-    })
+	browserSync.init({
+		server: {
+			baseDir: `./${buildPath}`,
+			open: false
+		}
+	})
 }
 
 function twig2Html() {
-    return src(path.src.twig, {base: srcPath})
-        .pipe(plumber())
-        .pipe(twig({
-            errorLogToConsole: true,
-        }))
-        .pipe(dest(path.build.twig))
-        .pipe(browserSync.stream())
+	return src(path.src.twig, {base: srcPath})
+		.pipe(plumber())
+		.pipe(twig({
+			errorLogToConsole: true
+		}))
+		.pipe(dest(path.build.twig))
+		.pipe(browserSync.stream())
 }
 
 function css() {
-    return src(path.src.css, {base: srcPath + 'scss/'})
-        .pipe(plumber({
-            errorHandler: function (err) {
-                notify.onError({
-                    title: 'SCSS',
-                    subtitle: 'Error',
-                    message: 'Error: <%= error.message %>',
-                    sound: 'Beep'
-                })(err)
-                this.emit('end')
-            }
-        }))
-        .pipe(sass())
-        .pipe(autoprefixer())
-        .pipe(cssbeautify())
-        .pipe(dest(path.build.css))
-        .pipe(cssnano({
-            zIndex: false,
-            discardComments: {
-                removeAll: true
-            }
-        }))
-        .pipe(removeComments())
-        .pipe(rename({
-            suffix: '.min',
-            extname: '.css'
-        }))
-        .pipe(dest(path.build.css))
-        .pipe(browserSync.stream())
+	return src(path.src.css, {base: `${srcPath}scss/`})
+		.pipe(plumber({
+			errorHandler: function (err) {
+				notify.onError({
+					title: 'SCSS',
+					subtitle: 'Error',
+					message: 'Error: <%= error.message %>',
+					sound: 'Beep'
+				})(err)
+				this.emit('end')
+			}
+		}))
+		.pipe(sass())
+		.pipe(autoprefixer())
+		.pipe(cssbeautify())
+		.pipe(dest(path.build.css))
+		.pipe(cssnano({
+			zIndex: false,
+			discardComments: {
+				removeAll: true
+			}
+		}))
+		.pipe(removeComments())
+		.pipe(rename({
+			suffix: '.min',
+			extname: '.css'
+		}))
+		.pipe(dest(path.build.css))
+		.pipe(browserSync.stream())
 }
 
 function js() {
-    return src(path.src.js, {base: srcPath + 'js/'})
-        .pipe(plumber({
-            errorHandler: function (err) {
-                notify.onError({
-                    title: 'JS',
-                    subtitle: 'Error',
-                    message: 'Error: <%= error.message %>',
-                    sound: 'Beep'
-                })(err)
-                this.emit('end')
-            }
-        }))
-        .pipe(rigger())
-        .pipe(dest(path.build.js))
-        .pipe(uglify())
-        .pipe(rename({
-            suffix: '.min',
-            extname: '.js'
-        }))
-        .pipe(dest(path.build.js))
-        .pipe(browserSync.stream())
+	return src(path.src.js, {base: `${srcPath}js/`})
+		.pipe(plumber({
+			errorHandler: function (err) {
+				notify.onError({
+					title: 'JS',
+					subtitle: 'Error',
+					message: 'Error: <%= error.message %>',
+					sound: 'Beep'
+				})(err)
+				this.emit('end')
+			}
+		}))
+		.pipe(rigger())
+		.pipe(dest(path.build.js))
+		.pipe(uglify())
+		.pipe(rename({
+			suffix: '.min',
+			extname: '.js'
+		}))
+		.pipe(dest(path.build.js))
+		.pipe(browserSync.stream())
 }
 
 function images() { // TODO: configure images compression
-    return src(path.src.images, {base: srcPath + 'images/'})
-        .pipe(imagemin([
-            imagemin.gifsicle({interlaced: true}),
-            imagemin.mozjpeg({quality: 80, progressive: true}),
-            imagemin.optipng({optimizationLevel: 5}),
-            imagemin.svgo({
-                plugins: [
-                    {removeViewBox: true},
-                    {cleanupIDs: false}
-                ]
-            })
-        ]))
-        .pipe(dest(path.build.images))
-        .pipe(browserSync.stream())
+	return src(path.src.images, {base: `${srcPath}images/`})
+		.pipe(imagemin([
+			imagemin.gifsicle({interlaced: true}),
+			imagemin.mozjpeg({quality: 80, progressive: true}),
+			imagemin.optipng({optimizationLevel: 5}),
+			imagemin.svgo({
+				plugins: [
+					{removeViewBox: true},
+					{cleanupIDs: false}
+				]
+			})
+		]))
+		.pipe(dest(path.build.images))
+		.pipe(browserSync.stream())
 }
 
 function fonts() {
-    return src(path.src.fonts, {base: srcPath + 'fonts/'})
-        .pipe(browserSync.stream())
+	return src(path.src.fonts, {base: `${srcPath}fonts/`})
+		.pipe(browserSync.stream())
 }
 
 function clean() {
-    return del(path.clean)
+	return del(path.clean)
 }
 
 function watchFiles() {
-    gulp.watch([path.watch.twig], twig2Html)
-    gulp.watch([path.watch.css], css)
-    gulp.watch([path.watch.js], js)
-    gulp.watch([path.watch.images], images)
-    gulp.watch([path.watch.fonts], fonts)
+	gulp.watch([path.watch.twig], twig2Html)
+	gulp.watch([path.watch.css], css)
+	gulp.watch([path.watch.js], js)
+	gulp.watch([path.watch.images], images)
+	gulp.watch([path.watch.fonts], fonts)
 }
 
 const build = gulp.series(clean, gulp.parallel(twig2Html, css, js, images, fonts))

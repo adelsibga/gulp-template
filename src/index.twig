@@ -15,8 +15,12 @@
     test messages
     {% include './components/footer.html' %}
     {% include './components/test.twig' with {
-        'message': 'test 123123text from test.twig'
+        'message': 'test text from test.twig'
     } only %}
+    {% set array = [0,1,2,3,4,5,6,7,8,9,10,11] %}
+    {% for i in array %}
+        {{ i }},
+    {% endfor %}
 </main>
 </body>
 <script src="./js/index.min.js"></script>
