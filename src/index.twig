@@ -11,9 +11,9 @@
 
 <body class="main__body">
 <main>
-    {% include './components/header.html' %}
+    {% include './components/header.twig' %}
     test messages
-    {% include './components/footer.html' %}
+    {% include './components/footer.twig' %}
     {% include './components/test.twig' with {
         'message': 'test text from test.twig'
     } only %}
