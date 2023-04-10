@@ -1,27 +1,14 @@
-<!doctype html>
-<html lang="en">
+{% extends 'templates/layout.twig' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Index</title>
-    <link rel="stylesheet" href="./css/index.min.css">
-</head>
+{% set title = 'Gulp template' %}
+{% set description = 'Gulp template for development' %}
 
-<body class="main__body">
-<main>
-    {% include './components/header.twig' %}
-    test messages
-    {% include './components/footer.twig' %}
-    {% include './components/test.twig' with {
-        'message': 'test text from test.twig'
-    } only %}
-    {% set array = [0,1,2,3,4,5,6,7,8,9,10,11] %}
-    {% for i in array %}
-        {{ i }},
-    {% endfor %}
-</main>
-</body>
-<script src="./js/index.min.js"></script>
-</html>
+{% block styles %}
+{% endblock %}
+
+{% block content %}
+    content
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

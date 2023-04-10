@@ -1,12 +1,5 @@
-*, *:before, *:after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
-@import './components/footer';
-@import './components/header';
-
-@import './config/vars';
-@import './config/reset';
-@import './config/global';
