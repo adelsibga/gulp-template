@@ -65,7 +65,7 @@ function twig2Html() {
 		.pipe(browserSync.stream())
 }
 
-function css() {
+function styles() {
 	return src(path.src.css, {base: `${srcPath}scss/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
@@ -98,7 +98,7 @@ function css() {
 		.pipe(browserSync.stream())
 }
 
-function js() {
+function scripts() {
 	return src(path.src.js, {base: `${srcPath}js/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
@@ -139,8 +139,11 @@ function images() { // TODO: configure images compression
 		.pipe(browserSync.stream())
 }
 
-function fonts() {
+function fonts() { // TODO: add convert fonts extension https://www.youtube.com/watch?v=qSZvGlIKGPg https://www.youtube.com/watch?v=izqR0UY11rk https://www.youtube.com/watch?v=Hh1aDoWMJXA https://www.youtube.com/watch?v=jU88mLuLWlk&t=5117s
+	// TODO: check task and convert fonts extensions ttf woff2
 	return src(path.src.fonts, {base: `${srcPath}fonts/`})
+		.pipe(plumber())
+		.pipe(dest(path.build.fonts))
 		.pipe(browserSync.stream())
 }
 
@@ -150,18 +153,18 @@ function clean() {
 
 function watchFiles() {
 	gulp.watch([path.watch.twig], twig2Html)
-	gulp.watch([path.watch.css], css)
-	gulp.watch([path.watch.js], js)
+	gulp.watch([path.watch.css], styles)
+	gulp.watch([path.watch.js], scripts)
 	gulp.watch([path.watch.images], images)
 	gulp.watch([path.watch.fonts], fonts)
 }
 
-const build = gulp.series(clean, gulp.parallel(twig2Html, css, js, images, fonts))
+const build = gulp.series(clean, gulp.parallel(twig2Html, styles, scripts, images, fonts))
 const watch = gulp.parallel(build, watchFiles, serve)
 
-exports.twig = twig
-exports.css = css
-exports.js = js
+exports.twig2Html = twig2Html
+exports.styles = styles
+exports.scripts = scripts
 exports.images = images
 exports.fonts = fonts
 exports.clean = clean
