@@ -7,8 +7,10 @@ const cssbeautify = require('gulp-cssbeautify')
 const removeComments = require('gulp-strip-css-comments')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')(require('sass'))
+const less = require('gulp-less')
 const cssnano = require('gulp-cssnano')
 const gcmq = require('gulp-group-css-media-queries')
+const sourcemaps = require('gulp-sourcemaps')
 const uglify = require('gulp-uglify')
 const plumber = require('gulp-plumber')
 const twig = require('gulp-twig')
@@ -17,6 +19,8 @@ const del = require('del')
 const notify = require('gulp-notify')
 const rigger = require('gulp-rigger')
 const browserSync = require('browser-sync').create()
+
+let preprocessor = 'less'
 
 const srcPath = 'src/'
 const buildPath = 'build/'
@@ -31,14 +35,14 @@ const path = {
 	},
 	src: {
 		twig: `${srcPath}*.twig`,
-		css: `${srcPath}scss/*.scss`,
+		css: `${srcPath + preprocessor}/*.${preprocessor}`,
 		js: `${srcPath}js/*.js`,
 		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
 		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`
 	},
 	watch: {
 		twig: `${srcPath}**/*.twig`,
-		css: `${srcPath}scss/**/*.scss`,
+		css: `${srcPath + preprocessor}/**/*.${preprocessor}`,
 		js: `${srcPath}js/**/*.js`,
 		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
 		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`
@@ -65,12 +69,12 @@ function twig2Html() {
 		.pipe(browserSync.stream())
 }
 
-function styles() {
-	return src(path.src.css, {base: `${srcPath}scss/`})
+function styles() { // TODO: check PostCSS
+	return src(path.src.css, {base: `${srcPath + preprocessor}/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
 				notify.onError({
-					title: 'SCSS',
+					title: `${preprocessor}`.toUpperCase(),
 					subtitle: 'Error',
 					message: 'Error: <%= error.message %>',
 					sound: 'Beep'
@@ -78,11 +82,14 @@ function styles() {
 				this.emit('end')
 			}
 		}))
+		.pipe(sourcemaps.init())
 		.pipe(sass())
 		.pipe(gcmq())
 		.pipe(autoprefixer())
 		.pipe(cssbeautify())
+        .pipe(sourcemaps.write())
 		.pipe(dest(path.build.css))
+        .pipe(sourcemaps.init())
 		.pipe(cssnano({
 			zIndex: false,
 			discardComments: {
@@ -94,11 +101,12 @@ function styles() {
 			suffix: '.min',
 			extname: '.css'
 		}))
+        .pipe(sourcemaps.write())
 		.pipe(dest(path.build.css))
 		.pipe(browserSync.stream())
 }
 
-function scripts() {
+function scripts() { // TODO: add sourcemaps for js
 	return src(path.src.js, {base: `${srcPath}js/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
