@@ -1,5 +1,7 @@
 'use strict'
 
+// TODO: add alias for js, images, fonts and any other
+
 const {src, dest} = require('gulp')
 const gulp = require('gulp')
 const autoprefixer = require('gulp-autoprefixer')
@@ -31,21 +33,24 @@ const path = {
 		css: `${buildPath}css/`,
 		js: `${buildPath}js/`,
 		images: `${buildPath}images/`,
-		fonts: `${buildPath}fonts/`
+		fonts: `${buildPath}fonts/`,
+		assets: `${buildPath}assets/`
 	},
 	src: {
 		twig: `${srcPath}*.twig`,
 		css: `${srcPath + preprocessor}/*.${preprocessor}`,
 		js: `${srcPath}js/*.js`,
 		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
-		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`
+		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`,
+		assets: `${srcPath}assets/**/*.*`
 	},
 	watch: {
 		twig: `${srcPath}**/*.twig`,
 		css: `${srcPath + preprocessor}/**/*.${preprocessor}`,
 		js: `${srcPath}js/**/*.js`,
 		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
-		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`
+		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`,
+		assets: `${srcPath}assets/**/*.*`
 	},
 	clean: `./${buildPath}`
 }
@@ -155,6 +160,13 @@ function fonts() { // TODO: add convert fonts extension https://www.youtube.com/
 		.pipe(browserSync.stream())
 }
 
+function assets() {
+	return src(path.src.assets, {base: `${srcPath}assets/`})
+		.pipe(plumber())
+		.pipe(dest(path.build.assets))
+		.pipe(browserSync.stream())
+}
+
 function clean() {
 	return del(path.clean)
 }
@@ -165,9 +177,10 @@ function watchFiles() {
 	gulp.watch([path.watch.js], scripts)
 	gulp.watch([path.watch.images], images)
 	gulp.watch([path.watch.fonts], fonts)
+	gulp.watch([path.watch.assets], assets)
 }
 
-const build = gulp.series(clean, gulp.parallel(twig2Html, styles, scripts, images, fonts))
+const build = gulp.series(clean, gulp.parallel(twig2Html, styles, scripts, images, fonts, assets))
 const watch = gulp.parallel(build, watchFiles, serve)
 
 exports.twig2Html = twig2Html
@@ -175,6 +188,7 @@ exports.styles = styles
 exports.scripts = scripts
 exports.images = images
 exports.fonts = fonts
+exports.assets = assets
 exports.clean = clean
 exports.build = build
 exports.watch = watch
