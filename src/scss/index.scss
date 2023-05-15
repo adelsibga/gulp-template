@@ -1,7 +1,10 @@
-@import './config/fonts';
-@import './components/quantity';
+@import './config/vars';
+@import './config/text';
+@import './config/euclidCircularFonts';
+@import './config/containers';
 @import './components/buttons/default';
 @import './components/buttons/withUnderline';
+@import './components/quantity';
 
 * {
   box-sizing: border-box;
@@ -14,4 +17,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 50px;
+}
+
+.frame {
+  display: block;
+  width: 275px;
+  height: 275px;
+  border-color: #FFFFFF;
+  box-shadow: $defaultShadow;
+  border-radius: $defaultBorderRadius;
 }

@@ -1,7 +1,16 @@
 // Fonts
-$EuclidCircularRegular: 'Euclid Circular B';
-$EuclidCircularMedium: 'Euclid Circular B Medium';
-$EuclidCircularBold: 'Euclid Circular B';
+$EuclidCircularLight: Light, Roboto, sans-serif;
+$EuclidCircularRegular: Euclid Circular B Regular, Roboto, sans-serif;
+$EuclidCircularMedium: Euclid Circular B Medium, Roboto, sans-serif;
+$EuclidCircularSemiBold: Euclid Circular B SemiBold, Roboto, sans-serif;
+$EuclidCircularBold: Euclid Circular B Bold, Roboto, sans-serif;
+
+// Fonts Italic
+$EuclidCircularLightItalic: Euclid Circular B Light Italic, Roboto, sans-serif;
+$EuclidCircularItalic: Euclid Circular B Italic, Roboto, sans-serif;
+$EuclidCircularMediumItalic: Medium Italic, Roboto, sans-serif;
+$EuclidCircularSemiBoldItalic: Euclid Circular B SemiBold Italic, Roboto, sans-serif;
+$EuclidCircularBoldItalic: Bold Italic, Roboto, sans-serif;
 
 // Default Colors
 $defaultTitleColor: #151824;
@@ -14,14 +23,26 @@ $defaultSuiteColor: #B8195B;
 // Learn Colors
 $defaultLearnColor: #3CB46E;
 
-// Quizmaker Colors
-$defaultQuizmakerColor: #F98D00;
+// Market Colors
+$defaultMarketColor: #773BDB;
 
 // Page Colors
 $defaultPageColor: #2972E0;
 
-// Market Colors
-$defaultMarketColor: #773BDB;
+// Space Colors
+$defaultSpaceColor: #003DAE;
+
+// Quizmaker Colors
+$defaultQuizmakerColor: #F98D00;
+
+// Blog Colors
+$defaultBlogColor_1: #130F3F;
+$defaultBlogColor_2: #003ECF;
+$defaultBlogColor_3: #91AFFD;
+$defaultBlogColor_4: #D4E0FF;
+$defaultBlogColor_5: #F2F4F8;
+$defaultBlogColor_6: #FCCCD4;
+$defaultBlogColor_7: #DD4A6C;
 
 // Buttons Colors
 $defaultButtonTextColor: #FFFFFF;
@@ -52,3 +73,9 @@ $underlineButtonColorHover: #151824;
 $defaultTransition: all 3s ease;
 $leftTransition: left .3s ease;
 $rightTransition: right .3s ease;
+
+// Box shadow
+$defaultShadow: 0 9px 23px rgba(22, 25, 32, 0.15);
+
+// Border radius
+$defaultBorderRadius: 10px;

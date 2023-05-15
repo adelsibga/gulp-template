@@ -1,26 +1,5 @@
-$RosatomBold: 'RosatomBold', sans-serif;
-$RosatomRegular: 'RosatomRegular', sans-serif;
-
 @font-face {
-  font-family: 'RosatomBold';
-  font-display: swap;
-  src: url('../fonts/RosatomBold.woff') format('woff');
-  src: local('Rosatom Bold'), local('Rosatom-Bold');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'RosatomRegular';
-  font-display: swap;
-  src: local('Rosatom Regular'), local('Rosatom-Regular');
-  src: url('../fonts/RosatomRegular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Euclid Circular B';
+  font-family: 'Euclid Circular B Bold';
   src: url('../fonts/EuclidCircularB-Bold.eot');
   src: local('Euclid Circular B Bold'), local('EuclidCircularB-Bold'),
   url('../fonts/EuclidCircularB-Bold.eot?#iefix') format('embedded-opentype'),
@@ -32,7 +11,7 @@ $RosatomRegular: 'RosatomRegular', sans-serif;
 }
 
 @font-face {
-  font-family: 'Euclid Circular B';
+  font-family: 'Euclid Circular B Italic';
   src: url('../fonts/EuclidCircularB-Italic.eot');
   src: local('Euclid Circular B Italic'), local('EuclidCircularB-Italic'),
   url('../fonts/EuclidCircularB-Italic.eot?#iefix') format('embedded-opentype'),
@@ -56,7 +35,7 @@ $RosatomRegular: 'RosatomRegular', sans-serif;
 }
 
 @font-face {
-  font-family: 'Euclid Circular B';
+  font-family: 'Euclid Circular B SemiBold Italic';
   src: url('../fonts/EuclidCircularB-SemiBoldItalic.eot');
   src: local('Euclid Circular B SemiBold Italic'), local('EuclidCircularB-SemiBoldItalic'),
   url('../fonts/EuclidCircularB-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
@@ -68,7 +47,7 @@ $RosatomRegular: 'RosatomRegular', sans-serif;
 }
 
 @font-face {
-  font-family: 'Euclid Circular B';
+  font-family: 'Euclid Circular B Bold Italic';
   src: url('../fonts/EuclidCircularB-BoldItalic.eot');
   src: local('Euclid Circular B Bold Italic'), local('EuclidCircularB-BoldItalic'),
   url('../fonts/EuclidCircularB-BoldItalic.eot?#iefix') format('embedded-opentype'),
@@ -80,7 +59,7 @@ $RosatomRegular: 'RosatomRegular', sans-serif;
 }
 
 @font-face {
-  font-family: 'Euclid Circular B';
+  font-family: 'Euclid Circular B Medium Italic';
   src: url('../fonts/EuclidCircularB-MediumItalic.eot');
   src: local('Euclid Circular B Medium Italic'), local('EuclidCircularB-MediumItalic'),
   url('../fonts/EuclidCircularB-MediumItalic.eot?#iefix') format('embedded-opentype'),
@@ -92,7 +71,7 @@ $RosatomRegular: 'RosatomRegular', sans-serif;
 }
 
 @font-face {
-  font-family: 'Euclid Circular B';
+  font-family: 'Euclid Circular B SemiBold';
   src: url('../fonts/EuclidCircularB-SemiBold.eot');
   src: local('Euclid Circular B SemiBold'), local('EuclidCircularB-SemiBold'),
   url('../fonts/EuclidCircularB-SemiBold.eot?#iefix') format('embedded-opentype'),
@@ -104,7 +83,7 @@ $RosatomRegular: 'RosatomRegular', sans-serif;
 }
 
 @font-face {
-  font-family: 'Euclid Circular B';
+  font-family: 'Euclid Circular B Light';
   src: url('../fonts/EuclidCircularB-Light.eot');
   src: local('Euclid Circular B Light'), local('EuclidCircularB-Light'),
   url('../fonts/EuclidCircularB-Light.eot?#iefix') format('embedded-opentype'),
@@ -116,7 +95,7 @@ $RosatomRegular: 'RosatomRegular', sans-serif;
 }
 
 @font-face {
-  font-family: 'Euclid Circular B';
+  font-family: 'Euclid Circular B Regular';
   src: url('../fonts/EuclidCircularB-Regular.eot');
   src: local('Euclid Circular B Regular'), local('EuclidCircularB-Regular'),
   url('../fonts/EuclidCircularB-Regular.eot?#iefix') format('embedded-opentype'),
@@ -128,7 +107,7 @@ $RosatomRegular: 'RosatomRegular', sans-serif;
 }
 
 @font-face {
-  font-family: 'Euclid Circular B';
+  font-family: 'Euclid Circular B Light Italic';
   src: url('../fonts/EuclidCircularB-LightItalic.eot');
   src: local('Euclid Circular B Light Italic'), local('EuclidCircularB-LightItalic'),
   url('../fonts/EuclidCircularB-LightItalic.eot?#iefix') format('embedded-opentype'),

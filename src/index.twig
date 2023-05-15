@@ -7,85 +7,105 @@
 {% endblock %}
 
 {% block content %}
-    {% include './components/quantity.twig' %}
-    <div class="container_buttons">
-        {% include './components/buttons/default.twig' with {
-            'link': '#',
-            'color': 'blue',
-            'text': 'Try for Free',
-        } %}
-        {% include './components/buttons/default.twig' with {
-            'link': '#',
-            'color': 'white',
-            'text': 'Learn more',
-            'withArrow': true,
-            'additionalClass': 'additionalClass additionalClass2'
-        } %}
-        {% include './components/buttons/default.twig' with {
-            'link': '#',
-            'color': 'green',
-            'text': 'Try for Free',
-        } %}
-        {% include './components/buttons/default.twig' with {
-            'link': '#',
-            'color': 'yellow',
-            'text': 'Try for Free',
-        } %}
-        {% include './components/buttons/default.twig' with {
-            'link': '#',
-            'color': 'pink',
-            'text': 'Download for Free',
-        } %}
-        {% include './components/buttons/default.twig' with {
-            'link': '#',
-            'color': 'blue',
-            'text': 'Free Trial',
-            'small': true
-        } %}
-        {% include './components/buttons/default.twig' with {
-            'link': '#',
-            'color': 'white',
-            'text': 'Free Trial',
-            'small': true
-        } %}
-        {% include './components/buttons/default.twig' with {
-            'link': '#',
-            'color': 'green',
-            'text': 'Free Trial',
-            'small': true,
-        } %}
-        {% include './components/buttons/default.twig' with {
-            'link': '#',
-            'color': 'white',
-            'text': 'Manage Cookies',
-            'small': true,
-            'additionalClass': 'button_cookies'
-        } %}
-        {% include './components/buttons/default.twig' with {
-            'link': '#',
-            'color': 'black',
-            'text': 'Accept All',
-            'small': true,
-        } %}
-        {% include './components/buttons/withUnderline.twig' with {
-            'link': '#',
-            'text': 'Explore',
-            'withArrow': true,
-            'additionalClass': 'additionalClass'
-        } %}
-        {% include './components/buttons/withUnderline.twig' with {
-            'link': '#',
-            'text': 'Pricing',
-            'pricing': true,
-            'withArrow': true,
-            'additionalClass': 'additionalClass'
-        } %}
-        {% include './components/buttons/withUnderline.twig' with {
-            'link': '#',
-            'text': 'Book a Demo',
-            'additionalClass': 'additionalClass',
-            'hoverUnderline': true
-        } %}
+    <div class="container">
+        {% include './components/quantity.twig' %}
+        <div class="container_buttons">
+            {% include './components/buttons/default.twig' with {
+                'link': '#',
+                'color': 'blue',
+                'text': 'Try for Free',
+            } %}
+            {% include './components/buttons/default.twig' with {
+                'link': '#',
+                'color': 'white',
+                'text': 'Learn more',
+                'withArrow': true,
+                'additionalClass': 'additionalClass additionalClass2'
+            } %}
+            {% include './components/buttons/default.twig' with {
+                'link': '#',
+                'color': 'green',
+                'text': 'Try for Free',
+            } %}
+            {% include './components/buttons/default.twig' with {
+                'link': '#',
+                'color': 'yellow',
+                'text': 'Try for Free',
+            } %}
+            {% include './components/buttons/default.twig' with {
+                'link': '#',
+                'color': 'pink',
+                'text': 'Download for Free',
+            } %}
+            {% include './components/buttons/default.twig' with {
+                'link': '#',
+                'color': 'blue',
+                'text': 'Free Trial',
+                'small': true
+            } %}
+            {% include './components/buttons/default.twig' with {
+                'link': '#',
+                'color': 'white',
+                'text': 'Free Trial',
+                'small': true
+            } %}
+            {% include './components/buttons/default.twig' with {
+                'link': '#',
+                'color': 'green',
+                'text': 'Free Trial',
+                'small': true,
+            } %}
+            {% include './components/buttons/default.twig' with {
+                'link': '#',
+                'color': 'white',
+                'text': 'Manage Cookies',
+                'small': true,
+                'additionalClass': 'button_cookies'
+            } %}
+            {% include './components/buttons/default.twig' with {
+                'link': '#',
+                'color': 'black',
+                'text': 'Accept All',
+                'small': true,
+            } %}
+            {% include './components/buttons/withUnderline.twig' with {
+                'link': '#',
+                'text': 'Explore',
+                'withArrow': true,
+                'additionalClass': 'additionalClass'
+            } %}
+            {% include './components/buttons/withUnderline.twig' with {
+                'link': '#',
+                'text': 'Pricing',
+                'pricing': true,
+                'withArrow': true,
+                'additionalClass': 'additionalClass'
+            } %}
+            {% include './components/buttons/withUnderline.twig' with {
+                'link': '#',
+                'text': 'Book a Demo',
+                'additionalClass': 'additionalClass',
+                'hoverUnderline': true
+            } %}
+        </div>
+        <div class="container_text">
+            <h1 class="title_h1">
+                Save 30-40% <br> with an academic discount
+            </h1>
+            <h2 class="title_h2">
+                Save 30-40% <br> with an academic discount
+            </h2>
+            <h3 class="title_h3">
+                Save 30-40% <br> with an academic discount
+            </h3>
+            <p class="text">
+                Please fill out the form below, and we will contact <br> you shortly to verify your academic status.
+            </p>
+            <p class="text_small">
+                All-in-one solution that includes everything <br> you need for eLearning authoring
+            </p>
+            <span class="frame"></span>
+        </div>
     </div>
 {% endblock %}
 

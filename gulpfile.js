@@ -75,6 +75,7 @@ function twig2Html() {
 }
 
 function styles() { // TODO: check PostCSS
+	// TODO: remove source maps from .min.css
 	return src(path.src.css, {base: `${srcPath + preprocessor}/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
