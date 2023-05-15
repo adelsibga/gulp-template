@@ -12,7 +12,12 @@ function decrement(i) {
 }
 
 function increment(i) {
-    quantity[i].value = parseInt(quantity[i].value) + 1
+    if (quantity[i].value >= 1000) {
+        quantity[i].value = 1000
+    }
+    else {
+        quantity[i].value = parseInt(quantity[i].value) + 1
+    }
 }
 
 minus.forEach((e, i) => {

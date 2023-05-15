@@ -8,7 +8,9 @@
 
 {% block content %}
     <div class="container">
-        {% include './components/quantity.twig' %}
+        <h1 >
+            iSpring Design system
+        </h1>
         <div class="container_buttons">
             {% include './components/buttons/default.twig' with {
                 'link': '#',
@@ -89,13 +91,13 @@
             } %}
         </div>
         <div class="container_text">
-            <h1 class="title_h1">
+            <h1 class="title title_h1">
                 Save 30-40% <br> with an academic discount
             </h1>
-            <h2 class="title_h2">
+            <h2 class="title title_h2">
                 Save 30-40% <br> with an academic discount
             </h2>
-            <h3 class="title_h3">
+            <h3 class="title title_h3">
                 Save 30-40% <br> with an academic discount
             </h3>
             <p class="text">
@@ -104,7 +106,6 @@
             <p class="text_small">
                 All-in-one solution that includes everything <br> you need for eLearning authoring
             </p>
-            <span class="frame"></span>
         </div>
     </div>
 {% endblock %}

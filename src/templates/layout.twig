@@ -12,9 +12,12 @@
         {% block styles %}{% endblock %}
     </head>
     <body>
+        {% include '../components/headers/header.twig' %}
+        {% include '../components/headers/learn.twig' %}
         <main>
             {% block content %}{% endblock %}
         </main>
+        {% include '../components/footers/whiteFooter.twig' %}
         {% block scripts %}{% endblock %}
         <script src="./js/index.min.js" type="module" defer></script>
     </body>

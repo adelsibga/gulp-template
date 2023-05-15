@@ -5,11 +5,19 @@
 @import './components/buttons/default';
 @import './components/buttons/withUnderline';
 @import './components/quantity';
+@import './components/footers/whiteFooter';
+@import './components/headers/header';
+@import './components/headers/learn';
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: $EuclidCircularRegular;
+  color: $defaultTextColor;
 }
 
 .container_buttons {
@@ -19,11 +27,8 @@
   gap: 50px;
 }
 
-.frame {
-  display: block;
-  width: 275px;
-  height: 275px;
-  border-color: #FFFFFF;
-  box-shadow: $defaultShadow;
-  border-radius: $defaultBorderRadius;
+.container_text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
