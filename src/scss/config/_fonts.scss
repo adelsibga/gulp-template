@@ -1,8 +1,6 @@
 $RosatomBold: 'RosatomBold', sans-serif;
 $RosatomRegular: 'RosatomRegular', sans-serif;
 
-$EuclidCircularBold: 'Euclid Circular B';
-
 @font-face {
   font-family: 'RosatomBold';
   font-display: swap;
@@ -46,7 +44,7 @@ $EuclidCircularBold: 'Euclid Circular B';
 }
 
 @font-face {
-  font-family: 'Euclid Circular B';
+  font-family: 'Euclid Circular B Medium';
   src: url('../fonts/EuclidCircularB-Medium.eot');
   src: local('Euclid Circular B Medium'), local('EuclidCircularB-Medium'),
   url('../fonts/EuclidCircularB-Medium.eot?#iefix') format('embedded-opentype'),

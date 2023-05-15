@@ -1,4 +1,7 @@
 @import './config/fonts';
+@import './components/quantity';
+@import './components/buttons/default';
+@import './components/buttons/withUnderline';
 
 * {
   box-sizing: border-box;
@@ -6,6 +9,9 @@
   padding: 0;
 }
 
-html {
-  font: 500 28px/1 $EuclidCircularBold;
+.container_buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
 }

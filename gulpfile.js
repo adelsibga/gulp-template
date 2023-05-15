@@ -22,7 +22,7 @@ const notify = require('gulp-notify')
 const rigger = require('gulp-rigger')
 const browserSync = require('browser-sync').create()
 
-let preprocessor = 'less'
+let preprocessor = 'scss'
 
 const srcPath = 'src/'
 const buildPath = 'build/'

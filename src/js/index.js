@@ -1,2 +1,1 @@
-console.log('test-passed')
-//= ./components/footer.js
+//= ./components/quantity.js
