@@ -15,11 +15,34 @@
   padding: 0;
 }
 
+body,
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-family: $EuclidCircularRegular;
+  line-height: 1.42857;
   color: $defaultTextColor;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $EuclidCircularRegular;
+  font-weight: 400;
+  color: $defaultTitleColor;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Delete test styles
 .container_buttons {
   display: flex;
   flex-direction: row;
