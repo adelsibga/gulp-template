@@ -18,7 +18,8 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     margin-bottom: 14px;
     list-style-type: none;
 
-    &-link {
+    &-link,
+    &-title {
       font: 600 17px/1.82 $EuclidCircularSemiBold;
       text-decoration: none;
       color: $defaultTextColor;
@@ -53,7 +54,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       height: 30px;
       margin-right: 4px;
       margin-bottom: 4px;
-      transition: border-color .3s ease;
+      transition: $defaultTransition;
       border: 1px solid #50515F;
       border-radius: 6px;
       background-repeat: no-repeat;
@@ -62,6 +63,12 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       @each $social in $socials {
         &_#{$social} {
           background-image: url('../images/footer/#{$social}.svg');
+
+          &:hover {
+            transition: $defaultTransition;
+            border: 1px solid #000000;
+            background-image: url('../images/footer/#{$social}-black.svg');
+          }
         }
       }
     }
