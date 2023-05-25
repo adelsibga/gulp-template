@@ -21,8 +21,18 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     &-link,
     &-title {
       font: 600 17px/1.82 $EuclidCircularSemiBold;
+      transition: $defaultTransition;
       text-decoration: none;
       color: $defaultTextColor;
+    }
+
+    &-link {
+      &:hover,
+      &:focus,
+      &:active {
+        transition: $defaultTransition;
+        color: #333333;
+      }
     }
   }
 
@@ -33,8 +43,16 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 
     &-link {
       font: 400 14px/1.82 $EuclidCircularRegular;
+      transition: $defaultTransition;
       text-decoration: none;
       color: $defaultTextColor;
+
+      &:hover,
+      &:focus,
+      &:active {
+        transition: $defaultTransition;
+        color: #333333;
+      }
     }
   }
 
