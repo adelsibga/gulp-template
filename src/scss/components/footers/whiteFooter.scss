@@ -2,13 +2,46 @@
 
 $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube';
 
+.footer[data-color='dark'] {
+  .footer__social-link {
+    @each $social in $socials {
+      &_#{$social} {
+        background-image: url('../images/footer/#{$social}-white.svg');
+
+        &:hover {
+          transition: $defaultTransition;
+          border: 1px solid var(--footerSocialsBorderHoverColor);
+          background-image: url('../images/footer/#{$social}-white-hover.svg');
+        }
+      }
+    }
+  }
+}
+
+.footer[data-color='light'] {
+  .footer__social-link {
+    @each $social in $socials {
+      &_#{$social} {
+        background-image: url('../images/footer/#{$social}.svg');
+
+        &:hover {
+          transition: $defaultTransition;
+          border: 1px solid var(--footerSocialsBorderHoverColor);
+          background-image: url('../images/footer/#{$social}-hover.svg');
+        }
+      }
+    }
+  }
+}
+
 .container_footer {
   padding-top: 97px;
   padding-bottom: 42px;
 }
 
 .footer {
-  background-color: $footerBackgroundColor;
+  transition: $defaultTransition;
+  background-color: var(--footerBackgroundColor);
 
   &__item-list {
     margin-bottom: 32px;
@@ -23,7 +56,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       font: 600 17px/1.82 $EuclidCircularSemiBold;
       transition: $defaultTransition;
       text-decoration: none;
-      color: $defaultTextColor;
+      color: var(--footerItemsHeaderColor);
     }
 
     &-link {
@@ -31,7 +64,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       &:focus,
       &:active {
         transition: $defaultTransition;
-        color: #333333;
+        color: var(--footerItemsHeaderColorHover);
       }
     }
   }
@@ -45,13 +78,13 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       font: 400 14px/1.82 $EuclidCircularRegular;
       transition: $defaultTransition;
       text-decoration: none;
-      color: $defaultTextColor;
+      color: var(--footerItemsColor);
 
       &:hover,
       &:focus,
       &:active {
         transition: $defaultTransition;
-        color: #333333;
+        color: var(--footerItemsColorHover);
       }
     }
   }
@@ -73,22 +106,10 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       margin-right: 4px;
       margin-bottom: 4px;
       transition: $defaultTransition;
-      border: 1px solid #50515F;
+      border: 1px solid var(--footerSocialsBorderColor);
       border-radius: 6px;
       background-repeat: no-repeat;
       background-position: 50%;
-
-      @each $social in $socials {
-        &_#{$social} {
-          background-image: url('../images/footer/#{$social}.svg');
-
-          &:hover {
-            transition: $defaultTransition;
-            border: 1px solid #000000;
-            background-image: url('../images/footer/#{$social}-black.svg');
-          }
-        }
-      }
     }
   }
 

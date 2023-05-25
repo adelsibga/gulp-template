@@ -72,7 +72,25 @@ $underlineButtonColorHover: #151824;
 // Header Colors
 
 // Footer Colors
-$footerBackgroundColor: #FFFFFF;
+.footer[data-color='dark'] {
+  --footerBackgroundColor: #252F3C;
+  --footerItemsHeaderColor: #DADADA;
+  --footerItemsHeaderColorHover: #FFFFFF;
+  --footerItemsColor: #DADADA;
+  --footerItemsColorHover: #FFFFFF;
+  --footerSocialsBorderColor: #CECECE;
+  --footerSocialsBorderHoverColor: #CECECE;
+}
+
+.footer[data-color='light'] {
+  --footerBackgroundColor: #FFFFFF;
+  --footerItemsHeaderColor: #3D3E47;
+  --footerItemsHeaderColorHover: #333333;
+  --footerItemsColor: #3D3E47;
+  --footerItemsColorHover: #333333;
+  --footerSocialsBorderColor: #50515F;
+  --footerSocialsBorderHoverColor: #000000;
+}
 
 // Transitions
 $defaultTransition: all .3s ease;
