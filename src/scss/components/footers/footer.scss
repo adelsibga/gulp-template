@@ -53,7 +53,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 
     &-link,
     &-title {
-      font: 600 17px/1.82 $EuclidCircularSemiBold;
+      font: 17px/1.82 $EuclidCircularSemiBold;
       transition: $defaultTransition;
       text-decoration: none;
       color: var(--footerItemsHeaderColor);
@@ -114,7 +114,61 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
   }
 
   &__bottom {
+    display: flex;
 
+    &-copyright {
+      width: 100%;
+      text-align: center;
+    }
+
+    &-form {
+      display: none;
+    }
+  }
+}
+
+.copyright {
+  &__logo {
+
+  }
+
+  &__sales-email {
+    margin: 20px auto 44px;
+
+    &-link {
+      font: 14px/1.82 $EuclidCircularRegular;
+      text-decoration: none;
+      color: var(--footerSalesEmailColor);
+    }
+  }
+
+  &__text {
+    font: 14px/1.82 $EuclidCircularRegular;
+    color: var(--footerCopyrightTextColor);
+  }
+
+  &__additional-links-list {
+    margin-top: 4px;
+  }
+
+  &__additional-links-delimiter {
+    font-size: 13px;
+    margin-right: 1px;
+    margin-left: 1px;
+    color: var(--footerLinksDelimeterColor);
+  }
+
+  &__additional-link {
+    font: 14px/1.82 $EuclidCircularRegular;
+    text-decoration: none;
+    color: var(--footerAdditionalLinkColor);
+  }
+}
+
+.form {
+  &__header {
+    font: 17px/1.82 $EuclidCircularSemiBold;
+    color: var(--footerFormHeaderColor);
   }
 }
 
@@ -198,6 +252,32 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
   }
 }
 
+@media screen and (min-width: 768px) {
+  .footer {
+    &__bottom {
+      padding-top: 22px;
+      border-top: 1px solid var(--footerDelimeterColor);
+
+      &-copyright {
+        width: 45%;
+        text-align: left;
+      }
+
+      &-form {
+        display: block;
+        width: 52%;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .copyright {
+    &__sales-email {
+      display: none;
+    }
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .footer {
     &__items-wrapper {
@@ -244,6 +324,30 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     &__social {
       grid-column: 5;
       grid-row: 3;
+    }
+  }
+
+  .copyright {
+    &__additional-links-list {
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1056px) {
+  .footer {
+    &__bottom {
+      margin-top: 59px;
+      padding-top: 22px;
+
+      &-copyright {
+        width: 50%;
+      }
+
+      &-form {
+        width: 45%;
+        margin-left: 19px;
+      }
     }
   }
 }
