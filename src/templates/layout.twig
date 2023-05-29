@@ -17,7 +17,9 @@
         <main>
             {% block content %}{% endblock %}
         </main>
-        {% include '../components/footers/whiteFooter.twig' %}
+        {% include '../components/footers/footer.twig' with {
+            'color': 'light'
+        } %}
         {% block scripts %}{% endblock %}
         <script src="./js/index.min.js" type="module" defer></script>
     </body>

@@ -1,0 +1,353 @@
+@import '../../config/vars';
+
+$socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube';
+
+.footer[data-color='dark'] {
+  .footer__social-link {
+    @each $social in $socials {
+      &_#{$social} {
+        background-image: url('../images/footer/#{$social}-white.svg');
+
+        &:hover {
+          transition: $defaultTransition;
+          border: 1px solid var(--footerSocialsBorderHoverColor);
+          background-image: url('../images/footer/#{$social}-white-hover.svg');
+        }
+      }
+    }
+  }
+}
+
+.footer[data-color='light'] {
+  .footer__social-link {
+    @each $social in $socials {
+      &_#{$social} {
+        background-image: url('../images/footer/#{$social}.svg');
+
+        &:hover {
+          transition: $defaultTransition;
+          border: 1px solid var(--footerSocialsBorderHoverColor);
+          background-image: url('../images/footer/#{$social}-hover.svg');
+        }
+      }
+    }
+  }
+}
+
+.container_footer {
+  padding-top: 97px;
+  padding-bottom: 42px;
+}
+
+.footer {
+  transition: $defaultTransition;
+  background-color: var(--footerBackgroundColor);
+
+  &__item-list {
+    margin-bottom: 32px;
+  }
+
+  &__item-header {
+    margin-bottom: 14px;
+    list-style-type: none;
+
+    &-link,
+    &-title {
+      font: 17px/1.82 $EuclidCircularSemiBold;
+      transition: $defaultTransition;
+      text-decoration: none;
+      color: var(--footerItemsHeaderColor);
+    }
+
+    &-link {
+      &:hover,
+      &:focus,
+      &:active {
+        transition: $defaultTransition;
+        color: var(--footerItemsHeaderColorHover);
+      }
+    }
+  }
+
+  &__item {
+    line-height: 1.42857;
+    margin-top: 6px;
+    list-style-type: none;
+
+    &-link {
+      font: 400 14px/1.82 $EuclidCircularRegular;
+      transition: $defaultTransition;
+      text-decoration: none;
+      color: var(--footerItemsColor);
+
+      &:hover,
+      &:focus,
+      &:active {
+        transition: $defaultTransition;
+        color: var(--footerItemsColorHover);
+      }
+    }
+  }
+
+  &__social {
+    display: block;
+    justify-content: center;
+    max-width: 120px;
+    margin: 0 auto;
+    padding-left: 0;
+    list-style-type: none;
+    text-align: start;
+    background: none;
+
+    &-link {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+      transition: $defaultTransition;
+      border: 1px solid var(--footerSocialsBorderColor);
+      border-radius: 6px;
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+
+    &-copyright {
+      width: 100%;
+      text-align: center;
+    }
+
+    &-form {
+      display: none;
+    }
+  }
+}
+
+.copyright {
+  &__logo {
+
+  }
+
+  &__sales-email {
+    margin: 20px auto 44px;
+
+    &-link {
+      font: 14px/1.82 $EuclidCircularRegular;
+      text-decoration: none;
+      color: var(--footerSalesEmailColor);
+    }
+  }
+
+  &__text {
+    font: 14px/1.82 $EuclidCircularRegular;
+    color: var(--footerCopyrightTextColor);
+  }
+
+  &__additional-links-list {
+    margin-top: 4px;
+  }
+
+  &__additional-links-delimiter {
+    font-size: 13px;
+    margin-right: 1px;
+    margin-left: 1px;
+    color: var(--footerLinksDelimeterColor);
+  }
+
+  &__additional-link {
+    font: 14px/1.82 $EuclidCircularRegular;
+    text-decoration: none;
+    color: var(--footerAdditionalLinkColor);
+  }
+}
+
+.form {
+  &__header {
+    font: 17px/1.82 $EuclidCircularSemiBold;
+    color: var(--footerFormHeaderColor);
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .footer {
+    &__items-wrapper {
+      display: grid;
+      grid-column-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__item-list {
+      &_company {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      &_articles {
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      &_support {
+        grid-column: 1;
+      }
+
+      &_community {
+        grid-column: 1;
+        grid-row: 3;
+      }
+    }
+
+    &__social {
+      grid-column: 1/3;
+    }
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .footer {
+    &__items-wrapper {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &__item-list {
+      &_products {
+        grid-column: 1;
+        grid-row: 1/3;
+      }
+
+      &_solutions {
+        grid-column: 2;
+        grid-row: 1/3;
+      }
+
+      &_company {
+        grid-column: 1;
+        grid-row: 3;
+      }
+
+      &_articles {
+        grid-column: 3;
+        grid-row: 2;
+      }
+
+      &_support {
+        grid-column: 3;
+        grid-row: 1;
+      }
+
+      &_community {
+        grid-column: 2;
+        grid-row: 3;
+      }
+    }
+
+    &__social {
+      margin-left: 0;
+      grid-column: 3;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    &__bottom {
+      padding-top: 22px;
+      border-top: 1px solid var(--footerDelimeterColor);
+
+      &-copyright {
+        width: 45%;
+        text-align: left;
+      }
+
+      &-form {
+        display: block;
+        width: 52%;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .copyright {
+    &__sales-email {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    &__items-wrapper {
+      margin-bottom: 11px;
+      grid-template-columns: auto;
+    }
+
+    &__item-list {
+      margin-bottom: 0;
+
+      &_products,
+      &_solutions, {
+        grid-row: 1/6;
+      }
+
+      &_company {
+        grid-column: 3;
+        grid-row: 1/6;
+      }
+
+      &_articles {
+        padding-top: 15px;
+        grid-column: 3;
+        grid-row: 2/6;
+      }
+
+      &_academy {
+        grid-column: 4;
+        grid-row: 1;
+      }
+
+      &_support {
+        padding-top: 15px;
+        grid-column: 4;
+        grid-row: 2/6;
+      }
+
+      &_community {
+        grid-column: 5;
+        grid-row: 1/3;
+      }
+    }
+
+    &__social {
+      grid-column: 5;
+      grid-row: 3;
+    }
+  }
+
+  .copyright {
+    &__additional-links-list {
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1056px) {
+  .footer {
+    &__bottom {
+      margin-top: 59px;
+      padding-top: 22px;
+
+      &-copyright {
+        width: 50%;
+      }
+
+      &-form {
+        width: 45%;
+        margin-left: 19px;
+      }
+    }
+  }
+}

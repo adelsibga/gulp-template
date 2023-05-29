@@ -72,10 +72,42 @@ $underlineButtonColorHover: #151824;
 // Header Colors
 
 // Footer Colors
-$footerBackgroundColor: #FFFFFF;
+.footer[data-color='dark'] {
+  --footerBackgroundColor: #252F3C;
+  --footerItemsHeaderColor: #DADADA;
+  --footerItemsHeaderColorHover: #FFFFFF;
+  --footerItemsColor: #DADADA;
+  --footerItemsColorHover: #FFFFFF;
+  --footerSocialsBorderColor: #CECECE;
+  --footerSocialsBorderHoverColor: #CECECE;
+
+  --footerDelimeterColor: #595A62;
+  --footerFormHeaderColor: #DADADA;
+  --footerSalesEmailColor: #DADADA;
+  --footerCopyrightTextColor: #DADADA;
+  --footerAdditionalLinkColor: #DADADA;
+  --footerLinksDelimeterColor: #DADADA;
+}
+
+.footer[data-color='light'] {
+  --footerBackgroundColor: #FFFFFF;
+  --footerItemsHeaderColor: #3D3E47;
+  --footerItemsHeaderColorHover: #333333;
+  --footerItemsColor: #3D3E47;
+  --footerItemsColorHover: #333333;
+  --footerSocialsBorderColor: #50515F;
+  --footerSocialsBorderHoverColor: #000000;
+
+  --footerDelimeterColor: #DDE0E5;
+  --footerFormHeaderColor: #3D3E47;
+  --footerSalesEmailColor: #3D3E47;
+  --footerCopyrightTextColor: #3D3E47;
+  --footerAdditionalLinkColor: #3D3E47;
+  --footerLinksDelimeterColor: #3D3E47;
+}
 
 // Transitions
-$defaultTransition: all 3s ease;
+$defaultTransition: all .3s ease;
 $leftTransition: left .3s ease;
 $rightTransition: right .3s ease;
 
