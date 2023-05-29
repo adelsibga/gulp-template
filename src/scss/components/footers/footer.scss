@@ -3,6 +3,10 @@
 $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube';
 
 .footer[data-color='dark'] {
+  .footer__logo {
+    background-image: url('../../../images/footer/logo-footer-dark.svg');
+  }
+
   .footer__social-link {
     @each $social in $socials {
       &_#{$social} {
@@ -19,6 +23,10 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 }
 
 .footer[data-color='light'] {
+  .footer__logo {
+    background-image: url('../../../images/footer/logo-footer-light.svg');
+  }
+
   .footer__social-link {
     @each $social in $socials {
       &_#{$social} {
@@ -35,11 +43,12 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 }
 
 .container_footer {
-  padding-top: 97px;
+  padding-top: 140px;
   padding-bottom: 42px;
 }
 
 .footer {
+  position: relative;
   transition: $defaultTransition;
   background-color: var(--footerBackgroundColor);
 
@@ -124,6 +133,20 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     &-form {
       display: none;
     }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+    width: 143px;
+    height: 35px;
+    margin: 0 auto;
+    transition: $defaultTransition;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 143px 35px;
   }
 }
 
@@ -253,7 +276,20 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 }
 
 @media screen and (min-width: 768px) {
+  .container_footer {
+    padding-top: 97px;
+  }
+
   .footer {
+    &__logo {
+      position: unset;
+      display: block;
+      width: 104px;
+      height: 23px;
+      margin: 10px 0 15px;
+      background-size: 104px 23px;
+    }
+
     &__bottom {
       padding-top: 22px;
       border-top: 1px solid var(--footerDelimeterColor);
