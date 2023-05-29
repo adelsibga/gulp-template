@@ -20,6 +20,15 @@ body {
   color: $defaultTextColor;
 }
 
+button, html input[type=button], input[type=reset], input[type=submit] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+.hidden {
+  display: none;
+}
+
 .container_buttons {
   display: flex;
   flex-direction: row;

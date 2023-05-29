@@ -72,6 +72,15 @@ $underlineButtonColorHover: #151824;
 // Header Colors
 
 // Footer Colors
+$footerEmailInputColor: #8C929B;
+$footerEmailInputBorderColor: #C3C4CA;
+$footerEmailInputColorHover: #404040;
+$footerEmailInputBorderColorHover: #ADB3B9;
+$footerSubmitButtonColor: #FFFFFF;
+$footerSubmitButtonBackgroundColor: #0547C0;
+$footerSubmitButtonBackgroundColorHover: #004FE1;
+$footerFormErrorMessageColor: #EF5B5B;
+
 .footer[data-color='dark'] {
   --footerBackgroundColor: #252F3C;
   --footerItemsHeaderColor: #DADADA;
@@ -80,13 +89,14 @@ $underlineButtonColorHover: #151824;
   --footerItemsColorHover: #FFFFFF;
   --footerSocialsBorderColor: #CECECE;
   --footerSocialsBorderHoverColor: #CECECE;
-
   --footerDelimeterColor: #595A62;
   --footerFormHeaderColor: #DADADA;
+  --footerFormDescriptionColor: #DADADA;
   --footerSalesEmailColor: #DADADA;
   --footerCopyrightTextColor: #DADADA;
   --footerAdditionalLinkColor: #DADADA;
   --footerLinksDelimeterColor: #DADADA;
+  --footerFormMessages: #FFFFFF;
 }
 
 .footer[data-color='light'] {
@@ -97,13 +107,14 @@ $underlineButtonColorHover: #151824;
   --footerItemsColorHover: #333333;
   --footerSocialsBorderColor: #50515F;
   --footerSocialsBorderHoverColor: #000000;
-
   --footerDelimeterColor: #DDE0E5;
   --footerFormHeaderColor: #3D3E47;
+  --footerFormDescriptionColor: #3D3E47;
   --footerSalesEmailColor: #3D3E47;
   --footerCopyrightTextColor: #3D3E47;
   --footerAdditionalLinkColor: #3D3E47;
   --footerLinksDelimeterColor: #3D3E47;
+  --footerFormMessages: #333333;
 }
 
 // Transitions
