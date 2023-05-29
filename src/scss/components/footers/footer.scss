@@ -3,13 +3,16 @@
 $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube';
 
 .footer[data-color='dark'] {
+  .footer__logo {
+    background-image: url('../../../images/footer/logo-footer-dark.svg');
+  }
+
   .footer__social-link {
     @each $social in $socials {
       &_#{$social} {
         background-image: url('../images/footer/#{$social}-white.svg');
 
         &:hover {
-          transition: $defaultTransition;
           border: 1px solid var(--footerSocialsBorderHoverColor);
           background-image: url('../images/footer/#{$social}-white-hover.svg');
         }
@@ -19,13 +22,16 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 }
 
 .footer[data-color='light'] {
+  .footer__logo {
+    background-image: url('../../../images/footer/logo-footer-light.svg');
+  }
+
   .footer__social-link {
     @each $social in $socials {
       &_#{$social} {
         background-image: url('../images/footer/#{$social}.svg');
 
         &:hover {
-          transition: $defaultTransition;
           border: 1px solid var(--footerSocialsBorderHoverColor);
           background-image: url('../images/footer/#{$social}-hover.svg');
         }
@@ -35,11 +41,12 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 }
 
 .container_footer {
-  padding-top: 97px;
+  padding-top: 140px;
   padding-bottom: 42px;
 }
 
 .footer {
+  position: relative;
   transition: $defaultTransition;
   background-color: var(--footerBackgroundColor);
 
@@ -104,12 +111,16 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       width: 30px;
       height: 30px;
       margin-right: 4px;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       transition: $defaultTransition;
       border: 1px solid var(--footerSocialsBorderColor);
       border-radius: 6px;
       background-repeat: no-repeat;
       background-position: 50%;
+
+      &:hover {
+        transition: $defaultTransition;
+      }
     }
   }
 
@@ -125,18 +136,29 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       display: none;
     }
   }
+
+  &__logo {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+    width: 143px;
+    height: 35px;
+    margin: 0 auto;
+    transition: $defaultTransition;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 143px 35px;
+  }
 }
 
 .copyright {
-  &__logo {
-
-  }
-
   &__sales-email {
     margin: 20px auto 44px;
 
     &-link {
       font: 14px/1.82 $EuclidCircularRegular;
+      transition: $defaultTransition;
       text-decoration: none;
       color: var(--footerSalesEmailColor);
     }
@@ -144,6 +166,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 
   &__text {
     font: 14px/1.82 $EuclidCircularRegular;
+    transition: $defaultTransition;
     color: var(--footerCopyrightTextColor);
   }
 
@@ -155,11 +178,13 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     font-size: 13px;
     margin-right: 1px;
     margin-left: 1px;
+    transition: $defaultTransition;
     color: var(--footerLinksDelimeterColor);
   }
 
   &__additional-link {
     font: 14px/1.82 $EuclidCircularRegular;
+    transition: $defaultTransition;
     text-decoration: none;
     color: var(--footerAdditionalLinkColor);
   }
@@ -168,7 +193,20 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 .form {
   &__header {
     font: 17px/1.82 $EuclidCircularSemiBold;
+    transition: $defaultTransition;
     color: var(--footerFormHeaderColor);
+  }
+
+  &__description {
+    font: 14px/1.82 $EuclidCircularRegular;
+    margin: 7px 0 0;
+    transition: $defaultTransition;
+    color: var(--footerFormDescriptionColor);
+
+    &-link {
+      font: inherit;
+      color: inherit;
+    }
   }
 }
 
@@ -253,9 +291,23 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 }
 
 @media screen and (min-width: 768px) {
+  .container_footer {
+    padding-top: 97px;
+  }
+
   .footer {
+    &__logo {
+      position: unset;
+      display: block;
+      width: 104px;
+      height: 23px;
+      margin: 10px 0 15px;
+      background-size: 104px 23px;
+    }
+
     &__bottom {
       padding-top: 22px;
+      transition: $defaultTransition;
       border-top: 1px solid var(--footerDelimeterColor);
 
       &-copyright {
@@ -266,6 +318,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       &-form {
         display: block;
         width: 52%;
+        margin-top: 10px;
         margin-left: 20px;
       }
     }
@@ -274,6 +327,87 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
   .copyright {
     &__sales-email {
       display: none;
+    }
+  }
+
+  .form {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 18px 0 0;
+
+    &__email-input {
+      font: 14px/1.82 $EuclidCircularRegular;
+      display: inline-block;
+      width: 230px;
+      height: 36px;
+      margin-right: 9px;
+      padding: 0 12px;
+      transition: $defaultTransition;
+      color: $footerEmailInputColor;
+      border: 1px solid $footerEmailInputBorderColor;
+      border-radius: 3px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        transition: $defaultTransition;
+        color: $footerEmailInputColorHover;
+        border-color: $footerEmailInputBorderColorHover;
+        outline: none;
+      }
+    }
+
+    &__submit-button {
+      font: 14px/1.82 $EuclidCircularMedium;
+      width: 120px;
+      height: 36px;
+      margin-left: 0;
+      padding: 0;
+      cursor: pointer;
+      transition: $defaultTransition;
+      text-align: center;
+      color: $footerSubmitButtonColor;
+      border: none;
+      border-radius: 3px;
+      background-color: $footerSubmitButtonBackgroundColor;
+
+      &:hover,
+      &:active {
+        transition: $defaultTransition;
+        border: none;
+        background-color: $footerSubmitButtonBackgroundColorHover;
+      }
+    }
+
+    &__message {
+      font: 14px/1.42857 $EuclidCircularMedium;
+      transition: $defaultTransition;
+      color: var(--footerFormMessages);
+
+      &_success {
+        position: relative;
+
+        &:before {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          margin-top: 1px;
+          margin-right: 10px;
+          content: '';
+          vertical-align: top;
+          background: url('../../../images/footer/success-check-mark.png');
+        }
+      }
+
+      &_error {
+        font-size: 16px;
+      }
+
+      &_red {
+        font: 13px $EuclidCircularRegular;
+        padding-top: 9px;
+        color: $footerFormErrorMessageColor;
+      }
     }
   }
 }
@@ -346,8 +480,24 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 
       &-form {
         width: 45%;
-        margin-left: 19px;
+        margin-left: 35px;
       }
+    }
+  }
+
+  .form {
+    &__message_success {
+      font-size: 16px;
+    }
+
+    &__email-input {
+      width: 284px;
+      height: 38px;
+    }
+
+    &__submit-button {
+      width: 136px;
+      height: 38px;
     }
   }
 }
