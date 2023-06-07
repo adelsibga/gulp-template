@@ -1,20 +1,21 @@
-@import '../../config/vars';
+@import '../config/vars';
 
+$imgFooterPath: '../images/footer/';
 $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube';
 
 .footer[data-color='dark'] {
   .footer__logo {
-    background-image: url('../../../images/footer/logo-footer-dark.svg');
+    background-image: url('#{$imgFooterPath}logo-footer-dark.svg');
   }
 
   .footer__social-link {
     @each $social in $socials {
       &_#{$social} {
-        background-image: url('../images/footer/#{$social}-white.svg');
+        background-image: url('#{$imgFooterPath}#{$social}-white.svg');
 
         &:hover {
           border: 1px solid var(--footerSocialsBorderHoverColor);
-          background-image: url('../images/footer/#{$social}-white-hover.svg');
+          background-image: url('#{$imgFooterPath}#{$social}-white-hover.svg');
         }
       }
     }
@@ -23,17 +24,17 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 
 .footer[data-color='light'] {
   .footer__logo {
-    background-image: url('../../../images/footer/logo-footer-light.svg');
+    background-image: url('#{$imgFooterPath}logo-footer-light.svg');
   }
 
   .footer__social-link {
     @each $social in $socials {
       &_#{$social} {
-        background-image: url('../images/footer/#{$social}.svg');
+        background-image: url('#{$imgFooterPath}#{$social}.svg');
 
         &:hover {
           border: 1px solid var(--footerSocialsBorderHoverColor);
-          background-image: url('../images/footer/#{$social}-hover.svg');
+          background-image: url('#{$imgFooterPath}#{$social}-hover.svg');
         }
       }
     }
@@ -99,7 +100,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
   &__social {
     display: block;
     justify-content: center;
-    max-width: 120px;
+    max-width: 106px;
     margin: 0 auto;
     padding-left: 0;
     list-style-type: none;
@@ -117,6 +118,11 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       border-radius: 6px;
       background-repeat: no-repeat;
       background-position: 50%;
+
+      &_instagram,
+      &_youtube {
+        margin-right: 0;
+      }
 
       &:hover {
         transition: $defaultTransition;
@@ -395,7 +401,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
           margin-right: 10px;
           content: '';
           vertical-align: top;
-          background: url('../../../images/footer/success-check-mark.png');
+          background: url('#{$imgFooterPath}success-check-mark.png');
         }
       }
 

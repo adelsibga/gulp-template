@@ -1,4 +1,6 @@
-@import '../../config/vars';
+@import '../config/vars';
+
+$imgButtonPath: '../images/buttons/';
 
 .button-with-underline {
   font: 500 16px/1.5 $EuclidCircularMedium;
@@ -35,7 +37,7 @@
       width: 20px;
       height: 17px;
       content: '';
-      background: url('../../images/buttons/cart.svg') center center no-repeat;
+      background: url('#{$imgButtonPath}cart.svg') center center no-repeat;
     }
   }
 
