@@ -8,6 +8,7 @@ const autoprefixer = require('gulp-autoprefixer')
 const cssbeautify = require('gulp-cssbeautify')
 const removeComments = require('gulp-strip-css-comments')
 const rename = require('gulp-rename')
+const replace = require('gulp-replace')
 const sass = require('gulp-sass')(require('sass'))
 const less = require('gulp-less')
 const cssnano = require('gulp-cssnano')
@@ -76,6 +77,7 @@ function twig2Html() {
 
 function styles() { // TODO: check PostCSS
 	// TODO: remove source maps from .min.css
+	// TODO: write source map if !isProd
 	return src(path.src.css, {base: `${srcPath + preprocessor}/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
@@ -94,6 +96,8 @@ function styles() { // TODO: check PostCSS
 		.pipe(autoprefixer())
 		.pipe(cssbeautify())
         .pipe(sourcemaps.write())
+		.pipe(replace(/@img\//g, '../images/'))
+		.pipe(replace(/@fonts\//g, '../fonts/'))
 		.pipe(dest(path.build.css))
         .pipe(sourcemaps.init())
 		.pipe(cssnano({
@@ -108,11 +112,13 @@ function styles() { // TODO: check PostCSS
 			extname: '.css'
 		}))
         .pipe(sourcemaps.write())
+		.pipe(replace(/@img\//g, '../images/'))
+		.pipe(replace(/@fonts\//g, '../fonts/'))
 		.pipe(dest(path.build.css))
 		.pipe(browserSync.stream())
 }
 
-function scripts() { // TODO: add sourcemaps for js
+function scripts() { // TODO: add sourcemaps for js if !isProd
 	return src(path.src.js, {base: `${srcPath}js/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
