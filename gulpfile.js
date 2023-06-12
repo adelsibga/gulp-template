@@ -42,7 +42,7 @@ const path = {
 		css: `${srcPath + preprocessor}/*.${preprocessor}`,
 		js: `${srcPath}js/*.js`,
 		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
-		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`,
+		fonts: `${srcPath}fonts/**/*.{eot,ttf,woff,woff2,svg}`,
 		assets: `${srcPath}assets/**/*.*`
 	},
 	watch: {
@@ -50,7 +50,7 @@ const path = {
 		css: `${srcPath + preprocessor}/**/*.${preprocessor}`,
 		js: `${srcPath}js/**/*.js`,
 		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
-		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`,
+		fonts: `${srcPath}fonts/**/*.{eot,ttf,woff,woff2,svg}`,
 		assets: `${srcPath}assets/**/*.*`
 	},
 	clean: `./${buildPath}`
@@ -159,8 +159,12 @@ function images() { // TODO: configure images compression
 		.pipe(browserSync.stream())
 }
 
-function fonts() { // TODO: add convert fonts extension https://www.youtube.com/watch?v=qSZvGlIKGPg https://www.youtube.com/watch?v=izqR0UY11rk https://www.youtube.com/watch?v=Hh1aDoWMJXA https://www.youtube.com/watch?v=jU88mLuLWlk&t=5117s
-	// TODO: check task and convert fonts extensions ttf woff2
+function fonts() {
+	// TODO: add convert fonts extension
+	//  https://www.youtube.com/watch?v=qSZvGlIKGPg
+	//  https://www.youtube.com/watch?v=izqR0UY11rk
+	//  https://www.youtube.com/watch?v=Hh1aDoWMJXA
+	//  https://www.youtube.com/watch?v=jU88mLuLWlk&t=5117s
 	return src(path.src.fonts, {base: `${srcPath}fonts/`})
 		.pipe(plumber())
 		.pipe(dest(path.build.fonts))
