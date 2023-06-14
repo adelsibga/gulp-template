@@ -1,6 +1,4 @@
-@import '../mixins/fontFace';
-
-$euclidUrl: '../fonts/';
+@import '../../mixins/fontFace';
 
 @include font-face('Euclid Circular B Light', 'EuclidCircularB-Light', 300, normal);
 @include font-face('Euclid Circular B Light Italic', 'EuclidCircularB-LightItalic', 300, italic);
