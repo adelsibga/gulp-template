@@ -2,13 +2,13 @@
 
 $euclidUrl: '../fonts/';
 
-@include font-face(false, 'Euclid Circular B Bold', '#{$euclidUrl}EuclidCircularB-Bold', bold, normal);
-@include font-face(false, 'Euclid Circular B Italic', '#{$euclidUrl}EuclidCircularB-Italic', normal, italic);
-@include font-face(false, 'Euclid Circular B Medium', '#{$euclidUrl}EuclidCircularB-Medium', 500, normal);
-@include font-face(false, 'Euclid Circular B SemiBold Italic', '#{$euclidUrl}EuclidCircularB-SemiBoldItalic', 600, italic);
-@include font-face(false, 'Euclid Circular B Bold Italic', '#{$euclidUrl}EuclidCircularB-BoldItalic', bold, italic);
-@include font-face(false, 'Euclid Circular B Medium Italic', '#{$euclidUrl}EuclidCircularB-MediumItalic', 500, italic);
-@include font-face(false, 'Euclid Circular B SemiBold', '#{$euclidUrl}EuclidCircularB-SemiBold', 600, normal);
-@include font-face(false, 'Euclid Circular B Light', '#{$euclidUrl}EuclidCircularB-Light', 300, normal);
-@include font-face(false, 'Euclid Circular B Regular', '#{$euclidUrl}EuclidCircularB-Regular', normal, normal);
-@include font-face(false, 'Euclid Circular B Light Italic', '#{$euclidUrl}EuclidCircularB-LightItalic', 300, italic);
+@include font-face('Euclid Circular B Light', '#{$euclidUrl}EuclidCircularB-Light', 300, normal);
+@include font-face('Euclid Circular B Light Italic', '#{$euclidUrl}EuclidCircularB-LightItalic', 300, italic);
+@include font-face('Euclid Circular B Regular', '#{$euclidUrl}EuclidCircularB-Regular', normal, normal);
+@include font-face('Euclid Circular B Medium', '#{$euclidUrl}EuclidCircularB-Medium', 500, normal);
+@include font-face('Euclid Circular B SemiBold', '#{$euclidUrl}EuclidCircularB-SemiBold', 600, normal);
+@include font-face('Euclid Circular B Bold', '#{$euclidUrl}EuclidCircularB-Bold', bold, normal);
+@include font-face('Euclid Circular B Italic', '#{$euclidUrl}EuclidCircularB-Italic', normal, italic);
+@include font-face('Euclid Circular B Medium Italic', '#{$euclidUrl}EuclidCircularB-MediumItalic', 500, italic);
+@include font-face('Euclid Circular B SemiBold Italic', '#{$euclidUrl}EuclidCircularB-SemiBoldItalic', 600, italic);
+@include font-face('Euclid Circular B Bold Italic', '#{$euclidUrl}EuclidCircularB-BoldItalic', bold, italic);

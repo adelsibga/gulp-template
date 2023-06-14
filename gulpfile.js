@@ -75,9 +75,10 @@ function twig2Html() {
 		.pipe(browserSync.stream())
 }
 
-function styles() { // TODO: check PostCSS
-	// TODO: remove source maps from .min.css
-	// TODO: write source map if !isProd
+function styles() {
+	// TODO: check PostCSS
+	//  remove source maps from .min.css
+	//  write source map if !isProd
 	return src(path.src.css, {base: `${srcPath + preprocessor}/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
@@ -118,7 +119,8 @@ function styles() { // TODO: check PostCSS
 		.pipe(browserSync.stream())
 }
 
-function scripts() { // TODO: add sourcemaps for js if !isProd
+function scripts() {
+	// TODO: add sourcemaps for js if !isProd
 	return src(path.src.js, {base: `${srcPath}js/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
@@ -142,7 +144,8 @@ function scripts() { // TODO: add sourcemaps for js if !isProd
 		.pipe(browserSync.stream())
 }
 
-function images() { // TODO: configure images compression
+function images() {
+	// TODO: configure images compression
 	return src(path.src.images, {base: `${srcPath}images/`})
 		.pipe(imagemin([
 			imagemin.gifsicle({interlaced: true}),
