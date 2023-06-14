@@ -1,7 +1,7 @@
 <footer class="footer" data-color="{{ color }}">
     <div class="container container_footer">
         <div class="footer__items-wrapper">
-            {% include './footerItem.twig' with {
+            {% include 'footerItem.twig' with {
                 'group': 'products',
                 'header': {
                     'Products': {
@@ -48,7 +48,7 @@
                     }
                 }
             } %}
-            {% include './footerItem.twig' with {
+            {% include 'footerItem.twig' with {
                 'group': 'solutions',
                 'header': {
                     'Solutions': {
@@ -95,7 +95,7 @@
                     }
                 }
             } %}
-            {% include './footerItem.twig' with {
+            {% include 'footerItem.twig' with {
                 'group': 'company',
                 'header': {
                     'Company': {
@@ -126,7 +126,7 @@
                     }
                 }
             } %}
-            {% include './footerItem.twig' with {
+            {% include 'footerItem.twig' with {
                 'group': 'articles',
                 'header': {
                     'Articles': {
@@ -157,7 +157,7 @@
                     }
                 }
             } %}
-            {% include './footerItem.twig' with {
+            {% include 'footerItem.twig' with {
                 'group': 'academy',
                 'header': {
                     'Academy': {
@@ -187,12 +187,12 @@
                     }
                 }
             } %}
-            {% include './footerItem.twig' with {
+            {% include 'footerItem.twig' with {
                 'group': 'support',
                 'header': {
                     'Support': {
                         title: 'Support',
-                        link: 'support'
+                        link: '/support'
                     },
                 },
                 'items': {
@@ -210,7 +210,7 @@
                     }
                 }
             } %}
-            {% include './footerItem.twig' with {
+            {% include 'footerItem.twig' with {
                 'group': 'community',
                 'header': {
                     'Community': {
@@ -236,7 +236,7 @@
                     }
                 }
             } %}
-            {% include './social.twig' with {
+            {% include 'social.twig' with {
                 'socialList': {
                     'facebook': 'https://www.facebook.com/iSpringPro',
                     'twitter': 'https://twitter.com/iSpringPro',
@@ -247,6 +247,6 @@
                 }
             } %}
         </div>
-        {% include './footerBottomPart.twig' %}
+        {% include 'footerBottomPart.twig' %}
     </div>
 </footer>
