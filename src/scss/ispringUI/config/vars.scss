@@ -81,42 +81,6 @@ $footerSubmitButtonBackgroundColor: #0547C0;
 $footerSubmitButtonBackgroundColorHover: #004FE1;
 $footerFormErrorMessageColor: #EF5B5B;
 
-.footer[data-color='dark'] {
-  --footerBackgroundColor: #252F3C;
-  --footerItemsHeaderColor: #DADADA;
-  --footerItemsHeaderColorHover: #FFFFFF;
-  --footerItemsColor: #DADADA;
-  --footerItemsColorHover: #FFFFFF;
-  --footerSocialsBorderColor: #CECECE;
-  --footerSocialsBorderHoverColor: #CECECE;
-  --footerDelimeterColor: #595A62;
-  --footerFormHeaderColor: #DADADA;
-  --footerFormDescriptionColor: #DADADA;
-  --footerSalesEmailColor: #DADADA;
-  --footerCopyrightTextColor: #DADADA;
-  --footerAdditionalLinkColor: #DADADA;
-  --footerLinksDelimeterColor: #DADADA;
-  --footerFormMessages: #FFFFFF;
-}
-
-.footer[data-color='light'] {
-  --footerBackgroundColor: #FFFFFF;
-  --footerItemsHeaderColor: #3D3E47;
-  --footerItemsHeaderColorHover: #333333;
-  --footerItemsColor: #3D3E47;
-  --footerItemsColorHover: #333333;
-  --footerSocialsBorderColor: #50515F;
-  --footerSocialsBorderHoverColor: #000000;
-  --footerDelimeterColor: #DDE0E5;
-  --footerFormHeaderColor: #3D3E47;
-  --footerFormDescriptionColor: #3D3E47;
-  --footerSalesEmailColor: #3D3E47;
-  --footerCopyrightTextColor: #3D3E47;
-  --footerAdditionalLinkColor: #3D3E47;
-  --footerLinksDelimeterColor: #3D3E47;
-  --footerFormMessages: #333333;
-}
-
 // Transitions
 $defaultTransition: all .3s ease;
 $leftTransition: left .3s ease;

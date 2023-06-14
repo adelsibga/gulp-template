@@ -8,6 +8,7 @@ const autoprefixer = require('gulp-autoprefixer')
 const cssbeautify = require('gulp-cssbeautify')
 const removeComments = require('gulp-strip-css-comments')
 const rename = require('gulp-rename')
+const replace = require('gulp-replace')
 const sass = require('gulp-sass')(require('sass'))
 const less = require('gulp-less')
 const cssnano = require('gulp-cssnano')
@@ -41,7 +42,7 @@ const path = {
 		css: `${srcPath + preprocessor}/*.${preprocessor}`,
 		js: `${srcPath}js/*.js`,
 		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
-		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`,
+		fonts: `${srcPath}fonts/**/*.{eot,ttf,woff,woff2,svg}`,
 		assets: `${srcPath}assets/**/*.*`
 	},
 	watch: {
@@ -49,7 +50,7 @@ const path = {
 		css: `${srcPath + preprocessor}/**/*.${preprocessor}`,
 		js: `${srcPath}js/**/*.js`,
 		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
-		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`,
+		fonts: `${srcPath}fonts/**/*.{eot,ttf,woff,woff2,svg}`,
 		assets: `${srcPath}assets/**/*.*`
 	},
 	clean: `./${buildPath}`
@@ -74,8 +75,10 @@ function twig2Html() {
 		.pipe(browserSync.stream())
 }
 
-function styles() { // TODO: check PostCSS
-	// TODO: remove source maps from .min.css
+function styles() {
+	// TODO: check PostCSS
+	//  remove source maps from .min.css
+	//  write source map if !isProd
 	return src(path.src.css, {base: `${srcPath + preprocessor}/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
@@ -94,6 +97,8 @@ function styles() { // TODO: check PostCSS
 		.pipe(autoprefixer())
 		.pipe(cssbeautify())
         .pipe(sourcemaps.write())
+		.pipe(replace(/@img\//g, '../images/'))
+		.pipe(replace(/@fonts\//g, '../fonts/'))
 		.pipe(dest(path.build.css))
         .pipe(sourcemaps.init())
 		.pipe(cssnano({
@@ -108,11 +113,14 @@ function styles() { // TODO: check PostCSS
 			extname: '.css'
 		}))
         .pipe(sourcemaps.write())
+		.pipe(replace(/@img\//g, '../images/'))
+		.pipe(replace(/@fonts\//g, '../fonts/'))
 		.pipe(dest(path.build.css))
 		.pipe(browserSync.stream())
 }
 
-function scripts() { // TODO: add sourcemaps for js
+function scripts() {
+	// TODO: add sourcemaps for js if !isProd
 	return src(path.src.js, {base: `${srcPath}js/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
@@ -136,7 +144,8 @@ function scripts() { // TODO: add sourcemaps for js
 		.pipe(browserSync.stream())
 }
 
-function images() { // TODO: configure images compression
+function images() {
+	// TODO: configure images compression
 	return src(path.src.images, {base: `${srcPath}images/`})
 		.pipe(imagemin([
 			imagemin.gifsicle({interlaced: true}),
@@ -153,8 +162,12 @@ function images() { // TODO: configure images compression
 		.pipe(browserSync.stream())
 }
 
-function fonts() { // TODO: add convert fonts extension https://www.youtube.com/watch?v=qSZvGlIKGPg https://www.youtube.com/watch?v=izqR0UY11rk https://www.youtube.com/watch?v=Hh1aDoWMJXA https://www.youtube.com/watch?v=jU88mLuLWlk&t=5117s
-	// TODO: check task and convert fonts extensions ttf woff2
+function fonts() {
+	// TODO: add convert fonts extension
+	//  https://www.youtube.com/watch?v=qSZvGlIKGPg
+	//  https://www.youtube.com/watch?v=izqR0UY11rk
+	//  https://www.youtube.com/watch?v=Hh1aDoWMJXA
+	//  https://www.youtube.com/watch?v=jU88mLuLWlk&t=5117s
 	return src(path.src.fonts, {base: `${srcPath}fonts/`})
 		.pipe(plumber())
 		.pipe(dest(path.build.fonts))

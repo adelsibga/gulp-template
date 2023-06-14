@@ -1,13 +1,4 @@
-@import './config/vars';
-@import './config/text';
-@import './config/euclidCircularFonts';
-@import './config/containers';
-@import './components/buttons/default';
-@import './components/buttons/withUnderline';
-@import './components/quantity';
-@import './components/footers/footer';
-@import './components/headers/header';
-@import './components/headers/learn';
+@import 'ispringUI/index';
 
 * {
   box-sizing: border-box;
