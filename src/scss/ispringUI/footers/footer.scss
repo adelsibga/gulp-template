@@ -1,6 +1,6 @@
-@import '../config/vars';
+@import '../config/vars', 'footerThemeColors';
 
-$imgFooterPath: '../images/footer/';
+$imgFooterPath: '@img/footer/';
 $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube';
 
 .footer[data-color='dark'] {

@@ -1,20 +1,7 @@
-$RosatomBold: 'RosatomBold', sans-serif;
-$RosatomRegular: 'RosatomRegular', sans-serif;
+@import '../mixins/fontFace';
 
-@font-face {
-  font-family: 'RosatomBold';
-  font-display: swap;
-  src: url('../fonts/RosatomBold.woff') format('woff');
-  src: local('Rosatom Bold'), local('Rosatom-Bold');
-  font-weight: 700;
-  font-style: normal;
-}
+$RosatomBold: 'Rosatom Bold', sans-serif;
+$RosatomRegular: 'Rosatom Regular', sans-serif;
 
-@font-face {
-  font-family: 'RosatomRegular';
-  font-display: swap;
-  src: local('Rosatom Regular'), local('Rosatom-Regular');
-  src: url('../fonts/RosatomRegular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@include font-face('Rosatom Bold', 'RosatomBold', bold, normal, true);
+@include font-face('Rosatom Regular', 'RosatomRegular', normal, normal, true);
