@@ -1,4 +1,4 @@
-$fontsUrl: '../fonts/';
+$fontsUrl: '@fonts/';
 
 @mixin font-face($font-family, $url, $weight, $style, $onlyWoff2: false) {
   @font-face {
