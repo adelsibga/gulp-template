@@ -40,7 +40,7 @@ const path = {
 	src: {
 		twig: `${srcPath}*.twig`,
 		css: `${srcPath + preprocessor}/*.${preprocessor}`,
-		js: `${srcPath}js/*.js`,
+		js: `${srcPath}js/**/*.js`,
 		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
 		fonts: `${srcPath}fonts/**/*.{eot,ttf,woff,woff2,svg}`,
 		assets: `${srcPath}assets/**/*.*`
