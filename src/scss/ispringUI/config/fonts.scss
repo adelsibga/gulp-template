@@ -1,12 +1,14 @@
 @import '../../mixins/fontFace';
 
-@include font-face('Euclid Circular B Light', 'EuclidCircularB-Light', 300, normal);
-@include font-face('Euclid Circular B Light Italic', 'EuclidCircularB-LightItalic', 300, italic);
-@include font-face('Euclid Circular B Regular', 'EuclidCircularB-Regular', normal, normal);
-@include font-face('Euclid Circular B Medium', 'EuclidCircularB-Medium', 500, normal);
-@include font-face('Euclid Circular B SemiBold', 'EuclidCircularB-SemiBold', 600, normal);
-@include font-face('Euclid Circular B Bold', 'EuclidCircularB-Bold', bold, normal);
-@include font-face('Euclid Circular B Italic', 'EuclidCircularB-Italic', normal, italic);
-@include font-face('Euclid Circular B Medium Italic', 'EuclidCircularB-MediumItalic', 500, italic);
-@include font-face('Euclid Circular B SemiBold Italic', 'EuclidCircularB-SemiBoldItalic', 600, italic);
-@include font-face('Euclid Circular B Bold Italic', 'EuclidCircularB-BoldItalic', bold, italic);
+$fontsDir: EuclidCircularB;
+
+@include font-face('Euclid Circular B Light', '#{$fontsDir}/EuclidCircularB-Light', 300, normal);
+@include font-face('Euclid Circular B Light Italic', '#{$fontsDir}/EuclidCircularB-LightItalic', 300, italic);
+@include font-face('Euclid Circular B Regular', '#{$fontsDir}/EuclidCircularB-Regular', normal, normal);
+@include font-face('Euclid Circular B Medium', '#{$fontsDir}/EuclidCircularB-Medium', 500, normal);
+@include font-face('Euclid Circular B SemiBold', '#{$fontsDir}/EuclidCircularB-SemiBold', 600, normal);
+@include font-face('Euclid Circular B Bold', '#{$fontsDir}/EuclidCircularB-Bold', bold, normal);
+@include font-face('Euclid Circular B Italic', '#{$fontsDir}/EuclidCircularB-Italic', normal, italic);
+@include font-face('Euclid Circular B Medium Italic', '#{$fontsDir}/EuclidCircularB-MediumItalic', 500, italic);
+@include font-face('Euclid Circular B SemiBold Italic', '#{$fontsDir}/EuclidCircularB-SemiBoldItalic', 600, italic);
+@include font-face('Euclid Circular B Bold Italic', '#{$fontsDir}/EuclidCircularB-BoldItalic', bold, italic);
