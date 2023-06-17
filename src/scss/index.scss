@@ -11,7 +11,7 @@ body {
   color: $defaultTextColor;
 }
 
-button, html input[type=button], input[type=reset], input[type=submit] {
+button, html input[type='button'], input[type='reset'], input[type='submit'] {
   cursor: pointer;
   -webkit-appearance: button;
 }

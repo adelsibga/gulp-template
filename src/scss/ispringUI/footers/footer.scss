@@ -14,7 +14,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
         background-image: url('#{$imgFooterPath}#{$social}-white.svg');
 
         &:hover {
-          border: 1px solid var(--footerSocialsBorderHoverColor);
+          border: 1px solid var(--footer-socials-border-hover-color);
           background-image: url('#{$imgFooterPath}#{$social}-white-hover.svg');
         }
       }
@@ -33,7 +33,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
         background-image: url('#{$imgFooterPath}#{$social}.svg');
 
         &:hover {
-          border: 1px solid var(--footerSocialsBorderHoverColor);
+          border: 1px solid var(--footer-socials-border-hover-color);
           background-image: url('#{$imgFooterPath}#{$social}-hover.svg');
         }
       }
@@ -49,7 +49,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 .footer {
   position: relative;
   transition: $defaultTransition;
-  background-color: var(--footerBackgroundColor);
+  background-color: var(--footer-background-color);
 
   &__item-list {
     margin-bottom: 32px;
@@ -64,7 +64,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       font: 17px/1.82 $EuclidCircularSemiBold;
       transition: $defaultTransition;
       text-decoration: none;
-      color: var(--footerItemsHeaderColor);
+      color: var(--footer-items-header-color);
     }
 
     &-link {
@@ -72,7 +72,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       &:focus,
       &:active {
         transition: $defaultTransition;
-        color: var(--footerItemsHeaderColorHover);
+        color: var(--footer-items-header-hover-color);
       }
     }
   }
@@ -86,13 +86,13 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       font: 400 14px/1.82 $EuclidCircularRegular;
       transition: $defaultTransition;
       text-decoration: none;
-      color: var(--footerItemsColor);
+      color: var(--footer-items-color);
 
       &:hover,
       &:focus,
       &:active {
         transition: $defaultTransition;
-        color: var(--footerItemsColorHover);
+        color: var(--footer-item-hover-color);
       }
     }
   }
@@ -114,7 +114,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       margin-right: 4px;
       margin-bottom: 6px;
       transition: $defaultTransition;
-      border: 1px solid var(--footerSocialsBorderColor);
+      border: 1px solid var(--footer-socials-border-color);
       border-radius: 6px;
       background-repeat: no-repeat;
       background-position: 50%;
@@ -166,14 +166,14 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       font: 14px/1.82 $EuclidCircularRegular;
       transition: $defaultTransition;
       text-decoration: none;
-      color: var(--footerSalesEmailColor);
+      color: var(--footer-sales-email-color);
     }
   }
 
   &__text {
     font: 14px/1.82 $EuclidCircularRegular;
     transition: $defaultTransition;
-    color: var(--footerCopyrightTextColor);
+    color: var(--footer-copyright-text-color);
   }
 
   &__additional-links-list {
@@ -185,14 +185,14 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     margin-right: 1px;
     margin-left: 1px;
     transition: $defaultTransition;
-    color: var(--footerLinksDelimeterColor);
+    color: var(--footer-links-delimeter-color);
   }
 
   &__additional-link {
     font: 14px/1.82 $EuclidCircularRegular;
     transition: $defaultTransition;
     text-decoration: none;
-    color: var(--footerAdditionalLinkColor);
+    color: var(--footer-additional-link-color);
   }
 }
 
@@ -200,14 +200,14 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
   &__header {
     font: 17px/1.82 $EuclidCircularSemiBold;
     transition: $defaultTransition;
-    color: var(--footerFormHeaderColor);
+    color: var(--footer-form-header-color);
   }
 
   &__description {
     font: 14px/1.82 $EuclidCircularRegular;
     margin: 7px 0 0;
     transition: $defaultTransition;
-    color: var(--footerFormDescriptionColor);
+    color: var(--footer-form-description-color);
 
     &-link {
       font: inherit;
@@ -314,7 +314,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     &__bottom {
       padding-top: 22px;
       transition: $defaultTransition;
-      border-top: 1px solid var(--footerDelimeterColor);
+      border-top: 1px solid var(--footer-delimeter-color);
 
       &-copyright {
         width: 45%;
@@ -388,7 +388,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     &__message {
       font: 14px/1.42857 $EuclidCircularMedium;
       transition: $defaultTransition;
-      color: var(--footerFormMessages);
+      color: var(--footer-form-messages);
 
       &_success {
         position: relative;
