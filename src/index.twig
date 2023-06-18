@@ -8,9 +8,24 @@
 
 {% block content %}
     <div class="container">
-        <h1 class="title title_h1">
+        <h1 class="title title_h1 page-title">
             iSpring Design system
         </h1>
+        {% include './components/images.twig' with {
+            pirctureClass: 'pirctureClass',
+            lazyContainerClass: 'lazyContainerClass',
+            imgMinSrc: 'imgMinSrc',
+            imgMinSrcX2: 'imgMinSrcX2',
+            imgClass: 'imgClass',
+            imagesPathSmall: 'imagesPathSmall',
+            maxWidth: 'maxWidth',
+            imagesPathDefault: 'imagesPathDefault',
+            imgAlt: 'imgAlt',
+            imgTitle: 'imgTitle',
+            width: 'width',
+            height: 'height',
+            id: 'id',
+        } %}
         <div class="container_buttons">
             {% include './components/ispringUI/buttons/default.twig' with {
                 'link': '#',

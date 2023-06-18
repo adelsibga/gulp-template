@@ -81,6 +81,8 @@ function twig2Html() {
 		.pipe(twig({
 			errorLogToConsole: true
 		}))
+		.pipe(replace(/@img\//g, './images/'))
+		.pipe(replace(/@fonts\//g, './fonts/'))
 		.pipe(dest(path.build.twig))
 		.pipe(browserSync.stream())
 }

@@ -1,0 +1,21 @@
+@import 'vars';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $EuclidCircularRegular;
+  color: $defaultTextColor;
+}
+
+button, html input[type='button'], input[type='reset'], input[type='submit'] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+.hidden {
+  display: none;
+}
