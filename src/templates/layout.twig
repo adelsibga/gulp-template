@@ -8,7 +8,24 @@
         <meta name="description"
               content="{% if description %}{{ description }}{% else %}Description{% endif %}">
         {% include '../components/favicon/favicon.twig' %}
-        {% include '../components/ispringUI/preload/fonts.twig' %}
+        {% include '../components/preload/fonts.twig' with {
+            'as': 'font',
+            rel: 'preload',
+            params: {
+                1: {
+                    href: 'EuclidCircularB/EuclidCircularB-Regular.woff2',
+                    type: 'woff2',
+                },
+                2: {
+                    href: 'EuclidCircularB/EuclidCircularB-Medium.woff2',
+                    type: 'woff2',
+                },
+                3: {
+                    href: 'EuclidCircularB/EuclidCircularB-SemiBold.woff2',
+                    type: 'woff2',
+                }
+            }
+        } %}
         <link rel="stylesheet" href="./css/index.min.css">
         {% block styles %}{% endblock %}
     </head>
