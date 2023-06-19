@@ -1,6 +1,6 @@
 'use strict'
 
-// TODO: add alias for js, images, fonts and any other
+// TODO: add alias for js and any other
 
 const {src, dest} = require('gulp')
 const gulp = require('gulp')
@@ -228,6 +228,7 @@ function assets() {
 				this.emit('end')
 			}
 		}))
+		.pipe(replace(/@img\//g, '../images/'))
 		.pipe(dest(path.build.assets))
 		.pipe(browserSync.stream())
 }
