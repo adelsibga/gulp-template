@@ -192,7 +192,7 @@ function images() {
 				]
 			})
 		], {
-			verbose: true
+			verbose: false
 		}))
 		.pipe(dest(path.build.images))
 		.pipe(browserSync.stream())

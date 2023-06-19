@@ -5,4 +5,5 @@ $defaultTitleColor: #151824;
   0 1px 1px #{$borderColor},
   -1px 0 1px #{$borderColor},
   0 -1px 1px #{$borderColor};
+  -webkit-text-stroke: 1px #{$borderColor};
 }
