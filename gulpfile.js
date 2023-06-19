@@ -18,6 +18,9 @@ const uglify = require('gulp-uglify')
 const plumber = require('gulp-plumber')
 const twig = require('gulp-twig')
 const imagemin = require('gulp-imagemin')
+const avif = require('gulp-avif')
+const webp = require('gulp-webp')
+const newer = require('gulp-newer')
 const del = require('del')
 const notify = require('gulp-notify')
 const rigger = require('gulp-rigger')
@@ -49,7 +52,7 @@ const path = {
 		twig: `${srcPath}**/*.twig`,
 		css: `${srcPath + preprocessor}/**/*.${preprocessor}`,
 		js: `${srcPath}js/**/*.js`,
-		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
+		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,avif,webmanifest,xml,json}`,
 		fonts: `${srcPath}fonts/**/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`,
 		assets: `${srcPath}assets/**/*.*`
 	},
@@ -157,8 +160,7 @@ function scripts() {
 }
 
 function images() {
-	// TODO: configure images compression
-	return src(path.src.images, {base: `${srcPath}images/`})
+	return src(`${srcPath}images/**/*.{jpg,png}`, {base: `${srcPath}images/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
 				notify.onError({
@@ -170,6 +172,15 @@ function images() {
 				this.emit('end')
 			}
 		}))
+		.pipe(newer(path.build.images))
+		.pipe(avif({
+			quality: 50
+		}))
+		.pipe(src(`${srcPath}images/**/*.{jpg,png}`))
+		.pipe(newer(path.build.images))
+		.pipe(webp())
+		.pipe(src(path.src.images))
+		.pipe(newer(path.build.images))
 		.pipe(imagemin([
 			imagemin.gifsicle({interlaced: true}),
 			imagemin.mozjpeg({quality: 80, progressive: true}),
@@ -180,7 +191,9 @@ function images() {
 					{cleanupIDs: false}
 				]
 			})
-		]))
+		], {
+			verbose: true
+		}))
 		.pipe(dest(path.build.images))
 		.pipe(browserSync.stream())
 }

@@ -7,7 +7,7 @@
         <title>{% if title %}{{ title }}{% else %}Title{% endif %}</title>
         <meta name="description"
               content="{% if description %}{{ description }}{% else %}Description{% endif %}">
-        {% include '../components/favicon/favicon.twig' %}
+        {% include '../components/favicon/simple.twig' %}
         {% include '../components/preload/fonts.twig' with {
             'as': 'font',
             rel: 'preload',

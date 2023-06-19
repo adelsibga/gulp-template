@@ -1,5 +1,6 @@
 @import 'ispringUI';
 @import 'components/images';
+@import './mixins/textBorder';
 
 .container_buttons {
   display: flex;
@@ -16,4 +17,11 @@
 
 .page-title {
   margin-bottom: 20px;
+}
+
+.text-border {
+  font: 120px/1.07 $EuclidCircularBold;
+  color: #FFFFFF;
+  @include text-border();
+  text-align: center;
 }
