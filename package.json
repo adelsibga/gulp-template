@@ -4,8 +4,7 @@
   "description": "gulp template",
   "main": "index.js",
   "scripts": {
-    "precommit": "lint-staged",
-    "eslint": "node_modules/.bin/eslint src/"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -20,8 +19,6 @@
   "devDependencies": {
     "browser-sync": "^2.27.11",
     "del": "^6.0.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-avif": "^1.1.1",
@@ -41,20 +38,10 @@
     "gulp-twig": "^1.2.0",
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.2",
     "notify-send": "^0.1.2",
-    "prettier": "^2.8.8",
     "sass": "^1.58.0"
   },
   "dependencies": {
     "gulp-replace": "^1.1.4"
-  },
-  "lint-staged": {
-    "*.{js, jsx}": [
-      "node_modules/.bin/eslint --max-warnings=0",
-      "prettier --write",
-      "git add"
-    ]
   }
 }
