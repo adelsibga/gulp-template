@@ -11,22 +11,6 @@ $imgButtonPath: '@img/buttons/';
   text-decoration: underline;
   color: $underlineButtonColor;
 
-  &__arrow {
-    position: absolute;
-    right: -18px;
-    transition: $rightTransition;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $underlineButtonColorHover;
-
-    .button-with-underline__arrow {
-      right: -22px;
-    }
-  }
-
   &_pricing {
     text-decoration: none;
 
@@ -44,11 +28,27 @@ $imgButtonPath: '@img/buttons/';
   &_hover-underline {
     text-decoration: none;
 
-    &:hover,
     &:focus,
+    &:hover,
     &:active {
       transition: $defaultTransition;
       text-decoration: underline;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    right: -18px;
+    transition: $rightTransition;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: $underlineButtonColorHover;
+
+    .button-with-underline__arrow {
+      right: -22px;
     }
   }
 }

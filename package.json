@@ -4,7 +4,8 @@
   "description": "gulp template",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "stylelint": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}'",
+    "stylelint:fix": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}' --fix"
   },
   "repository": {
     "type": "git",
@@ -39,7 +40,14 @@
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
     "notify-send": "^0.1.2",
-    "sass": "^1.58.0"
+    "postcss-less": "^6.0.0",
+    "postcss-sass": "^0.5.0",
+    "postcss-scss": "^4.0.6",
+    "sass": "^1.58.0",
+    "stylelint": "^15.8.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.0.1"
   },
   "dependencies": {
     "gulp-replace": "^1.1.4"

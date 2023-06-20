@@ -16,8 +16,8 @@
     transition: $defaultTransition;
   }
 
-  &:hover,
   &:focus,
+  &:hover,
   &:active {
     .button__arrow {
       left: 4px;
@@ -35,26 +35,12 @@
   text-decoration: none;
   border-radius: 200px;
 
-  &__arrow {
-    position: relative;
-    left: 0;
-    transition: $leftTransition;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    .button__arrow {
-      left: 10px;
-    }
-  }
-
   &_blue {
     color: $defaultButtonTextColor;
     background-color: $blueButtonBackground;
 
-    &:hover,
     &:focus,
+    &:hover,
     &:active {
       background-color: $blueButtonBackgroundHover;
     }
@@ -64,8 +50,8 @@
     color: $yellowButtonTextColor;
     background-color: $yellowButtonBackground;
 
-    &:hover,
     &:focus,
+    &:hover,
     &:active {
       background-color: $yellowButtonBackgroundHover;
     }
@@ -75,8 +61,8 @@
     color: $defaultButtonTextColor;
     background-color: $greenButtonBackground;
 
-    &:hover,
     &:focus,
+    &:hover,
     &:active {
       background-color: $greenButtonBackgroundHover;
     }
@@ -86,8 +72,8 @@
     color: $defaultButtonTextColor;
     background-color: $pinkButtonBackground;
 
-    &:hover,
     &:focus,
+    &:hover,
     &:active {
       background-color: $pinkButtonBackgroundHover;
     }
@@ -98,8 +84,8 @@
     border: 1px solid $whiteButtonBorderColor;
     background-color: $defaultButtonTextColor;
 
-    &:hover,
     &:focus,
+    &:hover,
     &:active {
       color: $whiteButtonTextColorHover;
       border: 1px solid $whiteButtonTextColorHover;
@@ -111,8 +97,8 @@
     color: $blackButtonColor;
     background-color: $blackButtonBackground;
 
-    &:hover,
     &:focus,
+    &:hover,
     &:active {
       background-color: $blackButtonBackgroundHover;
     }
@@ -124,11 +110,25 @@
     color: $defaultTitleColor;
     border-color: $cookiesButtonBorderColor;
 
-    &:hover,
     &:focus,
+    &:hover,
     &:active {
       color: $cookiesButtonColorHover;
       border-color: $cookiesButtonBorderColorHover;
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    left: 0;
+    transition: $leftTransition;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    .button__arrow {
+      left: 10px;
     }
   }
 }

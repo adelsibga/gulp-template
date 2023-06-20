@@ -8,11 +8,12 @@
 - TWIG
 - Минимизация скриптов, стилей, картинок
 - Конвертация картинок в __webp__, __avif__
+
 ### Скоро
 
+- Правка названий по camelCase
 - Конвертация шрифтов в формат woff2
 - Eslint
-- Prettier
 - Алиасы для js...
 - Различные режимы сборок:
     - Prod
@@ -80,7 +81,17 @@ git clone https://github.com/adelsibga/gulp-template.git
 
 ## npm-скрипты
 
-TODO: добавить и написать инструкцию для eslint, prettier
+Также в сборке есть возможность проверять код стилей на соответствие конфигу (.stylelintrc).
+
+`npm run stylelint` - запустит линтер и выведет в консоль список ошибок.
+
+`npm run stylelint:fix` - дополнительно исправит ошибки, доступные для автоисправления.
+
+> Для отключения какой-либо ошибки в файле используйте `// stylelint-disable order/order`, где __order/order__ - название правила
+
+Более подробно про stylelint можно прочитать в [Документации](https://stylelint.io/)
+
+TODO: добавить и написать инструкцию для eslint
 
 ## Команды
 
@@ -144,7 +155,7 @@ TODO: Написать про модульность и что она работ
 Для упрощения подключения шрифтов используйте миксин, который находится в `fontFace.scss`.
 
 ```scss
-@include font-face('Euclid Circular B Bold', '../fonts/EuclidCircularB-Bold', bold, normal, false);
+@include font-face('Euclid Circular B Bold', '../fonts/euclidCircularB-Bold', bold, normal, false);
 ```
 
 > Первый параметр ```$font-family``` - служит для определения семейства шрифтов.

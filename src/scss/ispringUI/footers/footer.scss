@@ -67,9 +67,10 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       color: var(--footer-items-header-color);
     }
 
+    // stylelint-disable order/order
     &-link {
-      &:hover,
       &:focus,
+      &:hover,
       &:active {
         transition: $defaultTransition;
         color: var(--footer-items-header-hover-color);
@@ -88,8 +89,8 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       text-decoration: none;
       color: var(--footer-items-color);
 
-      &:hover,
       &:focus,
+      &:hover,
       &:active {
         transition: $defaultTransition;
         color: var(--footer-item-hover-color);
@@ -119,13 +120,13 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       background-repeat: no-repeat;
       background-position: 50%;
 
+      &:hover {
+        transition: $defaultTransition;
+      }
+
       &_instagram,
       &_youtube {
         margin-right: 0;
-      }
-
-      &:hover {
-        transition: $defaultTransition;
       }
     }
   }
@@ -353,8 +354,8 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       border: 1px solid $footerEmailInputBorderColor;
       border-radius: 3px;
 
-      &:hover,
       &:focus,
+      &:hover,
       &:active {
         transition: $defaultTransition;
         color: $footerEmailInputColorHover;
@@ -393,7 +394,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       &_success {
         position: relative;
 
-        &:before {
+        &::before {
           display: inline-block;
           width: 24px;
           height: 24px;

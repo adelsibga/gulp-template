@@ -4,8 +4,7 @@
 
 .container_buttons {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   gap: 50px;
 }
 
@@ -20,8 +19,8 @@
 }
 
 .text-border {
+  @include text-border;
   font: 500 121px/1.07 $EuclidCircularSemiBold;
-  color: #FFFFFF;
-  @include text-border();
   text-align: center;
+  color: #fff;
 }
