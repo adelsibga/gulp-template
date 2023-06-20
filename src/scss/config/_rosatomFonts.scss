@@ -1,8 +1,0 @@
-@import '../mixins/fontFace';
-
-$RosatomBold: 'Rosatom Bold', sans-serif;
-$RosatomRegular: 'Rosatom Regular', sans-serif;
-$fontsDir: Rosatom;
-
-@include font-face('Rosatom Bold', '#{$fontsDir}/RosatomBold', bold, normal, true);
-@include font-face('Rosatom Regular', '#{$fontsDir}/RosatomRegular', normal, normal, true);

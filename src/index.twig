@@ -8,9 +8,19 @@
 
 {% block content %}
     <div class="container">
-        <h1 class="title title_h1">
+        <h1 class="title title_h1 page-title">
             iSpring Design system
         </h1>
+        {% include './components/images/modern.twig' with {
+            imgClass: 'images-test',
+            pictureClass: 'picture-test',
+            imgPath: '@img/testDir/group',
+            imgExt: 'png',
+            imgWidth: '748',
+            imgHeight: '421',
+            imgAlt: 'Test alt from images component',
+        } %}
+        <p class="text-border">Чему научитесь</p>
         <div class="container_buttons">
             {% include './components/ispringUI/buttons/default.twig' with {
                 'link': '#',

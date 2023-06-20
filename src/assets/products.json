@@ -8,7 +8,7 @@
       "currency": "USD",
       "value": 27.12
     },
-    "image": "../images/1.png",
+    "image": "@img/1.png",
     "brand": 9
   },
   {
@@ -20,7 +20,7 @@
       "currency": "USD",
       "value": 36.87
     },
-    "image": "/images/2.png",
+    "image": "@img/2.png",
     "brand": 8
   },
   {
@@ -32,7 +32,7 @@
       "currency": "USD",
       "value": 28.91
     },
-    "image": "/images/3.png",
+    "image": "@img/3.png",
     "brand": 2
   },
   {
@@ -44,7 +44,7 @@
       "currency": "USD",
       "value": 41.23
     },
-    "image": "/images/4.png",
+    "image": "@img/4.png",
     "brand": 7
   },
   {
@@ -56,7 +56,7 @@
       "currency": "USD",
       "value": 88.00
     },
-    "image": "/images/5.png",
+    "image": "@img/5.png",
     "brand": 3
   },
   {
@@ -68,7 +68,7 @@
       "currency": "USD",
       "value": 127.41
     },
-    "image": "/images/6.png",
+    "image": "@img/6.png",
     "brand": 6
   },
   {
@@ -80,7 +80,7 @@
       "currency": "USD",
       "value": 123.40
     },
-    "image": "/images/7.png",
+    "image": "@img/7.png",
     "brand": 5
   },
   {
@@ -92,7 +92,7 @@
       "currency": "USD",
       "value": 92.32
     },
-    "image": "/images/8.png",
+    "image": "@img/8.png",
     "brand": 1
   },
   {
@@ -104,7 +104,7 @@
       "currency": "USD",
       "value": 53.40
     },
-    "image": "/images/9.png",
+    "image": "@img/9.png",
     "brand": 2
   },
   {
@@ -116,7 +116,7 @@
       "currency": "USD",
       "value": 53.40
     },
-    "image": "/images/9.png",
+    "image": "@img/9.png",
     "brand": 2
   }
 ]

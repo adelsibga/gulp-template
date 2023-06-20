@@ -1,6 +1,6 @@
 'use strict'
 
-// TODO: add alias for js, images, fonts and any other
+// TODO: add alias for js and any other
 
 const {src, dest} = require('gulp')
 const gulp = require('gulp')
@@ -18,6 +18,9 @@ const uglify = require('gulp-uglify')
 const plumber = require('gulp-plumber')
 const twig = require('gulp-twig')
 const imagemin = require('gulp-imagemin')
+const avif = require('gulp-avif')
+const webp = require('gulp-webp')
+const newer = require('gulp-newer')
 const del = require('del')
 const notify = require('gulp-notify')
 const rigger = require('gulp-rigger')
@@ -40,17 +43,17 @@ const path = {
 	src: {
 		twig: `${srcPath}*.twig`,
 		css: `${srcPath + preprocessor}/*.${preprocessor}`,
-		js: `${srcPath}js/*.js`,
+		js: `${srcPath}js/**/*.js`,
 		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
-		fonts: `${srcPath}fonts/**/*.{eot,ttf,woff,woff2,svg}`,
+		fonts: `${srcPath}fonts/**/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`,
 		assets: `${srcPath}assets/**/*.*`
 	},
 	watch: {
 		twig: `${srcPath}**/*.twig`,
 		css: `${srcPath + preprocessor}/**/*.${preprocessor}`,
 		js: `${srcPath}js/**/*.js`,
-		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
-		fonts: `${srcPath}fonts/**/*.{eot,ttf,woff,woff2,svg}`,
+		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,avif,webmanifest,xml,json}`,
+		fonts: `${srcPath}fonts/**/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`,
 		assets: `${srcPath}assets/**/*.*`
 	},
 	clean: `./${buildPath}`
@@ -67,10 +70,22 @@ function serve() {
 
 function twig2Html() {
 	return src(path.src.twig, {base: srcPath})
-		.pipe(plumber())
+		.pipe(plumber({
+			errorHandler: function (err) {
+				notify.onError({
+					title: 'Twig',
+					subtitle: 'Error',
+					message: 'Error: <%= error.message %>',
+					sound: 'Beep'
+				})(err)
+				this.emit('end')
+			}
+		}))
 		.pipe(twig({
 			errorLogToConsole: true
 		}))
+		.pipe(replace(/@img\//g, './images/'))
+		.pipe(replace(/@fonts\//g, './fonts/'))
 		.pipe(dest(path.build.twig))
 		.pipe(browserSync.stream())
 }
@@ -145,8 +160,27 @@ function scripts() {
 }
 
 function images() {
-	// TODO: configure images compression
-	return src(path.src.images, {base: `${srcPath}images/`})
+	return src(`${srcPath}images/**/*.{jpg,png}`, {base: `${srcPath}images/`})
+		.pipe(plumber({
+			errorHandler: function (err) {
+				notify.onError({
+					title: 'Images',
+					subtitle: 'Error',
+					message: 'Error: <%= error.message %>',
+					sound: 'Beep'
+				})(err)
+				this.emit('end')
+			}
+		}))
+		.pipe(newer(path.build.images))
+		.pipe(avif({
+			quality: 50
+		}))
+		.pipe(src(`${srcPath}images/**/*.{jpg,png}`))
+		.pipe(newer(path.build.images))
+		.pipe(webp())
+		.pipe(src(path.src.images))
+		.pipe(newer(path.build.images))
 		.pipe(imagemin([
 			imagemin.gifsicle({interlaced: true}),
 			imagemin.mozjpeg({quality: 80, progressive: true}),
@@ -157,26 +191,44 @@ function images() {
 					{cleanupIDs: false}
 				]
 			})
-		]))
+		], {
+			verbose: false
+		}))
 		.pipe(dest(path.build.images))
 		.pipe(browserSync.stream())
 }
 
 function fonts() {
-	// TODO: add convert fonts extension
-	//  https://www.youtube.com/watch?v=qSZvGlIKGPg
-	//  https://www.youtube.com/watch?v=izqR0UY11rk
-	//  https://www.youtube.com/watch?v=Hh1aDoWMJXA
-	//  https://www.youtube.com/watch?v=jU88mLuLWlk&t=5117s
 	return src(path.src.fonts, {base: `${srcPath}fonts/`})
-		.pipe(plumber())
+		.pipe(plumber({
+			errorHandler: function (err) {
+				notify.onError({
+					title: 'Fonts',
+					subtitle: 'Error',
+					message: 'Error: <%= error.message %>',
+					sound: 'Beep'
+				})(err)
+				this.emit('end')
+			}
+		}))
 		.pipe(dest(path.build.fonts))
 		.pipe(browserSync.stream())
 }
 
 function assets() {
 	return src(path.src.assets, {base: `${srcPath}assets/`})
-		.pipe(plumber())
+		.pipe(plumber({
+			errorHandler: function (err) {
+				notify.onError({
+					title: 'Assets',
+					subtitle: 'Error',
+					message: 'Error: <%= error.message %>',
+					sound: 'Beep'
+				})(err)
+				this.emit('end')
+			}
+		}))
+		.pipe(replace(/@img\//g, '../images/'))
 		.pipe(dest(path.build.assets))
 		.pipe(browserSync.stream())
 }
