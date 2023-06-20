@@ -1,7 +1,5 @@
 'use strict'
 
-// TODO: add alias for js and any other
-
 const {src, dest} = require('gulp')
 const gulp = require('gulp')
 const autoprefixer = require('gulp-autoprefixer')
@@ -17,16 +15,20 @@ const sourcemaps = require('gulp-sourcemaps')
 const uglify = require('gulp-uglify')
 const plumber = require('gulp-plumber')
 const twig = require('gulp-twig')
+const htmlMin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin')
 const avif = require('gulp-avif')
 const webp = require('gulp-webp')
 const newer = require('gulp-newer')
 const del = require('del')
+const ifPlugin = require('gulp-if')
 const notify = require('gulp-notify')
 const rigger = require('gulp-rigger')
 const browserSync = require('browser-sync').create()
 
 let preprocessor = 'scss'
+const isProd = process.argv.includes('--prod')
+const isDev = !isProd
 
 const srcPath = 'src/'
 const buildPath = 'build/'
@@ -69,6 +71,7 @@ function serve() {
 }
 
 function twig2Html() {
+	// TODO: configure htmlMin https://github.com/kangax/html-minifier
 	return src(path.src.twig, {base: srcPath})
 		.pipe(plumber({
 			errorHandler: function (err) {
@@ -86,14 +89,16 @@ function twig2Html() {
 		}))
 		.pipe(replace(/@img\//g, './images/'))
 		.pipe(replace(/@fonts\//g, './fonts/'))
+		.pipe(ifPlugin(isProd, htmlMin({
+			removeComments: true,
+			collapseWhitespace: true
+		})))
 		.pipe(dest(path.build.twig))
 		.pipe(browserSync.stream())
 }
 
 function styles() {
 	// TODO: check PostCSS
-	//  remove source maps from .min.css
-	//  write source map if !isProd
 	return src(path.src.css, {base: `${srcPath + preprocessor}/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
@@ -106,16 +111,16 @@ function styles() {
 				this.emit('end')
 			}
 		}))
-		.pipe(sourcemaps.init())
+		.pipe(ifPlugin(isDev, sourcemaps.init()))
 		.pipe(sass())
 		.pipe(gcmq())
 		.pipe(autoprefixer())
 		.pipe(cssbeautify())
-        .pipe(sourcemaps.write())
+        .pipe(ifPlugin(isDev, sourcemaps.write()))
 		.pipe(replace(/@img\//g, '../images/'))
 		.pipe(replace(/@fonts\//g, '../fonts/'))
 		.pipe(dest(path.build.css))
-        .pipe(sourcemaps.init())
+		.pipe(ifPlugin(isDev, sourcemaps.init()))
 		.pipe(cssnano({
 			zIndex: false,
 			discardComments: {
@@ -127,7 +132,7 @@ function styles() {
 			suffix: '.min',
 			extname: '.css'
 		}))
-        .pipe(sourcemaps.write())
+        .pipe(ifPlugin(isDev, sourcemaps.write()))
 		.pipe(replace(/@img\//g, '../images/'))
 		.pipe(replace(/@fonts\//g, '../fonts/'))
 		.pipe(dest(path.build.css))
@@ -135,7 +140,7 @@ function styles() {
 }
 
 function scripts() {
-	// TODO: add sourcemaps for js if !isProd
+	// TODO: add alias for js
 	return src(path.src.js, {base: `${srcPath}js/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
@@ -148,13 +153,17 @@ function scripts() {
 				this.emit('end')
 			}
 		}))
+		.pipe(ifPlugin(isDev, sourcemaps.init()))
 		.pipe(rigger())
+		.pipe(ifPlugin(isDev, sourcemaps.write()))
 		.pipe(dest(path.build.js))
+		.pipe(ifPlugin(isDev, sourcemaps.init()))
 		.pipe(uglify())
 		.pipe(rename({
 			suffix: '.min',
 			extname: '.js'
 		}))
+		.pipe(ifPlugin(isDev, sourcemaps.write()))
 		.pipe(dest(path.build.js))
 		.pipe(browserSync.stream())
 }
