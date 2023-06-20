@@ -61,7 +61,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 
     &-link,
     &-title {
-      font: 17px/1.82 $EuclidCircularSemiBold;
+      font: 17px/1.82 $euclidCircularSemiBold;
       transition: $defaultTransition;
       text-decoration: none;
       color: var(--footer-items-header-color);
@@ -84,7 +84,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     list-style-type: none;
 
     &-link {
-      font: 400 14px/1.82 $EuclidCircularRegular;
+      font: 400 14px/1.82 $euclidCircularRegular;
       transition: $defaultTransition;
       text-decoration: none;
       color: var(--footer-items-color);
@@ -164,7 +164,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     margin: 20px auto 44px;
 
     &-link {
-      font: 14px/1.82 $EuclidCircularRegular;
+      font: 14px/1.82 $euclidCircularRegular;
       transition: $defaultTransition;
       text-decoration: none;
       color: var(--footer-sales-email-color);
@@ -172,7 +172,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
   }
 
   &__text {
-    font: 14px/1.82 $EuclidCircularRegular;
+    font: 14px/1.82 $euclidCircularRegular;
     transition: $defaultTransition;
     color: var(--footer-copyright-text-color);
   }
@@ -190,7 +190,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
   }
 
   &__additional-link {
-    font: 14px/1.82 $EuclidCircularRegular;
+    font: 14px/1.82 $euclidCircularRegular;
     transition: $defaultTransition;
     text-decoration: none;
     color: var(--footer-additional-link-color);
@@ -199,13 +199,13 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
 
 .form {
   &__header {
-    font: 17px/1.82 $EuclidCircularSemiBold;
+    font: 17px/1.82 $euclidCircularSemiBold;
     transition: $defaultTransition;
     color: var(--footer-form-header-color);
   }
 
   &__description {
-    font: 14px/1.82 $EuclidCircularRegular;
+    font: 14px/1.82 $euclidCircularRegular;
     margin: 7px 0 0;
     transition: $defaultTransition;
     color: var(--footer-form-description-color);
@@ -343,7 +343,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     margin: 18px 0 0;
 
     &__email-input {
-      font: 14px/1.82 $EuclidCircularRegular;
+      font: 14px/1.82 $euclidCircularRegular;
       display: inline-block;
       width: 230px;
       height: 36px;
@@ -365,7 +365,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     }
 
     &__submit-button {
-      font: 14px/1.82 $EuclidCircularMedium;
+      font: 14px/1.82 $euclidCircularMedium;
       width: 120px;
       height: 36px;
       margin-left: 0;
@@ -387,7 +387,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
     }
 
     &__message {
-      font: 14px/1.42857 $EuclidCircularMedium;
+      font: 14px/1.42857 $euclidCircularMedium;
       transition: $defaultTransition;
       color: var(--footer-form-messages);
 
@@ -411,7 +411,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
       }
 
       &_red {
-        font: 13px $EuclidCircularRegular;
+        font: 13px $euclidCircularRegular;
         padding-top: 9px;
         color: $footerFormErrorMessageColor;
       }
