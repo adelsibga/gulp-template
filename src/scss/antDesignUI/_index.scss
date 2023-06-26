@@ -1,0 +1,18 @@
+@use 'colors/map' as *;
+@use 'typography';
+
+:root {
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --#{$color}-#{$shade}: #{$value}
+    }
+  }
+}
+
+.ant-test {
+  max-width: 300px;
+  margin: 0 auto;
+  color: var(--calendula-gold-5);
+  background-color: var(--magenta-5);
+  box-shadow: 5px 2px 2px var(--volcano-7);
+}

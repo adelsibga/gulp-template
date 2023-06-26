@@ -1,0 +1,6 @@
+@use '../../mixins/fontFace' as *;
+
+$fontsDir: 'sanFranciscoProFonts';
+
+@include font-face('SF Pro Display', '#{$fontsDir}/SF-Pro-Display-Regular', normal, normal);
+@include font-face('SF Pro Display', '#{$fontsDir}/SF-Pro-Display-Semibold', 600, normal);
