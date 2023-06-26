@@ -18,6 +18,13 @@
 - SVG спрайты
 - Добавление english документации
 - Разделение задач из файла gulpfile.js на несколько отдельных файлов
+- camelCase kebab-case
+- use forward вместо import где это уместно
+- Модификация stylelint
+- husky для прекоммита
+- lint-staged
+- Prettier
+- https://habr.com/ru/companies/tinkoff/articles/497282/
 
 ## Установка
 
