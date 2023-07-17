@@ -4,9 +4,12 @@
   "description": "gulp template",
   "main": "index.js",
   "scripts": {
+    "lint": "npm run stylelint && npm run eslint",
     "stylelint": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}'",
     "stylelint:fix": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}' --fix",
-    "prod": "gulp build --prod"
+    "prod": "gulp build --prod",
+    "eslint": "eslint 'src/js/**/*.js'",
+    "eslint:fix": "eslint 'src/js/**/*.js' --fix"
   },
   "repository": {
     "type": "git",
@@ -19,8 +22,16 @@
   },
   "homepage": "https://github.com/adelsibga/gulp-template#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
     "browser-sync": "^2.27.11",
     "del": "^6.0.0",
+    "eslint": "^8.45.0",
+    "eslint-config-semistandard": "^17.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.1",
+    "eslint-plugin-promise": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-avif": "^1.1.1",

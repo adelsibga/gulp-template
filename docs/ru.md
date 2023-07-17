@@ -11,18 +11,15 @@
 
 ### Скоро
 
-- Eslint
 - Алиасы для js...
 - Подключение различных библиотек стилей и скриптов
 - SVG спрайты
 - Добавление english документации
 - Разделение задач из файла gulpfile.js на несколько отдельных файлов
-- camelCase kebab-case
 - use forward вместо import где это уместно
-- Модификация stylelint
 - husky для прекоммита
 - lint-staged
-- Prettier
+- Добавить возможность запускать команды из README.md
 - https://habr.com/ru/companies/tinkoff/articles/497282/
 
 ## Установка
@@ -86,6 +83,8 @@ git clone https://github.com/adelsibga/gulp-template.git
 
 ## npm-скрипты
 
+### Stylelint
+
 В сборке есть возможность проверять код стилей на соответствие конфигу (.stylelintrc).
 
 `npm run stylelint` - запустит линтер и выведет в консоль список ошибок.
@@ -96,11 +95,23 @@ git clone https://github.com/adelsibga/gulp-template.git
 
 Более подробно про stylelint можно прочитать в [Документации](https://stylelint.io/)
 
+### ESLint
+
+Можно проверить скрипты на соответствие конфигу (.eslintrc.json)
+
+`npm run eslint` - запустит линтер и выведет в консоль список ошибок.
+
+`npm run eslint:fix` - дополнительно исправит ошибки, доступные для автоисправления.
+
+> Для отключения какой-либо ошибки в файле используйте `/* eslint-disable-next-line eqeqeq */`, где __eqeqeq__ - название правила
+
+Более подробно про eslint можно прочитать в [Документации](https://eslint.org/)
+
+### Другие скрипты
+
 Так же есть __prod__ сборка
 `npm run prod` - запустил команду `gulp build` с флагом `--prod`
 Отличие prod сборки от обычного билда в том, что отсутствуют sourcemap у стилей и скриптов и минимизируется html.
-
-TODO: добавить и написать инструкцию для eslint
 
 ## Команды
 

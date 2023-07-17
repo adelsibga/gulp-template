@@ -1,9 +1,9 @@
 if (!Number.EPSILON) {
     Number.EPSILON = Math.pow(2, -52)
 }
-
 if (!Number.isInteger) {
     Number.isInteger = function (num) {
+        /* eslint-disable-next-line eqeqeq */
         return typeof num == 'number' && num % 1 === 0
     }
 }
