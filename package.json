@@ -39,6 +39,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-strip-css-comments": "^2.0.0",
+    "gulp-ttf2woff2": "^4.0.1",
     "gulp-twig": "^1.2.0",
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",

@@ -20,6 +20,7 @@ const imagemin = require('gulp-imagemin')
 const avif = require('gulp-avif')
 const webp = require('gulp-webp')
 const newer = require('gulp-newer')
+const ttf2woff2 = require('gulp-ttf2woff2')
 const del = require('del')
 const ifPlugin = require('gulp-if')
 const notify = require('gulp-notify')
@@ -208,7 +209,7 @@ function images() {
 }
 
 function fonts() {
-	return src(path.src.fonts, {base: `${srcPath}fonts/`})
+	return src(`${srcPath}fonts/**/*.ttf`, {base: `${srcPath}fonts/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
 				notify.onError({
@@ -220,6 +221,9 @@ function fonts() {
 				this.emit('end')
 			}
 		}))
+		.pipe(ttf2woff2())
+		.pipe(dest(path.build.fonts))
+		.pipe(src(`${srcPath}/fonts/**/*.woff2`))
 		.pipe(dest(path.build.fonts))
 		.pipe(browserSync.stream())
 }

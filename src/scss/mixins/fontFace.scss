@@ -1,21 +1,12 @@
 $fontsUrl: '@fonts/';
 
-@mixin font-face($font-family, $url, $weight, $style, $onlyWoff: true) {
+@mixin font-face($font-family, $url, $weight, $style) {
   @font-face {
     font-family: '#{$font-family}';
     font-weight: #{$weight};
     font-style: $style;
     font-display: swap;
     src: local('#{$font-family}');
-    @if ($onlyWoff) {
-      src: url('#{$fontsUrl + $url}.woff2') format('woff2'),
-      url('#{$fontsUrl + $url}.woff') format('woff');
-    } @else {
-      src: url('#{$fontsUrl + $url}.woff2') format('woff2'),
-      url('#{$fontsUrl + $url}.woff') format('woff'),
-      url('#{$fontsUrl + $url}.ttf') format('truetype'),
-      url('#{$fontsUrl + $url}.eot#iefix') format('embedded-opentype'),
-      url('#{$fontsUrl + $url}.svg#ciclefina') format('svg');
-    }
+    src: url('#{$fontsUrl + $url}.woff2') format('woff2'),
   }
 }
