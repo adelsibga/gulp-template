@@ -1,0 +1,43 @@
+@import 'vars';
+
+.title {
+  color: $defaultTitleColor;
+
+  &_h1 {
+    font: 44px/1.07 $euclidCircularSemiBold;
+  }
+
+  &_h2 {
+    font: 400 34px/1.1 $euclidCircularMedium;
+  }
+
+  &_h3 {
+    font: 18px/1.18 $euclidCircularSemiBold;
+  }
+}
+
+.text {
+  font: 400 16px/1.5 $euclidCircularRegular;
+  color: $defaultTextColor;
+
+  &_small {
+    font: 400 14px/1.33 $euclidCircularRegular;
+    color: $defaultTextColor;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    &_h1 {
+      font-size: 55px;
+    }
+
+    &_h2 {
+      font-size: 42px;
+    }
+
+    &_h3 {
+      font-size: 22px;
+    }
+  }
+}

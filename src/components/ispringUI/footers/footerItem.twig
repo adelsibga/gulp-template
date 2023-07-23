@@ -1,0 +1,16 @@
+<ul class="footer__item-list footer__item-list_{{ group }}">
+    {% for key, value in header %}
+        <li class="footer__item-header">
+            {% if value.link %}
+                <a class="footer__item-header-link" href="{{ value.link }}" title="{{ value.title }}">{{ key }}</a>
+            {% else %}
+                <span class="footer__item-header-title" title="{{ value.title }}">{{ key }}</span>
+            {% endif %}
+        </li>
+    {% endfor %}
+    {% for key, value in items %}
+        <li class="footer__item">
+            <a class="footer__item-link" href="{{ value.link }}" title="{{ value.title }}">{{ key }}</a>
+        </li>
+    {% endfor %}
+</ul>

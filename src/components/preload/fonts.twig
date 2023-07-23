@@ -1,0 +1,7 @@
+{% if as and as is not empty %}
+    {% if as == 'font' %}
+        {% for key in params %}
+            <link rel="{{ rel }}" href="@fonts/{{ key }}" as="font" type="font/woff2" crossorigin="anonymous">
+        {% endfor %}
+    {% endif %}
+{% endif %}

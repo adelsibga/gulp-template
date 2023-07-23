@@ -1,7 +1,5 @@
 'use strict'
 
-// TODO: add alias for js, images, fonts and any other
-
 const {src, dest} = require('gulp')
 const gulp = require('gulp')
 const autoprefixer = require('gulp-autoprefixer')
@@ -17,13 +15,21 @@ const sourcemaps = require('gulp-sourcemaps')
 const uglify = require('gulp-uglify')
 const plumber = require('gulp-plumber')
 const twig = require('gulp-twig')
+const htmlMin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin')
+const avif = require('gulp-avif')
+const webp = require('gulp-webp')
+const newer = require('gulp-newer')
+const ttf2woff2 = require('gulp-ttf2woff2')
 const del = require('del')
+const ifPlugin = require('gulp-if')
 const notify = require('gulp-notify')
 const rigger = require('gulp-rigger')
 const browserSync = require('browser-sync').create()
 
 let preprocessor = 'scss'
+const isProd = process.argv.includes('--prod')
+const isDev = !isProd
 
 const srcPath = 'src/'
 const buildPath = 'build/'
@@ -40,17 +46,17 @@ const path = {
 	src: {
 		twig: `${srcPath}*.twig`,
 		css: `${srcPath + preprocessor}/*.${preprocessor}`,
-		js: `${srcPath}js/*.js`,
+		js: `${srcPath}js/**/*.js`,
 		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
-		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`,
+		fonts: `${srcPath}fonts/**/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`,
 		assets: `${srcPath}assets/**/*.*`
 	},
 	watch: {
 		twig: `${srcPath}**/*.twig`,
 		css: `${srcPath + preprocessor}/**/*.${preprocessor}`,
 		js: `${srcPath}js/**/*.js`,
-		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
-		fonts: `${srcPath}fonts/**/*.{eot.woff,woff2,ttf,svg}`,
+		images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,avif,webmanifest,xml,json}`,
+		fonts: `${srcPath}fonts/**/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`,
 		assets: `${srcPath}assets/**/*.*`
 	},
 	clean: `./${buildPath}`
@@ -66,18 +72,34 @@ function serve() {
 }
 
 function twig2Html() {
+	// TODO: configure htmlMin https://github.com/kangax/html-minifier
 	return src(path.src.twig, {base: srcPath})
-		.pipe(plumber())
+		.pipe(plumber({
+			errorHandler: function (err) {
+				notify.onError({
+					title: 'Twig',
+					subtitle: 'Error',
+					message: 'Error: <%= error.message %>',
+					sound: 'Beep'
+				})(err)
+				this.emit('end')
+			}
+		}))
 		.pipe(twig({
 			errorLogToConsole: true
 		}))
+		.pipe(replace(/@img\//g, './images/'))
+		.pipe(replace(/@fonts\//g, './fonts/'))
+		.pipe(ifPlugin(isProd, htmlMin({
+			removeComments: true,
+			collapseWhitespace: true
+		})))
 		.pipe(dest(path.build.twig))
 		.pipe(browserSync.stream())
 }
 
-function styles() { // TODO: check PostCSS
-	// TODO: remove source maps from .min.css
-	// TODO: write source map if !isProd
+function styles() {
+	// TODO: check PostCSS
 	return src(path.src.css, {base: `${srcPath + preprocessor}/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
@@ -90,16 +112,16 @@ function styles() { // TODO: check PostCSS
 				this.emit('end')
 			}
 		}))
-		.pipe(sourcemaps.init())
+		.pipe(ifPlugin(isDev, sourcemaps.init()))
 		.pipe(sass())
 		.pipe(gcmq())
 		.pipe(autoprefixer())
 		.pipe(cssbeautify())
-        .pipe(sourcemaps.write())
+        .pipe(ifPlugin(isDev, sourcemaps.write()))
 		.pipe(replace(/@img\//g, '../images/'))
 		.pipe(replace(/@fonts\//g, '../fonts/'))
 		.pipe(dest(path.build.css))
-        .pipe(sourcemaps.init())
+		.pipe(ifPlugin(isDev, sourcemaps.init()))
 		.pipe(cssnano({
 			zIndex: false,
 			discardComments: {
@@ -111,14 +133,15 @@ function styles() { // TODO: check PostCSS
 			suffix: '.min',
 			extname: '.css'
 		}))
-        .pipe(sourcemaps.write())
+        .pipe(ifPlugin(isDev, sourcemaps.write()))
 		.pipe(replace(/@img\//g, '../images/'))
 		.pipe(replace(/@fonts\//g, '../fonts/'))
 		.pipe(dest(path.build.css))
 		.pipe(browserSync.stream())
 }
 
-function scripts() { // TODO: add sourcemaps for js if !isProd
+function scripts() {
+	// TODO: add alias for js
 	return src(path.src.js, {base: `${srcPath}js/`})
 		.pipe(plumber({
 			errorHandler: function (err) {
@@ -131,19 +154,43 @@ function scripts() { // TODO: add sourcemaps for js if !isProd
 				this.emit('end')
 			}
 		}))
+		.pipe(ifPlugin(isDev, sourcemaps.init()))
 		.pipe(rigger())
+		.pipe(ifPlugin(isDev, sourcemaps.write()))
 		.pipe(dest(path.build.js))
+		.pipe(ifPlugin(isDev, sourcemaps.init()))
 		.pipe(uglify())
 		.pipe(rename({
 			suffix: '.min',
 			extname: '.js'
 		}))
+		.pipe(ifPlugin(isDev, sourcemaps.write()))
 		.pipe(dest(path.build.js))
 		.pipe(browserSync.stream())
 }
 
-function images() { // TODO: configure images compression
-	return src(path.src.images, {base: `${srcPath}images/`})
+function images() {
+	return src(`${srcPath}images/**/*.{jpg,png}`, {base: `${srcPath}images/`})
+		.pipe(plumber({
+			errorHandler: function (err) {
+				notify.onError({
+					title: 'Images',
+					subtitle: 'Error',
+					message: 'Error: <%= error.message %>',
+					sound: 'Beep'
+				})(err)
+				this.emit('end')
+			}
+		}))
+		.pipe(newer(path.build.images))
+		.pipe(avif({
+			quality: 50
+		}))
+		.pipe(src(`${srcPath}images/**/*.{jpg,png}`))
+		.pipe(newer(path.build.images))
+		.pipe(webp())
+		.pipe(src(path.src.images))
+		.pipe(newer(path.build.images))
 		.pipe(imagemin([
 			imagemin.gifsicle({interlaced: true}),
 			imagemin.mozjpeg({quality: 80, progressive: true}),
@@ -154,22 +201,47 @@ function images() { // TODO: configure images compression
 					{cleanupIDs: false}
 				]
 			})
-		]))
+		], {
+			verbose: false
+		}))
 		.pipe(dest(path.build.images))
 		.pipe(browserSync.stream())
 }
 
-function fonts() { // TODO: add convert fonts extension https://www.youtube.com/watch?v=qSZvGlIKGPg https://www.youtube.com/watch?v=izqR0UY11rk https://www.youtube.com/watch?v=Hh1aDoWMJXA https://www.youtube.com/watch?v=jU88mLuLWlk&t=5117s
-	// TODO: check task and convert fonts extensions ttf woff2
-	return src(path.src.fonts, {base: `${srcPath}fonts/`})
-		.pipe(plumber())
+function fonts() {
+	return src(`${srcPath}fonts/**/*.ttf`, {base: `${srcPath}fonts/`})
+		.pipe(plumber({
+			errorHandler: function (err) {
+				notify.onError({
+					title: 'Fonts',
+					subtitle: 'Error',
+					message: 'Error: <%= error.message %>',
+					sound: 'Beep'
+				})(err)
+				this.emit('end')
+			}
+		}))
+		.pipe(ttf2woff2())
+		.pipe(dest(path.build.fonts))
+		.pipe(src(`${srcPath}/fonts/**/*.woff2`))
 		.pipe(dest(path.build.fonts))
 		.pipe(browserSync.stream())
 }
 
 function assets() {
 	return src(path.src.assets, {base: `${srcPath}assets/`})
-		.pipe(plumber())
+		.pipe(plumber({
+			errorHandler: function (err) {
+				notify.onError({
+					title: 'Assets',
+					subtitle: 'Error',
+					message: 'Error: <%= error.message %>',
+					sound: 'Beep'
+				})(err)
+				this.emit('end')
+			}
+		}))
+		.pipe(replace(/@img\//g, '../images/'))
 		.pipe(dest(path.build.assets))
 		.pipe(browserSync.stream())
 }

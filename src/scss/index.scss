@@ -1,52 +1,10 @@
-@import './config/vars';
-@import './config/text';
-@import './config/euclidCircularFonts';
-@import './config/containers';
-@import './components/buttons/default';
-@import './components/buttons/withUnderline';
-@import './components/quantity';
-@import './components/footers/whiteFooter';
-@import './components/headers/header';
-@import './components/headers/learn';
+@import 'ispringUI';
+@import 'components/images';
+@import './mixins/textBorder';
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body,
-html {
-  -webkit-font-smoothing: antialiased;
-}
-
-html {
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  font-family: $EuclidCircularRegular;
-  line-height: 1.42857;
-  color: $defaultTextColor;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $EuclidCircularRegular;
-  font-weight: 400;
-  color: $defaultTitleColor;
-}
-
-.img-responsive {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-// Delete test styles
 .container_buttons {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   gap: 50px;
 }
 
@@ -54,4 +12,15 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.page-title {
+  margin-bottom: 20px;
+}
+
+.text-border {
+  @include text-border;
+  font: 500 121px/1.07 $euclidCircularSemiBold;
+  text-align: center;
+  color: #fff;
 }

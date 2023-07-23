@@ -1,0 +1,44 @@
+<div class="footer__bottom">
+    <div class="footer__bottom-copyright copyright">
+        <span class="footer__logo"></span>
+        <div class="copyright__sales-email">
+            <a class="copyright__sales-email-link" href="mailto:sales@ispring.com">sales@ispring.com</a>
+        </div>
+        <div class="copyright__info">
+            <p class="copyright__text">
+                © 2001-2023 iSpring. All rights reserved.
+            </p>
+            <div class="copyright__additional-links-list">
+                <a class="copyright__additional-link" href="/legal/terms_of_use">Terms of Use</a>
+                <span class="copyright__additional-links-delimiter">|</span>
+                <a class="copyright__additional-link" href="/company/policy/privacy">Privacy Policy</a>
+                <span class="copyright__additional-links-delimiter">|</span>
+                <a class="copyright__additional-link" href="/data-security-guarantee">Data Security</a>
+                <br>
+                <a class="copyright__additional-link" href="/legal/dmca_notice">DMCA Notice</a>
+                <span class="copyright__additional-links-delimiter">|</span>
+                <a class="copyright__additional-link" id="cookieConsentEuPopup" href="javascript:void(0);">Cookie&nbsp;Settings</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom-form">
+        <p class="form__header">
+            Subscribe to our newsletters
+        </p>
+        <p class="form__description">
+            By clicking “Subscribe”, you agree to our <a href="/company/policy/privacy" class="form__description-link">Privacy Policy</a>. All
+            emails include an
+            unsubscribe link, so you can opt-out at any time.
+        </p>
+        {# TODO: Добавить логику для формы и для появления сообщений после отправки формы #}
+        <form class="form" method="post" name="subscribe_newsletter_form" novalidate="novalidate">
+            <input class="form__email-input" type="text" placeholder="Email" name="email">
+            <input class="form__submit-button" type="submit" value="Subscribe">
+            <p class="form__message_red hidden">Please enter valid Email.</p>
+            <p class="form__message form__message_success hidden">
+                You'll start receiving free tips and resources soon.
+            </p>
+            <div class="form__message form__message_error hidden">Oops! Something went wrong...</div>
+        </form>
+    </div>
+</div>
