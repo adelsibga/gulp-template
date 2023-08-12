@@ -19,6 +19,16 @@ input[type='submit'] {
   -webkit-appearance: button;
 }
 
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,html {
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+}
+
 .hidden {
   display: none;
 }

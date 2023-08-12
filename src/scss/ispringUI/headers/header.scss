@@ -101,7 +101,7 @@ $pathToImg: '@img/ispringUI/headers/';
   display: block;
   padding: 10px 0;
   text-decoration: unset;
-  color: #676e78;
+  color: $productMenuColor;
 }
 
 .b-main-menu__top-menu-link:hover {
@@ -183,11 +183,11 @@ $pathToImg: '@img/ispringUI/headers/';
 }
 
 .b-main-menu__search-input::-moz-placeholder {
-  color: #676e78
+  color: $productMenuColor
 }
 
 .b-main-menu__search-input::-webkit-input-placeholder {
-  color: #676e78
+  color: $productMenuColor
 }
 
 .b-main-menu__search-input:-webkit-autofill {
@@ -233,7 +233,7 @@ $pathToImg: '@img/ispringUI/headers/';
   margin: 0 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #676e78;
+  color: $productMenuColor;
   border-bottom: 1px solid #dde0e5;
 }
 
@@ -492,7 +492,7 @@ $pathToImg: '@img/ispringUI/headers/';
     font-size: 15px;
     text-align: center;
     text-decoration: none;
-    color: #676e78;
+    color: $productMenuColor;
   }
 
   .b-main-menu__auth-details_link:focus, .b-main-menu__auth-details_link:hover {
@@ -610,7 +610,7 @@ $pathToImg: '@img/ispringUI/headers/';
     font-size: 14px;
     margin: 0;
     padding: 10px 31px;
-    color: #676e78;
+    color: $productMenuColor;
     border-bottom: none;
   }
 
@@ -1354,7 +1354,7 @@ $pathToImg: '@img/ispringUI/headers/';
 
   .product-mobile-menu__text {
     font: 15px/1 $euclidCircularRegular;
-    color: #676e78;
+    color: $productMenuColor;
   }
 
   .product-mobile-menu__text_logo {
@@ -1392,12 +1392,12 @@ $pathToImg: '@img/ispringUI/headers/';
     display: block;
     transition: color .3s;
     text-decoration: none;
-    color: #676e78;
+    color: $productMenuColor;
   }
 
   .product-mobile-menu__link:focus {
     text-decoration: none;
-    color: #676e78;
+    color: $productMenuColor;
     outline: none;
   }
 
