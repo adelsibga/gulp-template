@@ -115,7 +115,7 @@ npm run lint
 
 **lint:fix** 
 ```shell
-npm run lint:fix
+npm run fix
 ```
 
 ### Другие скрипты

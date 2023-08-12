@@ -1,1 +1,229 @@
-Main Header
+<div id="headerForReturn" class="b-main-menu" role="navigation">
+    <div class="b-main-menu__container">
+        <div class="b-main-menu__navbar-header">
+            <button type="button" class="b-main-menu__collapse-button closed" id="mainMenuCollapseButton" title="Menu"></button>
+            <div class="b-main-menu__navbar-brand">
+                <a href="/" title="ispring" class="b-main-menu__site-logotype"></a>
+            </div>
+            <button type="button" title="Service menu button" class="b-main-menu__service-menu-button closed" id="serviceMenuButton">
+                <span class="b-main-menu__cart-items-counter js-cart-items-count"></span>
+            </button>
+        </div>
+        <div class="collapse b-main-menu__navbar-collapse b-animate_slide-up" id="mainMenu">
+            <ul class="b-main-menu__top-menu-list">
+                <li class="js-main-menu-dropdown dropdown-link b-main-menu__top-menu-item visible-xs">
+                    <span class="b-main-menu__top-menu-link b-main-menu__top-menu-link_submenu" title="Products">Products</span>
+                    <div id="product_menu_content" class="dropdown-menu-small b-main-menu__submenu b-main-menu__submenu_dropdown-menu">
+                        <div class="b-main-menu__dropdown-menu-wrapper">
+                            <div class="b-main-menu__top-menu-item ">
+                                <a class="b-main-menu__top-menu-link b-main-menu__top-menu-link_products" href="/ispring-suite"
+                                   title="iSpring Suite">iSpring Suite</a>
+                            </div>
+                            <div class="b-main-menu__top-menu-item b-main-menu__top-menu-item_last">
+                                <a class="b-main-menu__top-menu-link b-main-menu__top-menu-link_products" href="/ispring-learn"
+                                   title="iSpring Learn">iSpring Learn</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="js-main-menu-dropdown main-menu-dropdown b-main-menu__top-menu-item b-main-menu__item_hidden-xs">
+                    <span id="nav_item_products" class="b-main-menu__top-menu-link b-main-menu__top-menu-link_submenu"
+                          title="Products">Products</span>
+                    <div class="js-menu-products b-main-menu__popup-wrapper b-main-menu__popup-wrapper_en">
+                        <div class="b-main-menu__dropdown-container">
+                            <div class="b-main-menu__dropdown-item b-main-menu__popup-column b-main-menu__dropdown-item_first">
+                                <a class="b-main-menu__popup-description-wrapper" title="Fully-stocked eLearning authoring tool"
+                                   href="/ispring-suite">
+                                </a>
+                                {% include '../../../components/images/modern.twig' with {
+                                    imgClass: 'images-test',
+                                    pictureClass: 'picture-test',
+                                    imgPath: '@img/ispringUI/headers/top_menu/layout/responsive/ispring-suite-v3',
+                                    imgExt: 'png',
+                                    imgWidth: '242',
+                                    imgHeight: '141',
+                                    imgAlt: 'Test alt from images component',
+                                    notResponsive: true
+                                } %}
+                                <span class="b-main-menu__popup-name b-main-menu__popup-name_suite"></span>
+                                <a class="b-main-menu__popup-description" href="/ispring-suite">eLearning authoring toolkit</a>
+                            </div>
+                            <div class="b-main-menu__dropdown-item b-main-menu__popup-column b-main-menu__dropdown-item_last b-main-menu__dropdown-item_en">
+                                <a class="b-main-menu__popup-description-wrapper" title="Cloud based LMS for teaching and assessing online"
+                                   href="/ispring-learn">
+                                </a>
+                                {% include '../../../components/images/modern.twig' with {
+                                    imgClass: 'images-test',
+                                    pictureClass: 'picture-test',
+                                    imgPath: '@img/ispringUI/headers/top_menu/layout/responsive/ispring-learn-v3',
+                                    imgExt: 'png',
+                                    imgWidth: '227',
+                                    imgHeight: '137',
+                                    imgAlt: 'Test alt from images component',
+                                    notResponsive: true
+                                } %}
+                                <span class="b-main-menu__popup-name b-main-menu__popup-name_learn"></span>
+                                <a class="b-main-menu__popup-description" href="/ispring-learn">Learning management system</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="js-main-menu-dropdown dropdown-link b-main-menu__top-menu-item">
+                    <span id="nav_item_solutions" class="b-main-menu__top-menu-link b-main-menu__top-menu-link_submenu"
+                          title="Solutions">Solutions</span>
+                    <div class="dropdown-menu-small b-main-menu__submenu b-main-menu__submenu_solutions b-main-menu__submenu_dropdown-menu"
+                         aria-labelledby="nav_item_solutions">
+                        <div class="b-main-menu__dropdown-menu-wrapper b-main-menu__dropdown-menu-wrapper_solutions">
+                            <div class="b-main-menu__submenu-column b-main-menu__submenu-column_left js-main-menu-industry">
+                                <div class="b-main-menu__submenu-title b-main-menu__item_hidden-xs">By Industry</div>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_education-icon active"
+                                   href="/industries/education" title="LMS for The Education Industry – iSpring Learn">Education</a>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_retail-icon active"
+                                   href="/solutions/retail" title="Best Retail LMS to Boost Your Sales">Retail</a>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_automotive-icon active"
+                                   href="/solutions/automotive-training-software" title="Best LMS for Automotive – iSpring Learn">Automotive</a>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_restaurants-icon active"
+                                   href="/solutions/training-platform-for-restaurants" title="Best Restaurant LMS on The Market">Restaurants</a>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_healthcare-icon active"
+                                   href="/solutions/healthcare" title="Best Healthcare LMS for Medical Training">Healthcare</a>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_manufacturing-icon active"
+                                   href="/solutions/lms-for-manufacturing" title="LMS for Manufacturing and Industrial Training">Manufacturing</a>
+                            </div>
+                            <div class="b-main-menu__submenu-column b-main-menu__submenu-column_right">
+                                <div class="b-main-menu__submenu-title b-main-menu__item_hidden-xs">By Use Case</div>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_compliance-training active"
+                                   href="/solutions/compliance-training" title="Compliance Training Platform">Compliance Training</a>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_induction-training active"
+                                   href="/solutions/induction-training" title="Induction Training Software">Induction Training</a>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_product-training active"
+                                   href="/solutions/product-training" title="Best LMS for Product Training">Product Training</a>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_channel-partner-training active"
+                                   href="/solutions/channel-partner-training" title="Online Partner Training Software">Channel Partner
+                                    Training</a>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_sales-training active"
+                                   href="/solutions/sales-training-software" title="Sales Training Software">Sales Training</a>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_microlearning active"
+                                   href="/solutions/microlearning-lms" title="Microlearning LMS">Microlearning</a>
+                                <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_case b-main-menu__submenu-item-link_mobile-learning b-main-menu__submenu-item-link_last active"
+                                   href="/solutions/mobile-learning-software" title="Mobile Training Software">Mobile Learning</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="b-main-menu__top-menu-item ">
+                    <a id="nav_item_store" class="b-main-menu__top-menu-link" href="/pricing" title="Store">Pricing</a>
+                </li>
+                <li class="b-main-menu__top-menu-item ">
+                    <a id="nav_item_support" class="b-main-menu__top-menu-link" href="/support" title="Support">Support</a>
+                </li>
+                <li class="js-main-menu-dropdown dropdown-link b-main-menu__top-menu-item">
+                    <span id="nav_item_company" class="b-main-menu__top-menu-link b-main-menu__top-menu-link_submenu" title="Company">Company</span>
+                    <div class="dropdown-menu-small b-main-menu__submenu b-main-menu__submenu_dropdown-menu" aria-labelledby="nav_item_company">
+                        <div class=" b-main-menu__dropdown-menu-wrapper">
+                            <a class="b-main-menu__submenu-item-link active" href="/company" title="About Us">About Us</a>
+                            <a class="b-main-menu__submenu-item-link active" href="/blog/case-study" title="Case Studies">Case Studies</a>
+                            <a class="b-main-menu__submenu-item-link active" href="/featured_customers" title="Customers">Customers</a>
+                            <a class="b-main-menu__submenu-item-link active" href="/reseller-program" title="Partnership">Partnership</a>
+                            <a class="b-main-menu__submenu-item-link active" href="/course-development" title="Course&nbsp;Development">Course&nbsp;Development</a>
+                            <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_last active" href="/company/contact"
+                               title="Contact Us">Contact Us</a>
+                            <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_visible-sm active" href="/ispringacademy/"
+                               title="Academy">Academy</a>
+                            <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_visible-sm active" href="/blog/"
+                               title="Blog">Blog</a>
+                            <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_visible-sm active"
+                               href="https://community.ispringsolutions.com/" title="Forum" target="_blank">Forum</a>
+                            <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_visible-sm active" href="/webinars"
+                               title="Webinars">Webinars</a>
+                            <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_visible-sm active" href="/guides" title="Guides">Guides</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="js-main-menu-dropdown dropdown-link b-main-menu__top-menu-item hidden-sm">
+                    <span id="nav_item_blog" class="b-main-menu__top-menu-link b-main-menu__top-menu-link_submenu" title="Community">Community</span>
+                    <div class="dropdown-menu-small b-main-menu__submenu b-main-menu__submenu_dropdown-menu" aria-labelledby="nav_item_blog">
+                        <div class="b-main-menu__dropdown-menu-wrapper" aria-labelledby="nav_item_blog">
+                            <a class="b-main-menu__submenu-item-link active" href="/ispringacademy" title="Academy">Academy</a>
+                            <a class="b-main-menu__submenu-item-link active" href="/blog/" title="Blog">Blog</a>
+                            <a class="b-main-menu__submenu-item-link active" href="https://community.ispringsolutions.com/" title="Forum"
+                               target="_blank">Forum</a>
+                            <a class="b-main-menu__submenu-item-link active" href="/webinars" title="Webinars">Webinars</a>
+                            <a class="b-main-menu__submenu-item-link b-main-menu__submenu-item-link_last active" href="/guides"
+                               title="Guides">Guides</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="js-main-menu-dropdown dropdown-link b-main-menu__top-menu-item b-top-menu-languages">
+
+                    <span class="b-main-menu__top-menu-link b-main-menu__top-menu-link_submenu">
+                        <span class="b-main-menu__item-languages_visible-xs">Language</span>
+                        <span class="b-top-menu-languages__submenu-name b-main-menu__item-languages_hidden-xs">EN</span>
+                    </span>
+                    <div class="dropdown-menu-small b-main-menu__submenu b-main-menu__submenu_dropdown-menu b-top-menu-languages__submenu">
+                        <div class="b-main-menu__dropdown-menu-wrapper b-top-menu-languages__dropdown-menu-wrapper">
+                            <a href="https://www.ispringsolutions.com" class="b-top-menu-languages__item-link b-main-menu__top-menu-link"
+                               title="English">English </a>
+                            <a href="https://www.ispring.fr" class="b-top-menu-languages__item-link b-main-menu__top-menu-link" title="Français">Français </a>
+                            <a href="https://www.ispringlearn.de" class="b-top-menu-languages__item-link b-main-menu__top-menu-link" title="Deutsch">Deutsch </a>
+                            <a href="https://www.ispring.es" class="b-top-menu-languages__item-link b-main-menu__top-menu-link" title="Español">Español </a>
+                            <a href="https://www.ispring.it" class="b-top-menu-languages__item-link b-main-menu__top-menu-link" title="Italiano">Italiano </a>
+                            <a href="https://www.ispring.nl" class="b-top-menu-languages__item-link b-main-menu__top-menu-link" title="Nederlands">Nederlands </a>
+                            <a href="https://www.ispringpro.com.br" class="b-top-menu-languages__item-link b-main-menu__top-menu-link"
+                               title="Português">Português </a>
+                            <a href="https://www.ispring.pl" class="b-top-menu-languages__item-link b-main-menu__top-menu-link"
+                               title="Polski">Polski </a>
+                            <a href="https://www.ispring.cn" class="b-top-menu-languages__item-link b-main-menu__top-menu-link" title="中文">中文 </a>
+                            <a href="https://www.ispring.jp" class="b-top-menu-languages__item-link b-main-menu__top-menu-link"
+                               title="日本語">日本語 </a>
+                            <a href="https://www.ispring.ae" class="b-top-menu-languages__item-link b-main-menu__top-menu-link" title="العربية">العربية </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="b-main-menu__service-menu">
+                <a id="topContact" title="iSpring Contact" class="b-main-menu__contact js-main-menu-contact b-main-menu__item_hidden-xs"
+                   href="/company/contact"></a>
+                <a id="topShoppingCart" title="iSpring Shopping Cart"
+                   class="b-main-menu__shopping-cart js-main-menu-shopping-cart b-main-menu__item_hidden-xs" href="/pricing"><span
+                            class="b-main-menu__cart-items-counter js-cart-items-count"></span></a>
+                <div class="b-main-menu__search">
+                    <div class="b-main-menu__search_visible-xs">
+                        <form method="post" action="/search" class="js-search-field b-main-menu__swap-container b-main-menu__search-wrapper">
+                            <input type="text" class="b-main-menu__search-input" name="search" value="" placeholder="Search...">
+                            <button type="submit" class="b-main-menu__search-button" title="submit"></button>
+                        </form>
+                    </div>
+
+                    <div class="b-main-menu__search-collapse js-search-collapse b-main-menu__item_hidden-xs">
+                        <span class="b-main-menu__search-icon js-search-icon">&nbsp;</span>
+                        <form method="post" action="/search"
+                              class="js-search-field b-main-menu__swap-container b-main-menu__search-wrapper b-main-menu__search-wrapper_dropdown dropdown-menu">
+                            <input type="text" class="b-main-menu__search-input" name="search" value="" placeholder="Search...">
+                            <button type="submit" class="b-main-menu__search-button" title="submit"></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="b-main-menu__auth-details js-with-submenu b-main-menu__item_hidden-xs js-not-logged">
+                    <div class="b-main-menu__auth-details_wrapper">
+                        <a id="topMenuLoginLink" class="b-main-menu__auth-details_link" href="/login" title="Log in">Log in</a>
+                    </div>
+                </div>
+            </div>
+            <div class="b-main-menu__service-menu_mobile b-main-menu__service-menu_visible-xs text-center">
+                <a href="mailto:sales@ispring.com" class="" title="sales@ispring.com">sales@ispring.com</a></div>
+        </div>
+        <div id="serviceMenu" class="navbar-collapse b-main-menu__navbar-collapse collapse b-animate_slide-up ">
+            <ul class="nav navbar-nav b-main-menu__item_hidden-sm b-main-menu__service-menu_visible-xs">
+                <li class="b-main-menu__top-menu-item">
+                    <a class="b-main-menu__top-menu-link b-main-menu__top-menu-link_icon b-main-menu__shopping-cart" href="/cart/view"
+                       title="iSpring Shopping Cart">Shopping Cart<span id="cartItemsCount"></span> </a>
+                </li>
+                <li class="b-main-menu__top-menu-item b-main-menu__account">
+                    <a class="b-main-menu__top-menu-link b-main-menu__top-menu-link_icon b-main-menu__account_link" href="/login" title="My Account">My
+                        Account</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="b-graylayer" id="grayLayerMain"></div>
