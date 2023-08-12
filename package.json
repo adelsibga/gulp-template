@@ -4,12 +4,13 @@
   "description": "gulp template",
   "main": "index.js",
   "scripts": {
-    "lint": "npm run stylelint && npm run eslint",
-    "stylelint": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}'",
-    "stylelint:fix": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}' --fix",
     "prod": "gulp build --prod",
-    "eslint": "eslint 'src/js/**/*.js'",
-    "eslint:fix": "eslint 'src/js/**/*.js' --fix"
+    "lint": "run-s lint:*:nf",
+    "lint:fix": "run-s lint:*:fix",
+    "lint:stylelint:nf": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}'",
+    "lint:stylelint:fix": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}' --fix",
+    "lint:eslint:nf": "eslint 'src/js/**/*.js'",
+    "lint:eslint:fix": "eslint 'src/js/**/*.js' --fix"
   },
   "repository": {
     "type": "git",
