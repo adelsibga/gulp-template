@@ -1,85 +1,85 @@
 // Fonts
-$EuclidCircularLight: Light, Roboto, sans-serif;
-$EuclidCircularRegular: Euclid Circular B Regular, Roboto, sans-serif;
-$EuclidCircularMedium: Euclid Circular B Medium, Roboto, sans-serif;
-$EuclidCircularSemiBold: Euclid Circular B SemiBold, Roboto, sans-serif;
-$EuclidCircularBold: Euclid Circular B Bold, Roboto, sans-serif;
+$euclidCircularLight: 'Euclid Circular B Light', 'Roboto', sans-serif;
+$euclidCircularRegular: 'Euclid Circular B Regular', 'Roboto', sans-serif;
+$euclidCircularMedium: 'Euclid Circular B Medium', 'Roboto', sans-serif;
+$euclidCircularSemiBold: 'Euclid Circular B SemiBold', 'Roboto', sans-serif;
+$euclidCircularBold: 'Euclid Circular B Bold', 'Roboto', sans-serif;
 
 // Fonts Italic
-$EuclidCircularLightItalic: Euclid Circular B Light Italic, Roboto, sans-serif;
-$EuclidCircularItalic: Euclid Circular B Italic, Roboto, sans-serif;
-$EuclidCircularMediumItalic: Medium Italic, Roboto, sans-serif;
-$EuclidCircularSemiBoldItalic: Euclid Circular B SemiBold Italic, Roboto, sans-serif;
-$EuclidCircularBoldItalic: Bold Italic, Roboto, sans-serif;
+$euclidCircularLightItalic: 'Euclid Circular B Light Italic', 'Roboto', sans-serif;
+$euclidCircularItalic: 'Euclid Circular B Italic,' 'Roboto', sans-serif;
+$euclidCircularMediumItalic: 'Euclid Circular B Medium Italic', 'Roboto', sans-serif;
+$euclidCircularSemiBoldItalic: 'Euclid Circular B SemiBold Italic', 'Roboto', sans-serif;
+$euclidCircularBoldItalic: 'Euclid Circular B Bold Italic', 'Roboto', sans-serif;
 
 // Default Colors
 $defaultTitleColor: #151824;
-$defaultTextColor: #3D3E47;
-$iconsColor: #2F3337;
+$defaultTextColor: #3d3e47;
+$iconsColor: #2f3337;
 
 // Suite Colors
-$defaultSuiteColor: #B8195B;
+$defaultSuiteColor: #b8195b;
 
 // Learn Colors
-$defaultLearnColor: #3CB46E;
+$defaultLearnColor: #3cb46e;
 
 // Market Colors
-$defaultMarketColor: #773BDB;
+$defaultMarketColor: #773bdb;
 
 // Page Colors
-$defaultPageColor: #2972E0;
+$defaultPageColor: #2972e0;
 
 // Space Colors
-$defaultSpaceColor: #003DAE;
+$defaultSpaceColor: #003dae;
 
 // Quizmaker Colors
-$defaultQuizmakerColor: #F98D00;
+$defaultQuizmakerColor: #f98d00;
 
 // Blog Colors
-$defaultBlogColor_1: #130F3F;
-$defaultBlogColor_2: #003ECF;
-$defaultBlogColor_3: #91AFFD;
-$defaultBlogColor_4: #D4E0FF;
-$defaultBlogColor_5: #F2F4F8;
-$defaultBlogColor_6: #FCCCD4;
-$defaultBlogColor_7: #DD4A6C;
+$defaultBlogColor_1: #130f3f;
+$defaultBlogColor_2: #003ecf;
+$defaultBlogColor_3: #91affd;
+$defaultBlogColor_4: #d4e0ff;
+$defaultBlogColor_5: #f2f4f8;
+$defaultBlogColor_6: #fcccd4;
+$defaultBlogColor_7: #dd4a6c;
 
 // Buttons Colors
-$defaultButtonTextColor: #FFFFFF;
-$blueButtonBackground: #0547C0;
-$blueButtonBackgroundHover: #004FE1;
-$yellowButtonBackground: #FFD269;
-$yellowButtonBackgroundHover: #F9CA5C;
-$yellowButtonTextColor: #3D3E47;
-$greenButtonBackground: #14B855;
-$greenButtonBackgroundHover: #0BAF4C;
-$pinkButtonBackground: #B8195B;
-$pinkButtonBackgroundHover: #CE1C66;
-$whiteButtonTextColor: #3D3E47;
-$whiteButtonTextColorHover: #000000;
+$defaultButtonTextColor: #fff;
+$blueButtonBackground: #0547c0;
+$blueButtonBackgroundHover: #004fe1;
+$yellowButtonBackground: #ffd269;
+$yellowButtonBackgroundHover: #f9ca5c;
+$yellowButtonTextColor: #3d3e47;
+$greenButtonBackground: #14b855;
+$greenButtonBackgroundHover: #0baf4c;
+$pinkButtonBackground: #b8195b;
+$pinkButtonBackgroundHover: #ce1c66;
+$whiteButtonTextColor: #3d3e47;
+$whiteButtonTextColorHover: #000;
 $whiteButtonBorderColor: #595961;
 $cookiesButtonBorderColor: #595961;
-$cookiesButtonBorderColorHover: #000000;
-$cookiesButtonColorHover: #000000;
-$blackButtonColor: #FFFFFF;
-$blackButtonBackground: #3C3C3C;
-$blackButtonBackgroundHover: #000000;
+$cookiesButtonBorderColorHover: #000;
+$cookiesButtonColorHover: #000;
+$blackButtonColor: #fff;
+$blackButtonBackground: #3c3c3c;
+$blackButtonBackgroundHover: #000;
 
 // Buttons with underline Colors
-$underlineButtonColor: #3D3E47;
+$underlineButtonColor: #3d3e47;
 $underlineButtonColorHover: #151824;
 
 // Header Colors
 
 // Footer Colors
-$footerEmailInputColor: #8C929B;
-$footerEmailInputBorderColor: #C3C4CA;
+$footerEmailInputColor: #8c929b;
+$footerEmailInputBorderColor: #c3c4ca;
 $footerEmailInputColorHover: #404040;
-$footerEmailInputBorderColorHover: #ADB3B9;
-$footerSubmitButtonColor: #FFFFFF;
-$footerSubmitButtonBackgroundColor: #0547C0;
-$footerSubmitButtonBackgroundColorHover: #004FE1;
-$footerFormErrorMessageColor: #EF5B5B;
+$footerEmailInputBorderColorHover: #adb3b9;
+$footerSubmitButtonColor: #fff;
+$footerSubmitButtonBackgroundColor: #0547c0;
+$footerSubmitButtonBackgroundColorHover: #004fe1;
+$footerFormErrorMessageColor: #ef5b5b;
 
 // Transitions
 $defaultTransition: all .3s ease;

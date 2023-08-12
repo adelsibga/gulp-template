@@ -8,82 +8,92 @@
 
 {% block content %}
     <div class="container">
-        <h1 class="title title_h1">
+        <h1 class="title title_h1 page-title">
             iSpring Design system
         </h1>
+        {% include './components/images/modern.twig' with {
+            imgClass: 'images-test',
+            pictureClass: 'picture-test',
+            imgPath: '@img/testDir/group',
+            imgExt: 'png',
+            imgWidth: '748',
+            imgHeight: '421',
+            imgAlt: 'Test alt from images component',
+        } %}
+        <p class="text-border">Чему научитесь</p>
         <div class="container_buttons">
-            {% include './components/buttons/default.twig' with {
+            {% include './components/ispringUI/buttons/default.twig' with {
                 'link': '#',
                 'color': 'blue',
                 'text': 'Try for Free',
             } %}
-            {% include './components/buttons/default.twig' with {
+            {% include './components/ispringUI/buttons/default.twig' with {
                 'link': '#',
                 'color': 'white',
                 'text': 'Learn more',
                 'withArrow': true,
                 'additionalClass': 'additionalClass additionalClass2'
             } %}
-            {% include './components/buttons/default.twig' with {
+            {% include './components/ispringUI/buttons/default.twig' with {
                 'link': '#',
                 'color': 'green',
                 'text': 'Try for Free',
             } %}
-            {% include './components/buttons/default.twig' with {
+            {% include './components/ispringUI/buttons/default.twig' with {
                 'link': '#',
                 'color': 'yellow',
                 'text': 'Try for Free',
             } %}
-            {% include './components/buttons/default.twig' with {
+            {% include './components/ispringUI/buttons/default.twig' with {
                 'link': '#',
                 'color': 'pink',
                 'text': 'Download for Free',
             } %}
-            {% include './components/buttons/default.twig' with {
+            {% include './components/ispringUI/buttons/default.twig' with {
                 'link': '#',
                 'color': 'blue',
                 'text': 'Free Trial',
                 'small': true
             } %}
-            {% include './components/buttons/default.twig' with {
+            {% include './components/ispringUI/buttons/default.twig' with {
                 'link': '#',
                 'color': 'white',
                 'text': 'Free Trial',
                 'small': true
             } %}
-            {% include './components/buttons/default.twig' with {
+            {% include './components/ispringUI/buttons/default.twig' with {
                 'link': '#',
                 'color': 'green',
                 'text': 'Free Trial',
                 'small': true,
             } %}
-            {% include './components/buttons/default.twig' with {
+            {% include './components/ispringUI/buttons/default.twig' with {
                 'link': '#',
                 'color': 'white',
                 'text': 'Manage Cookies',
                 'small': true,
                 'additionalClass': 'button_cookies'
             } %}
-            {% include './components/buttons/default.twig' with {
+            {% include './components/ispringUI/buttons/default.twig' with {
                 'link': '#',
                 'color': 'black',
                 'text': 'Accept All',
                 'small': true,
             } %}
-            {% include './components/buttons/withUnderline.twig' with {
+            {% include './components/ispringUI/buttons/withUnderline.twig' with {
                 'link': '#',
                 'text': 'Explore',
                 'withArrow': true,
                 'additionalClass': 'additionalClass'
             } %}
-            {% include './components/buttons/withUnderline.twig' with {
+            {% include './components/ispringUI/buttons/withUnderline.twig' with {
                 'link': '#',
                 'text': 'Pricing',
                 'pricing': true,
                 'withArrow': true,
                 'additionalClass': 'additionalClass'
             } %}
-            {% include './components/buttons/withUnderline.twig' with {
+            {% include './components/ispringUI/buttons/withUnderline.twig' with {
                 'link': '#',
                 'text': 'Book a Demo',
                 'additionalClass': 'additionalClass',

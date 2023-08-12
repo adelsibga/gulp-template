@@ -1,12 +1,11 @@
-let quantity = document.querySelectorAll('.qtyInput')
+const quantity = document.querySelectorAll('.qtyInput')
 const plus = document.querySelectorAll('.quantity__button_plus')
 const minus = document.querySelectorAll('.quantity__button_minus')
 
 function decrement(i) {
     if (quantity[i].value <= 1) {
         quantity[i].value = 1
-    }
-    else {
+    } else {
         quantity[i].value = parseInt(quantity[i].value) - 1
     }
 }
@@ -14,8 +13,7 @@ function decrement(i) {
 function increment(i) {
     if (quantity[i].value >= 1000) {
         quantity[i].value = 1000
-    }
-    else {
+    } else {
         quantity[i].value = parseInt(quantity[i].value) + 1
     }
 }
