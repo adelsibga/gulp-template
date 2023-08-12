@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "prod": "gulp build --prod",
-    "lint": "run-s lint:*:nf",
-    "lint:fix": "run-s lint:*:fix",
-    "lint:stylelint:nf": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}'",
-    "lint:stylelint:fix": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}' --fix",
-    "lint:eslint:nf": "eslint 'src/js/**/*.js'",
-    "lint:eslint:fix": "eslint 'src/js/**/*.js' --fix"
+    "lint": "run-s lint:*",
+    "lint:stylelint": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}'",
+    "lint:eslint": "eslint 'src/js/**/*.js'",
+    "lint:fix": "run-s fix:*",
+    "fix:stylelint": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}' --fix",
+    "fix:eslint": "eslint 'src/js/**/*.js' --fix"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
     "browser-sync": "^2.27.11",
+    "concurrently": "^8.2.0",
     "del": "^6.0.0",
     "eslint": "^8.45.0",
     "eslint-config-semistandard": "^17.0.0",
