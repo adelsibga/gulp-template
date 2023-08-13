@@ -386,7 +386,7 @@
     "selector-max-universal": null,
     "selector-nested-pattern": null,
     "selector-no-qualifying-type": null,
-    "selector-no-vendor-prefix": true,
+    "selector-no-vendor-prefix": null,
     "selector-pseudo-class-no-unknown": true,
     "selector-pseudo-element-colon-notation": "double",
     "selector-pseudo-element-no-unknown": true,

@@ -15,7 +15,8 @@ $euclidCircularBoldItalic: 'Euclid Circular B Bold Italic', 'Roboto', sans-serif
 // Default Colors
 $defaultTitleColor: #151824;
 $defaultTextColor: #3d3e47;
-$iconsColor: #2f3337;
+$defaultIconsColor: #2f3337;
+$defaultBorderColor: #ededed;
 
 // Suite Colors
 $defaultSuiteColor: #b8195b;
@@ -70,6 +71,12 @@ $underlineButtonColor: #3d3e47;
 $underlineButtonColorHover: #151824;
 
 // Header Colors
+$productMenuColor: #676e78;
+$productMenuListBorderColor: #e7e8ea;
+$productMenuDropdownBorderColor: #d1d1d1;
+$productMenuHoverBackgroundColor: #f2f4f8;
+$productMenuSeparatorColor: #dde0e5;
+$productMenuScrollingBackgroundColor: #252f3c;
 
 // Footer Colors
 $footerEmailInputColor: #8c929b;

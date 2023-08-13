@@ -8,7 +8,7 @@
     "lint": "run-s lint:*",
     "lint:stylelint": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}'",
     "lint:eslint": "eslint 'src/js/**/*.js'",
-    "lint:fix": "run-s fix:*",
+    "fix": "run-s fix:*",
     "fix:stylelint": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}' --fix",
     "fix:eslint": "eslint 'src/js/**/*.js' --fix"
   },

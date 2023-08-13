@@ -19,6 +19,41 @@ input[type='submit'] {
   -webkit-appearance: button;
 }
 
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,html {
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+}
+
 .hidden {
   display: none;
+}
+
+a {
+  font-family: inherit;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .hidden-sm {
+    display: none
+  }
+}
+
+@media (min-width: 1024px) {
+  .hidden-md, .visible-sm, .visible-xs {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .visible-xs {
+    display: none;
+  }
 }
