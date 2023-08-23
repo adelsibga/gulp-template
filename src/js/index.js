@@ -20,7 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     _mainMenuHandler(e, n)
     selectInitNavigationMenu('js-not-logged', n, e)
     ShowSearchField()
+    // eslint-disable-next-line no-new
     new TopMobileMenu()
+    // eslint-disable-next-line no-new
     new ArrowNavigationMenuNew()
     setVisibleDropDown()
     scrollingMenu()
