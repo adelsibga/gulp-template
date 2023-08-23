@@ -8,6 +8,8 @@
     "lint": "run-s lint:*",
     "lint:stylelint": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}'",
     "lint:eslint": "eslint 'src/js/**/*.js'",
+    "lint:editorconfig": "editorconfig-checker",
+    "lint:htmlhint": "htmlhint 'build/**/*.html'",
     "fix": "run-s fix:*",
     "fix:stylelint": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}' --fix",
     "fix:eslint": "eslint 'src/js/**/*.js' --fix"
@@ -30,6 +32,7 @@
     "caniuse-lite": "^1.0.30001520",
     "concurrently": "^8.2.0",
     "del": "^6.0.0",
+    "editorconfig-checker": "^5.1.1",
     "eslint": "^8.45.0",
     "eslint-config-semistandard": "^17.0.0",
     "eslint-config-standard": "^17.1.0",
@@ -50,6 +53,7 @@
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
@@ -58,6 +62,7 @@
     "gulp-twig": "^1.2.0",
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
+    "htmlhint": "^1.1.4",
     "notify-send": "^0.1.2",
     "postcss-less": "^6.0.0",
     "postcss-sass": "^0.5.0",
@@ -67,8 +72,5 @@
     "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
     "stylelint-order": "^6.0.3",
     "stylelint-scss": "^5.0.1"
-  },
-  "dependencies": {
-    "gulp-replace": "^1.1.4"
   }
 }
