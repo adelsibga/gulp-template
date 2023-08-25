@@ -1,0 +1,5 @@
+@import '../../mixins/fontFace';
+
+$fontsDir: '';
+
+@include font-face('', '#{$fontsDir}/', 400, normal)
