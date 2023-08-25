@@ -1,5 +1,5 @@
-import {path, srcPath} from '../config/path.js'
-import {isDev} from '../config/env.js'
+import { path, srcPath } from '../config/path.js'
+import { isDev } from '../config/env.js'
 import {
     src,
     dest,
@@ -15,7 +15,7 @@ import {
 
 function scripts() {
     // TODO: add alias for js
-    return src(path.src.js, {base: `${srcPath}js/`})
+    return src(path.src.js, { base: `${srcPath}js/` })
         .pipe(plumber({
             errorHandler: function (err) {
                 notify.onError({

@@ -1,5 +1,5 @@
-import {path, srcPath, preprocessor} from '../config/path.js'
-import {isDev} from '../config/env.js'
+import { path, srcPath, preprocessor } from '../config/path.js'
+import { isDev } from '../config/env.js'
 import {
     src,
     dest,
@@ -20,7 +20,7 @@ import {
 
 function styles() {
     // TODO: check PostCSS and less after uninstall less packages
-    return src(path.src.css, {base: `${srcPath + preprocessor}/`})
+    return src(path.src.css, { base: `${srcPath + preprocessor}/` })
         .pipe(plumber({
             errorHandler: function (err) {
                 notify.onError({

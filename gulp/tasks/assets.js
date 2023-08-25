@@ -1,4 +1,4 @@
-import {path, srcPath} from '../config/path.js'
+import { path, srcPath } from '../config/path.js'
 import {
     src,
     dest,
@@ -9,7 +9,7 @@ import {
 } from '../config/plugins.js'
 
 function assets() {
-    return src(path.src.assets, {base: `${srcPath}assets/`})
+    return src(path.src.assets, { base: `${srcPath}assets/` })
         .pipe(plumber({
             errorHandler: function (err) {
                 notify.onError({

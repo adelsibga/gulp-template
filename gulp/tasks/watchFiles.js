@@ -1,11 +1,11 @@
 import gulp from 'gulp'
-import {path} from '../config/path.js'
-import {twig2Html} from './twig2Html.js'
-import {styles} from './styles.js'
-import {scripts} from './scripts.js'
-import {images} from './images.js'
-import {fonts} from './fonts.js'
-import {assets} from './assets.js'
+import { path } from '../config/path.js'
+import { twig2Html } from './twig2Html.js'
+import { styles } from './styles.js'
+import { scripts } from './scripts.js'
+import { images } from './images.js'
+import { fonts } from './fonts.js'
+import { assets } from './assets.js'
 
 function watchFiles() {
     gulp.watch([path.watch.twig], twig2Html)
