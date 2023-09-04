@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if title %}{{ title }}{% else %}Title{% endif %}</title>
     <meta name="description" content="{% if description %}{{ description }}{% else %}Description{% endif %}">
-    {% include '../../components/favicon/simple.twig' %}
-    {% include '../../components/preload/fonts.twig' with {
+    {% include '../components/favicon/simple.twig' %}
+    {% include '../components/preload/fonts.twig' with {
       fonts: {
         1: 'EuclidCircularB/EuclidCircularB-Regular',
         2: 'EuclidCircularB/EuclidCircularB-Medium',
@@ -18,12 +18,12 @@
   </head>
   <body>
     <div class="main-container">
-      {% include '../../components/ispringUI/headers/header.twig' %}
-      {% include '../../components/ispringUI/headers/products/learn.twig' %}
+      {% include '../components/ispringUI/headers/header.twig' %}
+      {% include '../components/ispringUI/headers/products/learn.twig' %}
       <main>
         {% block content %}{% endblock %}
       </main>
-      {% include '../../components/ispringUI/footers/footer.twig' with {
+      {% include '../components/ispringUI/footers/footer.twig' with {
         'color': 'light'
       } %}
     </div>
