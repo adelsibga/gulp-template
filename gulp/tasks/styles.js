@@ -1,10 +1,9 @@
 import { path, srcPath, preprocessor } from '../config/path.js'
 import { isDev } from '../config/env.js'
+import { logger } from "../config/Logger.js";
 import {
     src,
     dest,
-    plumber,
-    notify,
     browserSync,
     ifPlugin,
     sourcemaps,
@@ -21,17 +20,7 @@ import {
 function styles() {
     // TODO: check PostCSS and less after uninstall less packages
     return src(path.src.css, { base: `${srcPath + preprocessor}/` })
-        .pipe(plumber({
-            errorHandler: function (err) {
-                notify.onError({
-                    title: `${preprocessor}`.toUpperCase(),
-                    subtitle: 'Error',
-                    message: 'Error: <%= error.message %>',
-                    sound: 'Beep'
-                })(err)
-                this.emit('end')
-            }
-        }))
+        .pipe(logger.handleError(`${preprocessor}`.toUpperCase()))
         .pipe(ifPlugin(isDev, sourcemaps.init()))
         .pipe(sass())
         .pipe(gcmq())

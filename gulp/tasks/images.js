@@ -1,9 +1,8 @@
 import { path, srcPath } from '../config/path.js'
+import { logger } from '../config/logger.js'
 import {
     src,
     dest,
-    plumber,
-    notify,
     browserSync,
     avif,
     webp,
@@ -13,17 +12,7 @@ import {
 
 function images() {
     return src(`${srcPath}images/**/*.{jpg,png}`, { base: `${srcPath}images/` })
-        .pipe(plumber({
-            errorHandler: function (err) {
-                notify.onError({
-                    title: 'Images',
-                    subtitle: 'Error',
-                    message: 'Error: <%= error.message %>',
-                    sound: 'Beep'
-                })(err)
-                this.emit('end')
-            }
-        }))
+      .pipe(logger.handleError('Images'))
         .pipe(newer(path.build.images))
         .pipe(avif({
             quality: 50
