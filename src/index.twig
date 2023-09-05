@@ -12,6 +12,30 @@
     <h1 class="title title_h1">
       iSpring Design system
     </h1>
+    {% include './components/images/withMedia.twig' with {
+      lazyContainerClass: 'lazyContainerClass',
+      pictureClass: 'pictureClass',
+      imgClass: 'imgClass',
+      imgId: 'imgId',
+      imgExt: 'png',
+      imgAlt: 'imgAlt',
+      imgPath: '@img/testDir/group3',
+      imgExt: 'png',
+      media: {
+        1: {
+          mediaWidth: 'max-width:767px',
+          imgPath: '@img/testDir/group1',
+        },
+        2: {
+          mediaWidth: 'max-width:1023px',
+          imgPath: '@img/testDir/group2',
+        },
+        3: {
+          mediaWidth: 'min-width:1024px',
+          imgPath: '@img/testDir/group3',
+        }
+      }
+    } %}
   </div>
 {% endblock %}
 

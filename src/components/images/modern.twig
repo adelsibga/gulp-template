@@ -2,7 +2,7 @@
     <source srcset="{{ imgPath }}.avif, {{ imgPath }}-x2.avif 2x" type="image/avif">
     <source srcset="{{ imgPath }}.webp, {{ imgPath }}-x2.webp 2x" type="image/webp">
     <img class="{% if not notResponsive %}img-responsive {% endif %}{{ imgClass }}"
-        {% if id is not empty %}id="{{ id }}"{% endif %}
+        {% if imgId is not empty %}id="{{ imgId }}"{% endif %}
         {% if not noLazyload %} loading="lazy"{% endif %}
         src="{{ imgPath }}.{{ imgExt }}"
         alt="{% if imgAlt is not empty %}{{ imgAlt }}{% else %}Image{% endif %}"
