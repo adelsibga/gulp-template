@@ -3,7 +3,7 @@ import { plumber, notify } from '../config/plugins.js'
 class Logger {
     handleError(title) {
         return plumber({
-            errorHandler: function (err) {
+            errorHandler(err) {
                 notify.onError({
                     title,
                     subtle: 'Error',

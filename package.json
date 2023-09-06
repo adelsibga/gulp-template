@@ -2,7 +2,6 @@
   "name": "gulp-template",
   "version": "1.0.0",
   "description": "gulp template",
-  "main": "index.js",
   "scripts": {
     "start": "gulp",
     "prod": "gulp build --prod",
@@ -26,6 +25,14 @@
   },
   "homepage": "https://github.com/adelsibga/gulp-template#readme",
   "type": "module",
+  "keywords": [
+    "gulp",
+    "twig",
+    "scss",
+    "sass",
+    "less",
+    "linters"
+  ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
