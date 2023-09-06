@@ -3,9 +3,9 @@
 $imgButtonPath: '@img/buttons/';
 
 .button-with-underline {
-  display: inline-block;
   font: 500 16px/1.5 $euclidCircularMedium;
   position: relative;
+  display: inline-block;
   padding: 6px 0;
   transition: $defaultTransition;
   text-align: center;

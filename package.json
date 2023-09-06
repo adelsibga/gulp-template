@@ -4,6 +4,7 @@
   "description": "gulp template",
   "main": "index.js",
   "scripts": {
+    "start": "gulp",
     "prod": "gulp build --prod",
     "lint": "run-s lint:*",
     "lint:stylelint": "stylelint 'src/{scss,sass,less}/**/*.{scss,sass,less}'",

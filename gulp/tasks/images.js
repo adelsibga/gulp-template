@@ -12,7 +12,7 @@ import {
 
 function images() {
     return src(`${srcPath}images/**/*.{jpg,png}`, { base: `${srcPath}images/` })
-      .pipe(logger.handleError('Images'))
+        .pipe(logger.handleError('Images'))
         .pipe(newer(path.build.images))
         .pipe(avif({
             quality: 50
