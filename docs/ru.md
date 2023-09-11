@@ -12,6 +12,7 @@
 
 ### Скоро
 
+- https://www.npmjs.com/package/module-alias
 - добавление babel
 - проверить компонент картинки для gif и для png на мобилках и для десктопа
 - модульность js с помощью webpack
