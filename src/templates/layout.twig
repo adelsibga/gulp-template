@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if title %}{{ title }}{% else %}Title{% endif %}</title>
     <meta name="description" content="{% if description %}{{ description }}{% else %}Description{% endif %}">
-    {% include '../components/favicon/simple.twig' %}
-    {% include '../components/preload/fonts.twig' with {
+    {% include '../components/common/favicon/simple.twig' %}
+    {% include '../components/common/preload/fonts.twig' with {
       fonts: {
         1: 'EuclidCircularB/EuclidCircularB-Regular',
         2: 'EuclidCircularB/EuclidCircularB-Medium',

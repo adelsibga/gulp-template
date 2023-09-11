@@ -1,6 +1,6 @@
-@import '../config/vars', 'footerThemeColors';
+@import '../../config/vars', 'footerThemeColors';
 
-$imgFooterPath: '@img/footer/';
+$imgFooterPath: '@img/ispringUI/components/footer/';
 $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube';
 
 .footer[data-color='dark'] {
@@ -217,7 +217,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
   }
 }
 
-@media screen and (width >= 375px) {
+@media screen and (min-width: 375px) {
   .footer {
     &__items-wrapper {
       display: grid;
@@ -252,7 +252,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
   }
 }
 
-@media screen and (width >= 680px) {
+@media screen and (min-width: 680px) {
   .footer {
     &__items-wrapper {
       grid-template-columns: 1fr 1fr 1fr;
@@ -297,7 +297,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
   }
 }
 
-@media screen and (width >= 768px) {
+@media screen and (min-width: 768px) {
   .container_footer {
     padding-top: 97px;
   }
@@ -419,7 +419,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
   }
 }
 
-@media screen and (width >= 1024px) {
+@media screen and (min-width: 1024px) {
   .footer {
     &__items-wrapper {
       margin-bottom: 11px;
@@ -475,7 +475,7 @@ $socials: 'facebook', 'twitter', 'instagram', 'linkedin', 'pinterest', 'youtube'
   }
 }
 
-@media screen and (width >= 1056px) {
+@media screen and (min-width: 1056px) {
   .footer {
     &__bottom {
       margin-top: 59px;

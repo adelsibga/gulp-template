@@ -10,21 +10,21 @@
   padding-left: 20px;
 }
 
-@media screen and (width >= 768px) {
+@media screen and (min-width: 768px) {
   .container,
   .container_fluid {
     width: 750px;
   }
 }
 
-@media screen and (width >= 1024px) {
+@media screen and (min-width: 1024px) {
   .container,
   .container_fluid {
     width: 1000px;
   }
 }
 
-@media screen and (width >= 1057px) {
+@media screen and (min-width: 1057px) {
   .container {
     width: 1040px;
 
