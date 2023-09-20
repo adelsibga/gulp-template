@@ -27,6 +27,7 @@
       "named": "ignore",
       "asyncArrow": "ignore"
     }],
-    "no-self-compare": "off"
+    "no-self-compare": "off",
+    "no-new": 0
   }
 }

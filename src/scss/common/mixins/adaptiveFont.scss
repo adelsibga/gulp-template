@@ -1,3 +1,5 @@
+// stylelint-disable media-query-no-invalid
+
 @mixin adaptiveFont($desktopSize, $mobileSize, $screenMaxWidth: 1920) {
   $addSize: $desktopSize - $mobileSize;
   $addMobileSize: $addSize + $addSize * 0.7;
