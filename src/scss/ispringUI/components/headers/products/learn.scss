@@ -7,7 +7,7 @@ $white: #fff;
   display: none
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
   .product-menu {
     display: block;
     height: 45px
@@ -247,7 +247,7 @@ $white: #fff;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (width >= 1024px) {
   .product-menu_scrolling {
     padding-top: 7px;
     padding-bottom: 6px;
@@ -302,7 +302,7 @@ $white: #fff;
   }
 }
 
-@media screen and (min-width: 1057px) {
+@media screen and (width >= 1057px) {
   .product-menu__content {
     max-width: 1000px
   }
@@ -318,7 +318,7 @@ $white: #fff;
   max-height: 1000px
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (width <= 767px) {
   .graylayer {
     position: fixed;
     z-index: 99;
@@ -446,13 +446,13 @@ $white: #fff;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
   .product-mobile-menu__content {
     display: none;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
   .product-menu__wrapper {
     border-bottom: 2px solid $defaultBorderColor;
   }
@@ -477,7 +477,7 @@ $white: #fff;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
   .product-menu_scrolling .product-menu__link_scrolling-button_demo, .product-menu_scrolling .product-menu__link_scrolling-button_pricing {
     color: $defaultTextColor;
     border-color: $defaultTitleColor;
