@@ -37,7 +37,7 @@
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
     "browser-sync": "^2.27.11",
-    "caniuse-lite": "^1.0.30001520",
+    "caniuse-lite": "^1.0.30001538",
     "concurrently": "^8.2.0",
     "del": "^6.0.0",
     "editorconfig-checker": "^5.1.1",

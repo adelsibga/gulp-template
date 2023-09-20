@@ -1,0 +1,4 @@
+defaults and supports es6-module
+not edge > 0
+not Firefox ESR
+not dead
