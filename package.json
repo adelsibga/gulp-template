@@ -39,7 +39,7 @@
     "browser-sync": "^2.29.3",
     "caniuse-lite": "^1.0.30001546",
     "concurrently": "^8.2.1",
-    "del": "^7.1.0",
+    "del": "^6.0.0",
     "editorconfig-checker": "^5.1.1",
     "eslint": "^8.50.0",
     "eslint-config-semistandard": "^17.0.0",
