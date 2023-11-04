@@ -13,7 +13,26 @@
       iSpring Design system
     </h1>
     {% include './components/common/scroller/scrollerBackground/index.twig' with {
-      additionalClass: 'container',
+      sectionAdditionalClass: 'sectionAdditionalClass container',
+      wrapperAdditionalClass: 'wrapperAdditionalClass',
+      itemsAdditionalClass: 'itemsAdditionalClass'
+    } %}
+
+    {% include './components/common/scroller/scrollerItem/index.twig' with {
+      dataSpeed: 'fast',
+      dataDirection: 'left',
+      sectionAdditionalClass: 'sectionAdditionalClass',
+      listAdditionalClass: 'listAdditionalClass',
+      itemAdditionalClass: 'itemAdditionalClass',
+      items: {
+        1: 'HTML',
+        2: 'CSS',
+        3: 'JS',
+        4: 'SSG',
+        5: 'webdev',
+        6: 'animation',
+        7: 'UI/UX'
+      }
     } %}
   </div>
 {% endblock %}

@@ -1,5 +1,4 @@
-<div
-  class="scroller"
+<section class="scroller{% if sectionAdditionalClass %} {{ sectionAdditionalClass }}{% endif %}"
   {% if dataDirection %}
     data-direction="{{ dataDirection }}"
   {% endif %}
@@ -7,9 +6,11 @@
     data-speed="{{ dataSpeed }}"
   {% endif %}
 >
-  <ul class="scroller__inner">
+  <ul class="scroller__inner{% if listAdditionalClass %} {{ listAdditionalClass }}{% endif %}">
     {% for i, item in items %}
-      <li class="scroller__item">{{ item }}</li>
+      <li class="scroller__item{% if itemAdditionalClass %} {{ itemAdditionalClass }}{% endif %}">
+        {{ item }}
+      </li>
     {% endfor %}
   </ul>
-</div>
+</section>
