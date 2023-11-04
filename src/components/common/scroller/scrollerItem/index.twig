@@ -1,0 +1,15 @@
+<div
+  class="scroller"
+  {% if dataDirection %}
+    data-direction="{{ dataDirection }}"
+  {% endif %}
+  {% if dataSpeed %}
+    data-speed="{{ dataSpeed }}"
+  {% endif %}
+>
+  <ul class="scroller__inner">
+    {% for i, item in items %}
+      <li class="scroller__item">{{ item }}</li>
+    {% endfor %}
+  </ul>
+</div>

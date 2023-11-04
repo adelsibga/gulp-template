@@ -12,6 +12,26 @@
     <h1 class="title title_h1">
       iSpring Design system
     </h1>
+    {% include './components/common/scroller/scrollerItem/index.twig' with {
+      dataSpeed: 'fast',
+      dataDirection: 'left',
+      items: {
+        1: '<img
+              class="images-test"
+              loading="lazy"
+              src="@img/ispringUI/components/headers/top_menu/layout/responsive/ispring-suite-v3.png"
+              alt="Test alt from images component"
+              width="242"
+              height="141"
+            >',
+        2: 'CSS',
+        3: 'JS',
+        4: 'SSG',
+        5: 'webdev',
+        6: 'animation',
+        7: 'UI/UX',
+      }
+    } %}
     {% include './components/common/images/withMedia.twig' with {
       lazyContainerClass: 'lazyContainerClass',
       pictureClass: 'pictureClass',

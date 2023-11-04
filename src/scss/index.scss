@@ -1,4 +1,7 @@
 @import 'common/config/default';
 @import 'common/config/normalize';
 @import 'common/components/images';
+@import 'common/components/scroller/scrollerItem';
 @import 'ispringUI';
+
+@include scroller
