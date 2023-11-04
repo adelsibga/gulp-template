@@ -12,18 +12,130 @@
     <h1 class="title title_h1">
       iSpring Design system
     </h1>
-    {% include './components/common/scroller/waterfall/index.twig' with {
-      additionalClass: 'additionalClass',
-      itemAdditionalClass: 'itemAdditionalClass',
-      items: {
-        1: 'онлайн-курсов',
-        2: 'тестов и опросов',
-        3: 'видеокурсов',
-        4: 'тренажёров',
-        5: 'обучающих статей',
-        6: 'электронных книг'
-      }
-    } %}
+
+    <h2 class="js-number-of-clients title_h2 active">59000</h2>
+
+    <div class="scroller__wrapper">
+      {% include './components/common/scroller/scrollerItem/index.twig' with {
+        sectionAdditionalClass: 'scroller_small',
+        dataSpeed: 'fast',
+        dataDirection: 'left',
+        items: {
+          1: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/1.webp"
+            >',
+          2: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/2.webp"
+            >',
+          3: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/3.webp"
+            >',
+          4: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/4.webp"
+            >',
+          5: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/5.webp"
+            >',
+          6: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/6.webp"
+            >',
+          7: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/7.webp"
+            >',
+        }
+      } %}
+
+      {% include './components/common/scroller/scrollerItem/index.twig' with {
+        sectionAdditionalClass: 'scroller_middle',
+        dataSpeed: 'fast',
+        dataDirection: 'right',
+        items: {
+          1: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/8.webp"
+            >',
+          2: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/9.webp"
+            >',
+          3: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/10.webp"
+            >',
+          4: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/11.webp"
+            >',
+          5: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/12.webp"
+            >',
+          6: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/13.webp"
+            >',
+          7: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/14.webp"
+            >',
+          8: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/15.webp"
+            >',
+          9: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/16.webp"
+            >',
+          10: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/17.webp"
+            >',
+        }
+      } %}
+
+      {% include './components/common/scroller/scrollerItem/index.twig' with {
+        sectionAdditionalClass: 'scroller_small',
+        dataSpeed: 'fast',
+        dataDirection: 'left',
+        items: {
+          1: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/18.webp"
+            >',
+          2: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/19.webp"
+            >',
+          3: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/20.webp"
+            >',
+          4: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/21.webp"
+            >',
+          5: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/22.webp"
+            >',
+          6: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/23.webp"
+            >',
+          7: '<img
+              class="img-responsive"
+              src="@img/testDir/scroller/24.webp"
+            >',
+        }
+      } %}
+    </div>
   </div>
 {% endblock %}
 

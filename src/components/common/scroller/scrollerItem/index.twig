@@ -8,9 +8,15 @@
 >
   <ul class="scroller__inner{% if listAdditionalClass %} {{ listAdditionalClass }}{% endif %}">
     {% for i, item in items %}
-      <li class="scroller__item{% if itemAdditionalClass %} {{ itemAdditionalClass }}{% endif %}">
-        {{ item }}
-      </li>
+      {% if item.href and item.content %}
+        <li class="scroller__item{% if itemAdditionalClass %} {{ itemAdditionalClass }}{% endif %}">
+          <a href="{{ item.href }}">{{ item.content }}</a>
+        </li>
+        {% else %}
+          <li class="scroller__item{% if itemAdditionalClass %} {{ itemAdditionalClass }}{% endif %}">
+            {{ item }}
+          </li>
+      {% endif %}
     {% endfor %}
   </ul>
 </section>
