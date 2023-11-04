@@ -1,9 +1,7 @@
 @import 'common/config/default';
 @import 'common/config/normalize';
 @import 'common/components/images';
-@import 'common/components/scroller/scrollerItem';
-@import 'common/components/scroller/scrollerBackground';
+@import 'common/components/scroller/waterfall';
 @import 'ispringUI';
 
-@include scrollerItem;
-@include scrollerBackground($widthContainer, 44px, $pathToImg: '@img/testDir/world-famous');
+@include waterfall(6, $maxWidth: $widthContainer, 40px)
