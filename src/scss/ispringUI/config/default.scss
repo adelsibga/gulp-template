@@ -40,19 +40,19 @@ a {
   outline: none;
 }
 
-@media screen and (width >= 768px) and (width <= 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .hidden-sm {
     display: none
   }
 }
 
-@media (width >= 1024px) {
+@media (min-width: 1024px) {
   .hidden-md, .visible-sm, .visible-xs {
     display: none;
   }
 }
 
-@media (width >= 768px) {
+@media (min-width: 768px) {
   .visible-xs {
     display: none;
   }

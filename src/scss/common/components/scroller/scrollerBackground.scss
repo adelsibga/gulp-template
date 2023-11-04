@@ -1,0 +1,72 @@
+@import '../../mixins/image';
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0)
+  }
+
+  100% {
+    transform: translateX(-200vw)
+  }
+}
+
+@mixin scrollerBackground($maxWidth, $height, $color: #fff, $animationDuration: 10, $pathToImg, $imgExt: png) {
+  .scroller-background {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    max-width: $maxWidth;
+
+    &__items-wrapper {
+      position: relative;
+      overflow: hidden;
+      height: $height;
+
+      &::after,
+      &::before {
+        position: absolute;
+        z-index: 1;
+        top: -35px;
+        display: block;
+        width: 87px;
+        height: calc(#{$height} + 80px);
+        content: '';
+        background: linear-gradient(90deg, $color 3.27%, hsla(0, 0%, 100%, 0) 109.69%);
+      }
+
+      &::before {
+        left: -5px;
+      }
+
+      &::after {
+        right: -5px;
+        transform: rotate(180deg);
+      }
+    }
+
+    &__items {
+      @include image-set($pathToImg, $imgExt);
+      width: 500%;
+      height: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      animation: scrolling calc(2 * #{$animationDuration}s) linear infinite;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .scroller-background {
+      &__items {
+        animation-duration: calc(3 * #{$animationDuration}s);
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .scroller-background {
+      &__items {
+        animation-duration: calc(7 * #{$animationDuration}s);
+      }
+    }
+  }
+}

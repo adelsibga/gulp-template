@@ -4,7 +4,7 @@
   }
 }
 
-@mixin scroller($defaultTime: 10, $maskColor: #fff, $maxWidth: 450) {
+@mixin scrollerItem($defaultTime: 10, $maskColor: #fff, $maxWidth: 450) {
   .scroller {
     max-width: #{$maxWidth}px;
 
@@ -44,7 +44,7 @@
     }
   }
 
-  @media screen and (width >= 1024px) {
+  @media screen and (min-width: 1024px) {
     .scroller {
       &[data-speed='fast'] {
         --_animation-duration: #{1 * $defaultTime}s;

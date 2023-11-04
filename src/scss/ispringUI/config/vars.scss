@@ -93,8 +93,12 @@ $defaultTransition: all .3s ease;
 $leftTransition: left .3s ease;
 $rightTransition: right .3s ease;
 
-// Box shadow
+// Box Shadow
 $defaultShadow: 0 9px 23px rgba(22, 25, 32, 0.15);
 
-// Border radius
+// Border Radius
 $defaultBorderRadius: 10px;
+
+// Containers Width
+$widthContainer: 1040px;
+$widthContainerFluid: 1167px;
