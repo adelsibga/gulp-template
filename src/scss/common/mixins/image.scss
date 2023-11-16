@@ -1,3 +1,6 @@
+@import 'retina-media-query';
+
+// noinspection ALL
 @mixin image-set($pathToImg, $imgExt) {
   background-image: url('#{$pathToImg}.#{$imgExt}');
   background-image: image-set(
@@ -5,4 +8,11 @@
       url('#{$pathToImg}.webp') type('mage/webp'),
       url('#{$pathToImg}.#{$imgExt}') type('image/#{$imgExt}'),
   );
+}
+
+// noinspection ALL
+@mixin retina-image-set($pathToImg, $imgExt) {
+  @include retina {
+    @include image-set($pathToImg, $imgExt)
+  }
 }
