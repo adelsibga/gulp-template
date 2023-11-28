@@ -45,11 +45,16 @@ function isTablet() {
     return (/ipad|android|android 3.0|xoom|sch-i800|playbook|tablet|kindle/i.test(navigator.userAgent.toLowerCase()))
 }
 
+function isIPadInSafari() {
+  return /macintosh/i.test(navigator.userAgent.toLowerCase()) && navigator.maxTouchPoints && 2 < navigator.maxTouchPoints
+}
+
 export {
     isIPad,
     isIPhone,
     isAndroid,
     isMobileOrTablet,
     isMobile,
-    isTablet
+    isTablet,
+    isIPadInSafari
 }
