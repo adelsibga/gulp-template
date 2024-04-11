@@ -2,9 +2,13 @@
 @import 'common/config/normalize';
 @import 'common/components/images';
 @import 'common/components/scroller/scrollerItem';
+@import 'common/components/scroller/scrollerBackground';
+@import 'common/components/scroller/waterfall';
 @import 'ispringUI';
 
 @include scrollerItem(20);
+@include scrollerBackground($widthContainer, 44px, $pathToImg: '@img/testDir/world-famous');
+@include waterfall(6, $maxWidth: $widthContainer, $height: 40px);
 
 .scroller {
   padding: 10px 0;
@@ -43,4 +47,16 @@
       height: auto;
     }
   }
+}
+
+.container_buttons {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 50px;
+}
+
+.container_text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
