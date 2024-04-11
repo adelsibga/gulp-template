@@ -8,7 +8,7 @@
 
 @include scrollerItem(20);
 @include scrollerBackground($widthContainer, 44px, $pathToImg: '@img/testDir/world-famous');
-@include waterfall(6, $maxWidth: $widthContainer, $height: 40px);
+@include waterfall(6, $maxWidth: $widthContainer, $height: 60px);
 
 .scroller {
   padding: 10px 0;
