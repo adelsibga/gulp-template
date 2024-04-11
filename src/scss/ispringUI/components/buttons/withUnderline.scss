@@ -1,0 +1,55 @@
+@import '../../config/vars';
+
+$imgButtonPath: '@img/components/buttons/';
+
+.button-with-underline {
+  font: 500 16px/1.5 $euclidCircularMedium;
+  position: relative;
+  display: inline-block;
+  padding: 6px 0;
+  transition: $defaultTransition;
+  text-align: center;
+  text-decoration: underline;
+  color: $underlineButtonColor;
+
+  &_pricing {
+    text-decoration: none;
+
+    &::before {
+      position: absolute;
+      top: 10px;
+      left: -25px;
+      width: 20px;
+      height: 17px;
+      content: '';
+      background: url('#{$imgButtonPath}cart.svg') center center no-repeat;
+    }
+  }
+
+  &_hover-underline {
+    text-decoration: none;
+
+    &:focus,
+    &:hover,
+    &:active {
+      transition: $defaultTransition;
+      text-decoration: underline;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    right: -18px;
+    transition: $rightTransition;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: $underlineButtonColorHover;
+
+    .button-with-underline__arrow {
+      right: -22px;
+    }
+  }
+}

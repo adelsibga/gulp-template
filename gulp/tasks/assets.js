@@ -1,27 +1,16 @@
-import {path, srcPath} from '../config/path.js'
+import { path, srcPath } from '../config/path.js'
+import { logger } from '../config/logger.js'
+import { stringReplacement } from '../config/replace.js'
 import {
     src,
     dest,
-    plumber,
-    notify,
-    browserSync,
-    replace
+    browserSync
 } from '../config/plugins.js'
 
 function assets() {
-    return src(path.src.assets, {base: `${srcPath}assets/`})
-        .pipe(plumber({
-            errorHandler: function (err) {
-                notify.onError({
-                    title: 'Assets',
-                    subtitle: 'Error',
-                    message: 'Error: <%= error.message %>',
-                    sound: 'Beep'
-                })(err)
-                this.emit('end')
-            }
-        }))
-        .pipe(replace(/@img\//g, '../images/'))
+    return src(path.src.assets, { base: `${srcPath}assets/` })
+        .pipe(logger.handleError('Assets'))
+        .pipe(stringReplacement(/@img\//g, '../images/'))
         .pipe(dest(path.build.assets))
         .pipe(browserSync.stream())
 }

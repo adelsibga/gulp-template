@@ -1,10 +1,9 @@
-import {path, srcPath} from '../config/path.js'
-import {isDev} from '../config/env.js'
+import { path, srcPath } from '../config/path.js'
+import { isDev } from '../config/env.js'
+import { logger } from '../config/logger.js'
 import {
     src,
     dest,
-    plumber,
-    notify,
     browserSync,
     ifPlugin,
     sourcemaps,
@@ -15,18 +14,8 @@ import {
 
 function scripts() {
     // TODO: add alias for js
-    return src(path.src.js, {base: `${srcPath}js/`})
-        .pipe(plumber({
-            errorHandler: function (err) {
-                notify.onError({
-                    title: 'JS',
-                    subtitle: 'Error',
-                    message: 'Error: <%= error.message %>',
-                    sound: 'Beep'
-                })(err)
-                this.emit('end')
-            }
-        }))
+    return src(path.src.js, { base: `${srcPath}js/` })
+        .pipe(logger.handleError('JS'))
         .pipe(ifPlugin(isDev, sourcemaps.init()))
         .pipe(rigger())
         .pipe(ifPlugin(isDev, sourcemaps.write()))

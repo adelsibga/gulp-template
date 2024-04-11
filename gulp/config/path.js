@@ -34,5 +34,5 @@ export {
     path,
     srcPath,
     buildPath,
-    preprocessor,
+    preprocessor
 }

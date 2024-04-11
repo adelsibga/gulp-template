@@ -1,0 +1,16 @@
+<picture class="{{ lazyContainerClass }} {{ pictureClass }}">
+  {% if media is not empty %}
+    {% for i, params in media %}
+      <source srcset="{{ params.imgPath }}.avif, {{ params.imgPath }}-x2.avif 2x" type="image/avif" media="({{ params.mediaWidth }})">
+      <source srcset="{{ params.imgPath }}.webp, {{ params.imgPath }}-x2.webp 2x" type="image/webp" media="({{ params.mediaWidth }})">
+    {% endfor %}
+  {% endif %}
+  <img class="{% if not notResponsive and media is empty %}img-responsive {% endif %}{{ imgClass }}"
+    {% if imgId is not empty %}id="{{ imgId }}"{% endif %}
+    {% if not noLazyload %} loading="lazy"{% endif %}
+    src="{{ imgPath }}.{{ imgExt }}"
+    alt="{% if imgAlt is not empty %}{{ imgAlt }}{% else %}Image{% endif %}"
+    {% if imgWidth is not empty %}width="{{ imgWidth }}"{% endif %}
+    {% if imgHeight is not empty %}height="{{ imgHeight }}"{% endif %}
+  >
+</picture>

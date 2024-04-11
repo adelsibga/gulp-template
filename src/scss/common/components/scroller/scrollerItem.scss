@@ -1,0 +1,58 @@
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+@mixin scrollerItem($defaultTime: 10, $maskColor: #fff, $maxWidth: 450) {
+  .scroller {
+    max-width: #{$maxWidth}px;
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    &[data-animated='true'] {
+      overflow: hidden;
+      mask: linear-gradient(90deg, transparent, $maskColor 20%, $maskColor 80%, transparent);
+    }
+
+    &[data-animated='true'] .scroller__inner {
+      flex-wrap: nowrap;
+      width: max-content;
+      animation: scroll var(--_animation-duration, calc(#{2 * $defaultTime} / 2) s) var(--_animation-direction, forwards) linear infinite;
+    }
+
+    &[data-direction='right'] {
+      --_animation-direction: reverse;
+    }
+
+    &[data-direction='left'] {
+      --_animation-direction: forwards;
+    }
+
+    &[data-speed='fast'] {
+      --_animation-duration: calc(#{$defaultTime} / 2)s;
+    }
+
+    &[data-speed='slow'] {
+      --_animation-duration: calc(#{3 * $defaultTime} /2) s;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .scroller {
+      &[data-speed='fast'] {
+        --_animation-duration: #{1 * $defaultTime}s;
+      }
+
+      &[data-speed='slow'] {
+        --_animation-duration: #{3 * $defaultTime}s;
+      }
+    }
+  }
+}

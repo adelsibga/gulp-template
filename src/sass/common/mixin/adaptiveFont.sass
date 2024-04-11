@@ -1,0 +1,13 @@
+@mixin adaptiveFont($desktopSize, $mobileSize, $screenMaxWidth: 1920)
+  $addSize: $desktopSize - $mobileSize
+  $addMobileSize: $addSize + $addSize * 0.7
+  @media screen and (width <= 767px)
+    font-size: calc(#{$mobileSize}px + #{$addMobileSize} * ((100vw - 320px) / #{$screenMaxWidth}))
+
+
+  @media screen and (width >= 768px) and (max-width: #{$screenMaxWidth}px)
+    font-size: calc(#{$mobileSize}px + #{$addSize} * (100vw / #{$screenMaxWidth}))
+
+
+  @media screen and (min-width: #{$screenMaxWidth + 1}px)
+    font-size: #{$desktopSize}px

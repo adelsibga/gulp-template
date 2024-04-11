@@ -1,0 +1,22 @@
+<section class="scroller{% if sectionAdditionalClass %} {{ sectionAdditionalClass }}{% endif %}"
+  {% if dataDirection %}
+    data-direction="{{ dataDirection }}"
+  {% endif %}
+  {% if dataSpeed %}
+    data-speed="{{ dataSpeed }}"
+  {% endif %}
+>
+  <ul class="scroller__inner{% if listAdditionalClass %} {{ listAdditionalClass }}{% endif %}">
+    {% for i, item in items %}
+      {% if item.href and item.content %}
+        <li class="scroller__item{% if itemAdditionalClass %} {{ itemAdditionalClass }}{% endif %}">
+          <a href="{{ item.href }}">{{ item.content }}</a>
+        </li>
+        {% else %}
+          <li class="scroller__item{% if itemAdditionalClass %} {{ itemAdditionalClass }}{% endif %}">
+            {{ item }}
+          </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>

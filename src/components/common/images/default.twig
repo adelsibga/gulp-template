@@ -1,0 +1,19 @@
+<picture class="{{ pictureClass }} {{ lazyContainerClass }}">
+    {% if (imgMinSrc is not empty) and (imgMinSrcX2 is not empty) %}
+        <source
+                class="{{ imgClass }}-source"
+                srcset="{{ imagesPathSmall }}"
+                media="(max-width:{{ maxWidth }}px)"
+        >
+    {% endif %}
+    <img class="{% if not notResponsive %}img-responsive {% endif %}{{ imgClass }}"
+        srcset="{{ imagesPathDefault }}"
+        src="@img/common/pixel-grey.gif"
+        {% if imgAlt is not empty %}alt="{{ imgAlt }}"{% endif %}
+        {% if imgTitle is not empty %}title="{{ imgTitle }}"{% endif %}
+        {% if width is not empty %}width="{{ width }}"{% endif %}
+        {% if height is not empty %}height="{{ height }}"{% endif %}
+        {% if id is not empty %}id="{{ id }}"{% endif %}
+        {% if not noLazyload %} loading="lazy"{% endif %}
+    >
+</picture>

@@ -1,0 +1,5 @@
+{% if fonts and fonts is not empty %}
+  {% for fontsPath in fonts %}
+    <link rel="preload" href="@fonts/{{ fontsPath }}.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  {% endfor %}
+{% endif %}

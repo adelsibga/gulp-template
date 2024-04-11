@@ -69,6 +69,7 @@ class Accordion {
 document.addEventListener('DOMContentLoaded', () => {
     const t = document.querySelectorAll('.js-accordion')
     t.forEach(t => {
+        // eslint-disable-next-line no-new
         new Accordion(t)
     })
 })

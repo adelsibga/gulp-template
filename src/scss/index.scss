@@ -1,6 +1,53 @@
+@import 'common/config/default';
+@import 'common/config/normalize';
+@import 'common/components/images';
+@import 'common/components/scroller/scrollerItem';
+@import 'common/components/scroller/scrollerBackground';
+@import 'common/components/scroller/waterfall';
 @import 'ispringUI';
-@import 'components/images';
-@import './mixins/textBorder';
+
+@include scrollerItem(20);
+@include scrollerBackground($widthContainer, 44px, $pathToImg: '@img/testDir/world-famous');
+@include waterfall(6, $maxWidth: $widthContainer, $height: 40px);
+
+.scroller {
+  padding: 10px 0;
+
+  &__inner {
+    gap: 30px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &_middle {
+    max-width: 1000px;
+  }
+
+  &_small {
+    max-width: 850px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+    padding: 20px;
+    border: 1px solid #edf0f7;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(163, 172, 192, .26);
+
+    .img-responsive {
+      width: 100%;
+      max-width: 175px;
+      height: auto;
+    }
+  }
+}
 
 .container_buttons {
   display: flex;
@@ -12,15 +59,4 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.page-title {
-  margin-bottom: 20px;
-}
-
-.text-border {
-  @include text-border;
-  font: 500 121px/1.07 $euclidCircularSemiBold;
-  text-align: center;
-  color: #fff;
 }

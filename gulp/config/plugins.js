@@ -1,5 +1,8 @@
+/* eslint-disable import/first */
+/* eslint-disable no-use-before-define */
+
 /* Global */
-const {src, dest} = gulp
+const { src, dest } = gulp
 import gulp from 'gulp'
 import plumber from 'gulp-plumber'
 import notify from 'gulp-notify'
@@ -8,7 +11,7 @@ import ifPlugin from 'gulp-if'
 import sourcemaps from 'gulp-sourcemaps'
 import removeComments from 'gulp-strip-css-comments' // TODO: add for js
 import rename from 'gulp-rename'
-import replace from 'gulp-replace'                   // for simple alias
+import replace from 'gulp-replace' // for simple alias
 
 /* Twig || HTML */
 import twig from 'gulp-twig'

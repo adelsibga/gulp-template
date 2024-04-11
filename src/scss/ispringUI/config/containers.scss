@@ -1,3 +1,5 @@
+@import 'vars';
+
 .container {
   min-width: 320px;
 }
@@ -26,11 +28,11 @@
 
 @media screen and (min-width: 1057px) {
   .container {
-    width: 1040px;
+    width: $widthContainer;
 
     &_fluid {
       width: unset;
-      max-width: 1167px;
+      max-width: $widthContainerFluid;
     }
   }
 }

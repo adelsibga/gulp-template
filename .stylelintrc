@@ -1,4 +1,8 @@
 {
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-order-config-standard"
+  ],
   "plugins": [
     "stylelint-scss",
     "stylelint-order",
@@ -255,6 +259,7 @@
         "unspecified": "bottomAlphabetical"
       }
     ],
+    "alpha-value-notation": "number",
     "at-rule-empty-line-before": [
       "always",
       {
@@ -280,6 +285,7 @@
         "severity": "warning"
       }
     ],
+    "color-function-notation": "legacy",
     "color-hex-length": "short",
     "color-named": "never",
     "color-no-hex": null,
@@ -330,6 +336,7 @@
         "severity": "warning"
       }
     ],
+    "import-notation": "string",
     "font-family-name-quotes": "always-unless-keyword",
     "font-family-no-duplicate-names": true,
     "font-weight-notation": "numeric",
@@ -338,11 +345,13 @@
     "function-name-case": "lower",
     "function-url-no-scheme-relative": true,
     "function-url-quotes": "always",
+    "hue-degree-notation": "number",
     "keyframe-declaration-no-important": true,
     "length-zero-no-unit": true,
     "max-nesting-depth": null,
-    "media-feature-name-no-unknown": true,
-    "media-feature-name-no-vendor-prefix": true,
+    "media-feature-name-no-unknown": null,
+    "media-feature-name-no-vendor-prefix": null,
+    "media-feature-range-notation": "prefix",
     "no-descending-specificity": null,
     "no-duplicate-selectors": true,
     "no-empty-source": [

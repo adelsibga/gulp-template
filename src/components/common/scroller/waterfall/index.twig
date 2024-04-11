@@ -1,0 +1,7 @@
+<div class="waterfall{% if additionalClass %} {{ additionalClass }}{% endif %}">
+  {% for i, item in items %}
+    <span class="waterfall__item{% if itemAdditionalClass %} {{ itemAdditionalClass }}{% endif %}">
+      {{ item }}
+    </span>
+  {% endfor %}
+</div>

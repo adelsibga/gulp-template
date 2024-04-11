@@ -1,9 +1,8 @@
-import {path, srcPath} from '../config/path.js'
+import { path, srcPath } from '../config/path.js'
+import { logger } from '../config/logger.js'
 import {
     src,
     dest,
-    plumber,
-    notify,
     browserSync,
     avif,
     webp,
@@ -12,18 +11,8 @@ import {
 } from '../config/plugins.js'
 
 function images() {
-    return src(`${srcPath}images/**/*.{jpg,png}`, {base: `${srcPath}images/`})
-        .pipe(plumber({
-            errorHandler: function (err) {
-                notify.onError({
-                    title: 'Images',
-                    subtitle: 'Error',
-                    message: 'Error: <%= error.message %>',
-                    sound: 'Beep'
-                })(err)
-                this.emit('end')
-            }
-        }))
+    return src(`${srcPath}images/**/*.{jpg,png}`, { base: `${srcPath}images/` })
+        .pipe(logger.handleError('Images'))
         .pipe(newer(path.build.images))
         .pipe(avif({
             quality: 50
@@ -34,16 +23,16 @@ function images() {
         .pipe(src(path.src.images))
         .pipe(newer(path.build.images))
         .pipe(imagemin([
-            imagemin.gifsicle({interlaced: true}),
+            imagemin.gifsicle({ interlaced: true }),
             imagemin.mozjpeg({
                 quality: 80,
                 progressive: true
             }),
-            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.optipng({ optimizationLevel: 5 }),
             imagemin.svgo({
                 plugins: [
-                    {removeViewBox: true},
-                    {cleanupIDs: false}
+                    { removeViewBox: true },
+                    { cleanupIDs: false }
                 ]
             })
         ], {
