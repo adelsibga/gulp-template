@@ -284,6 +284,25 @@
         }
       } %}
     </div>
+
+    <div class="container_accordion-right-img">
+      {% include './components/common/accordion/rightImg.twig' with {
+        accordionParams: {
+          1: {
+            buttonText : 'Платформа RS&#8209;Connect&nbsp;PRO',
+            buttonClass : 'js-accordion-button-first',
+            contentText : 'Обеспечивает связь отдельных веб-моделей обмена (коннекторов) связь с автоматизированными системами банка (АБС), сервисами ДБО, фронтальными решениями и пр. Приобретается, настраивается и единоразово.',
+
+          },
+          2: {
+            buttonText : 'Веб&#8209;модули (коннекторы) для обмена с государственными информационными системами',
+            buttonClass : 'js-accordion-button-second',
+            contentText : 'Каждый модуль (коннектор) отвечает за обмен с определенным государственным ведомством. Модуль устанавливается на интеграционный слой.',
+          }
+        },
+        pathToStartImg: '@img/tmp/accordion/rightImg/accordion-img-desktop/second-x2.png'
+      } %}
+    </div>
   </div>
 {% endblock %}
 

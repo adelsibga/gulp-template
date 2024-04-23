@@ -1,0 +1,188 @@
+@import '../../../ispringUI/config/vars';
+
+$title-color: #2b2b2b;
+$text-color: #2b2b2b;
+$text-hover-color: #5dd669;
+$pathToImg: '@img/tmp/accordion/rightImg/';
+
+.container_connect-pro-solutions {
+  min-width: 320px;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.connect-pro-solutions {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &__title {
+    font: 450 34px/1.23 $euclidCircularRegular;
+    margin: 0 0 24px;
+    color: $title-color;
+  }
+
+  &__text {
+    font: 300 18px/1.07 $euclidCircularRegular;
+    margin: 0 0 32px;
+    color: $text-color;
+  }
+
+  &__accordion {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 54px;
+  }
+
+  &__accordion-button {
+    font: 300 26px/1.23 $euclidCircularRegular;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 30px 48px;
+    transition: $defaultTransition;
+    text-align: left;
+    color: $title-color;
+    border: unset;
+    border-bottom: 1px solid #bbb;
+    background: unset;
+
+    &::before {
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 26px;
+      height: 15px;
+      content: '';
+      transition: $defaultTransition;
+      transform: rotate(0);
+      background-image: url('#{$pathToImg}accordion-arrow.svg');
+    }
+
+    &:not(:first-of-type) {
+      padding-top: 30px;
+
+      &::before {
+        top: 37px;
+      }
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: $text-hover-color;
+
+      &::before {
+        transition: $defaultTransition;
+        background-image: url('#{$pathToImg}accordion-arrow-hover.svg');
+      }
+    }
+
+    &.is-open {
+      &.connect-pro-solutions__accordion-button {
+        border-bottom: 3px solid $text-hover-color;
+
+        &::before {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__accordion-text {
+    font: 300 24px/1.33 $euclidCircularRegular;
+    overflow: hidden;
+    max-height: 0;
+    margin: 0;
+    transition: $defaultTransition;
+    color: $text-color;
+  }
+
+  &__accordion-image-wrapper {
+    padding-top: 32px;
+  }
+
+  &__accordion-image {
+    display: block;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .connect-pro-solutions {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    &__title {
+      font-size: 46px;
+    }
+
+    &__text {
+      margin-bottom: 50px;
+    }
+
+    &__accordion-button {
+      padding-left: 56px;
+    }
+
+    &__accordion-image-wrapper {
+      padding-top: 50px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .connect-pro-solutions {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    &__title {
+      font-size: 50px;
+      margin-bottom: 32px;
+    }
+
+    &__text {
+      margin-bottom: 56px;
+    }
+
+    &__accordion {
+      row-gap: 64px;
+    }
+
+    &__accordion-image-wrapper {
+      padding-top: 56px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .connect-pro-solutions {
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+    &__title {
+      font-size: 52px;
+    }
+
+    &__text {
+      font-size: 26px;
+    }
+
+    &__accordion {
+      flex-direction: row;
+      column-gap: 32px;
+      row-gap: unset;
+    }
+
+    &__accordion-text-wrapper {
+      max-width: 560px;
+    }
+
+    &__accordion-image-wrapper {
+      padding-top: unset;
+    }
+  }
+}

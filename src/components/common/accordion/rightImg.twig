@@ -1,0 +1,18 @@
+<div class="connect-pro-solutions__accordion">
+  <div class="connect-pro-solutions__accordion-text-wrapper">
+    {% for i, item in accordionParams %}
+      <button class="js-connect-pro-accordion-button {{ item.buttonClass }} connect-pro-solutions__accordion-button">
+        {{ item.buttonText }}
+      </button>
+      <div class="js-connect-pro-accordion-content connect-pro-solutions__accordion-text">
+        {{ item.contentText }}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="connect-pro-solutions__accordion-image-wrapper">
+    <img class="js-connect-pro-accordion-image connect-pro-solutions__accordion-image"
+         src="{{ pathToStartImg }}"
+         alt="Состав решения RS‑Connect PRO"
+    >
+  </div>
+</div>

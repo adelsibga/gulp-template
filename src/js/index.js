@@ -2,6 +2,7 @@ import { checkAccount } from './ispringUI/components/headers/top_menu_common.js'
 import { TopMobileMenu } from './ispringUI/components/headers/TopMobileMenu.js'
 import { ArrowNavigationMenuNew } from './ispringUI/components/headers/product/mobile.js'
 import { scrollerItemAnimation } from './components/scroller/scrollerItem.js'
+import { connectProAccordion } from './components/accordion/rightImg.js'
 
 import {
     _mainMenuHandler,
@@ -53,4 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   )
   r.observe(n)
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+  connectProAccordion()
 })

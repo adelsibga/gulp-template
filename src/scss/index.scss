@@ -4,10 +4,11 @@
 @import 'common/components/scroller/scrollerItem';
 @import 'common/components/scroller/scrollerBackground';
 @import 'common/components/scroller/waterfall';
+@import 'common/components/accordion/rightImg';
 @import 'ispringUI';
 
 @include scrollerItem(20);
-@include scrollerBackground($widthContainer, 44px, $pathToImg: '@img/testDir/world-famous');
+@include scrollerBackground($widthContainer, 44px, $pathToImg: '@img/tmp/imagesWithMedia/world-famous');
 @include waterfall(6, $maxWidth: $widthContainer, $height: 60px);
 
 .scroller {
