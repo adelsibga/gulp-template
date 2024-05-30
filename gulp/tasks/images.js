@@ -10,7 +10,7 @@ import {
     newer
 } from '../config/plugins.js'
 
-// TODO: Добавить для isProd конвертацию изображений и сжатие
+// TODO: Добавить для isProd конвертацию изображений и сжатие а для isDev выключить
 function images() {
     return src(`${srcPath}images/**/*.{jpg,png}`, { base: `${srcPath}images/` })
         .pipe(logger.handleError('Images'))
