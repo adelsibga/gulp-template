@@ -31,6 +31,24 @@ function scripts() {
         .pipe(browserSync.stream())
 }
 
+function singleScripts() {
+  return src(path.src.singleJs)
+    .pipe(logger.handleError('single js'))
+    .pipe(ifPlugin(isDev, sourcemaps.init()))
+    .pipe(rigger())
+    .pipe(ifPlugin(isDev, sourcemaps.write()))
+    .pipe(dest(path.build.singleJs))
+    .pipe(ifPlugin(isDev, sourcemaps.init()))
+    .pipe(uglify())
+    .pipe(rename({
+      basename: 'script'
+    }))
+    .pipe(ifPlugin(isDev, sourcemaps.write()))
+    .pipe(dest(path.build.singleJs))
+    .pipe(browserSync.stream())
+}
+
 export {
-    scripts
+  scripts,
+  singleScripts
 }
