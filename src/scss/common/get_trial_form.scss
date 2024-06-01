@@ -2,6 +2,7 @@
   0% {
     transform: translateX(0);
   }
+
   12.5% {
     transform: translateX(-6px) rotateY(-5deg);
   }
@@ -18,7 +19,7 @@
     transform: translateX(2px) rotateY(1deg);
   }
 
-  to {
+  100% {
     transform: translateX(0);
   }
 }

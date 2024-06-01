@@ -49,6 +49,38 @@ function styles() {
         .pipe(browserSync.stream())
 }
 
+function singleStyles() {
+  return src([path.src.singleCss])
+    .pipe(logger.handleError('singleStyles'))
+    .pipe(ifPlugin(isDev, sourcemaps.init()))
+    .pipe(sass())
+    .pipe(gcmq())
+    .pipe(autoprefixer())
+    .pipe(cssbeautify())
+    .pipe(ifPlugin(isDev, sourcemaps.write()))
+    .pipe(stringReplacement(/@img\//g, '../images/'))
+    .pipe(stringReplacement(/@fonts\//g, '../fonts/'))
+    .pipe(dest(file => file.base))
+    .pipe(ifPlugin(isDev, sourcemaps.init()))
+    .pipe(cssnano({
+      zIndex: false,
+      discardComments: {
+        removeAll: true
+      }
+    }))
+    .pipe(removeComments())
+    .pipe(rename({
+      suffix: '.min',
+      extname: '.css'
+    }))
+    .pipe(ifPlugin(isDev, sourcemaps.write()))
+    .pipe(stringReplacement(/@img\//g, '../images/'))
+    .pipe(stringReplacement(/@fonts\//g, '../fonts/'))
+    .pipe(dest(path.build.singleCss))
+    .pipe(browserSync.stream())
+}
+
 export {
-    styles
+    styles,
+    singleStyles
 }

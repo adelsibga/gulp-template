@@ -1,0 +1,30 @@
+// stylelint-disable block-no-empty
+@import 'vars';
+
+.title {
+  &_h1 {
+    color: $anuColor;
+  }
+
+  &_h2 {
+
+  }
+
+  &_h3 {
+
+  }
+}
+
+.text {
+  &_big {
+
+  }
+
+  &_medium {
+
+  }
+
+  &_small {
+
+  }
+}

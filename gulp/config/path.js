@@ -6,6 +6,7 @@ const path = {
     build: {
         twig: `${buildPath}`,
         css: `${buildPath}css/`,
+        singleCss: file => file.base,
         js: `${buildPath}js/`,
         images: `${buildPath}images/`,
         fonts: `${buildPath}fonts/`,
@@ -14,6 +15,7 @@ const path = {
     src: {
         twig: `${srcPath}*.twig`,
         css: `${srcPath + preprocessor}/*.${preprocessor}`,
+        singleCss: `${srcPath}any_page/**/*.scss`,
         js: `${srcPath}js/**/*.js`,
         images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
         fonts: `${srcPath}fonts/**/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`,
@@ -22,6 +24,7 @@ const path = {
     watch: {
         twig: `${srcPath}**/*.twig`,
         css: `${srcPath + preprocessor}/**/*.${preprocessor}`,
+        singleCss: `${srcPath}/**/*.scss`,
         js: `${srcPath}js/**/*.js`,
         images: `${srcPath}images/**/*.{jpg,png,svg,gif,ico,webp,avif,webmanifest,xml,json}`,
         fonts: `${srcPath}fonts/**/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`,
